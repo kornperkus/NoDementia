@@ -17,13 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MenuActivity"
+            android:theme="@style/Page1">
+        </activity>
         <activity android:name=".Page1Activity"
             android:theme="@style/Page1">
         </activity>
         <activity android:name=".Page2Activity"
             android:theme="@style/Page1">
         </activity>
-        <activity android:name=".bmiActivity"
+        <activity android:name=".Page6Activity"
             android:theme="@style/Page1">
         </activity>
     </application>

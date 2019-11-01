@@ -8,9 +8,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,22 +23,22 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_action_bar);
         getSupportActionBar().setElevation(0);
 
-        setup();
+        bindView();
         page1Btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Page1Activity.class));
+                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
             }
         });
         page2Btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), bmiActivity.class));
+                startActivity(new Intent(getApplicationContext(), Page6Activity.class));
             }
         });
     }
 
-    private void setup(){
+    private void bindView(){
         page1Btn = (Button) findViewById(R.id.btn_page1);
         page2Btn = (Button) findViewById(R.id.btn_page2);
         page3Btn = (Button) findViewById(R.id.btn_page3);

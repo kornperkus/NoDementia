@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class bmiActivity extends AppCompatActivity {
+public class Page6Activity extends AppCompatActivity {
 
     private EditText editHeight, editWeight;
     private Button btnCal;
