@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,10 +32,16 @@ public class bmiActivity extends AppCompatActivity {
         btnCal.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                int height = Integer.parseInt(editHeight.getText().toString());
-                int weight = Integer.parseInt(editWeight .getText().toString());
-                double result = weight/(Math.pow(height, 2));
-                resultTv.setText(String.format("BMI: %.2f", result*1000));
+                String h = editHeight.getText().toString();
+                String w = editWeight .getText().toString();
+                if(h.isEmpty() || w.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "กรุณาป้อนข้อมูลให้ครบถ้วนค่ะ", Toast.LENGTH_SHORT).show();
+                }else {
+                    int height = Integer.parseInt(h);
+                    int weight = Integer.parseInt(w);
+                    double result = weight/(Math.pow(height, 2));
+                    resultTv.setText(String.format("%.1f", result*10000));
+                }
             }
         });
     }

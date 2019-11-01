@@ -9,7 +9,8 @@
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/page1PrimaryDark">
+        android:background="@color/page1PrimaryDark"
+        android:layout_marginTop="6dp">
         <TextView
             android:id="@+id/page_title"
             android:text="@string/page_bmi_title"
@@ -26,21 +27,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/frame">
+        android:layout_below="@id/frame"
+        android:padding="16dp">
         <TextView
             android:text="ความสูง"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            style="@style/TextAppearance.AppCompat.Title"/>
         <EditText
             android:id="@+id/edit_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:maxLength="3"/>
+            android:maxLength="3" />
         <TextView
             android:text="น้ำหนัก"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            style="@style/TextAppearance.AppCompat.Title"/>
         <EditText
             android:id="@+id/edit_weight"
             android:layout_width="match_parent"
@@ -50,12 +56,20 @@
         <Button
             android:id="@+id/bnt_cal"
             android:text="คำนวณ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
         <TextView
             android:id="@+id/result_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="80sp"
+            android:layout_gravity="center"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_marginTop="18dp"/>
     </LinearLayout>
     <ImageView
         android:src="@drawable/ic_back"
