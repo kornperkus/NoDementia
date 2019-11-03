@@ -25,7 +25,7 @@ public class Page6Activity extends AppCompatActivity {
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page6);
         getSupportActionBar().setElevation(0);
 
         bindView();

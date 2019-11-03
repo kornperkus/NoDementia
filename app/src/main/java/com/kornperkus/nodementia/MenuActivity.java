@@ -1,15 +1,16 @@
 package com.kornperkus.nodementia;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, page10Btn;
+public class MenuActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+    private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, page10Btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -19,7 +20,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+        getSupportActionBar().setCustomView(R.layout.action_bar_menu);
         getSupportActionBar().setElevation(0);
 
         bindView();
@@ -50,29 +51,40 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page8Btn.setOnClickListener(this);
         page9Btn.setOnClickListener(this);
         page10Btn.setOnClickListener(this);
+        page1Btn.setOnLongClickListener(this);
+        page2Btn.setOnLongClickListener(this);
+        page3Btn.setOnLongClickListener(this);
+        page4Btn.setOnLongClickListener(this);
+        page5Btn.setOnLongClickListener(this);
+        page6Btn.setOnLongClickListener(this);
+        page7Btn.setOnLongClickListener(this);
+        page8Btn.setOnLongClickListener(this);
+        page9Btn.setOnLongClickListener(this);
+        page10Btn.setOnLongClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
+        Class clss = null;
         switch (id) {
             case R.id.page1_btn:
-                Toast.makeText(getApplicationContext(), "Btn 1 ", Toast.LENGTH_SHORT).show();
+                clss = Page1Activity.class;
                 break;
             case R.id.page2_btn:
-                Toast.makeText(getApplicationContext(), "Btn 2 ", Toast.LENGTH_SHORT).show();
+                clss = Page2Activity.class;
                 break;
             case R.id.page3_btn:
-                Toast.makeText(getApplicationContext(), "Btn 3 ", Toast.LENGTH_SHORT).show();
+                //clss = Page3Activity.class;
                 break;
             case R.id.page4_btn:
-                Toast.makeText(getApplicationContext(), "Btn 4 ", Toast.LENGTH_SHORT).show();
+                //clss = Page4Activity.class;
                 break;
             case R.id.page5_btn:
-                Toast.makeText(getApplicationContext(), "Btn 5 ", Toast.LENGTH_SHORT).show();
+                clss = Page6Activity.class;
                 break;
             case R.id.page6_btn:
-                Toast.makeText(getApplicationContext(), "Btn 6 ", Toast.LENGTH_SHORT).show();
+                clss = Page6Activity.class;
                 break;
             case R.id.page7_btn:
                 Toast.makeText(getApplicationContext(), "Btn 7 ", Toast.LENGTH_SHORT).show();
@@ -87,5 +99,46 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(getApplicationContext(), "Btn 10 ", Toast.LENGTH_SHORT).show();
                 break;
         }
+        if(clss != null) startActivity(new Intent(getApplicationContext(), clss));
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.page1_btn:
+                Toast.makeText(getApplicationContext(), "ความหมายของภาวะสมองเสื่อม", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page2_btn:
+                Toast.makeText(getApplicationContext(), "สาเหตุของภาวะสมองเสื่อม", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page3_btn:
+                Toast.makeText(getApplicationContext(), "ปัจจัยเสี่ยงของการเกิดภาวะสมองเสื่อม", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page4_btn:
+                Toast.makeText(getApplicationContext(), "อาการของภาวะสมองเสื่อม", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page5_btn:
+                Toast.makeText(getApplicationContext(), "แบบทดสอบสภาพสมองเบื้องต้น (MMSE)", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page6_btn:
+                Toast.makeText(getApplicationContext(), "การคำนวณค่าดัชนีมวลกาย (BMI)", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page7_btn:
+                Toast.makeText(getApplicationContext(), "การป้องกันสภาวะสมองเสื่อม", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page8_btn:
+                Toast.makeText(getApplicationContext(), "การรักษาของภาวะสมองเสื่อม", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page9_btn:
+                Toast.makeText(getApplicationContext(), "คู่มือการใช้งาน", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.page10_btn:
+                Toast.makeText(getApplicationContext(), "ความพึงพอใจ", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                return false;
+        }
+        return true;
     }
 }

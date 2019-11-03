@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page1);
         getSupportActionBar().setElevation(0);
 
         bindView();

@@ -13,5 +13,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/page1Background</item>
     </style>
-
+    <style name="menu_ic">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">100dp</item>
+    </style>
 </resources>
