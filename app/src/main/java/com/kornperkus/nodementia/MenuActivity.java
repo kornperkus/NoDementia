@@ -3,6 +3,7 @@ package com.kornperkus.nodementia;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -75,13 +76,13 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 clss = Page2Activity.class;
                 break;
             case R.id.page3_btn:
-                //clss = Page3Activity.class;
+                clss = Page3Activity.class;
                 break;
             case R.id.page4_btn:
-                //clss = Page4Activity.class;
+                clss = Page4Activity.class;
                 break;
             case R.id.page5_btn:
-                clss = Page6Activity.class;
+                clss = Page5Activity.class;
                 break;
             case R.id.page6_btn:
                 clss = Page6Activity.class;

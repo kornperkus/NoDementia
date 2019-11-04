@@ -5,6 +5,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,10 @@ public class Page6Activity extends AppCompatActivity {
                 }
             }
         });
+
+        //set color
+        FrameLayout frame = findViewById(R.id.frame);
+        frame.setBackgroundColor(getResources().getColor(R.color.page6PrimaryDark));
     }
 
     private void bindView(){

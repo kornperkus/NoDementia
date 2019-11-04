@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class Page1Activity extends AppCompatActivity {
@@ -24,8 +26,12 @@ public class Page1Activity extends AppCompatActivity {
 
         bindView();
         title.setText(getString(R.string.page1_title));
-        headline.setText(getString(R.string.page1_headline));
+        headline.setVisibility(View.GONE);
         body.setText(getString(R.string.page1_body));
+
+        //set color
+        FrameLayout frame = findViewById(R.id.frame);
+        frame.setBackgroundColor(getResources().getColor(R.color.page1PrimaryDark));
     }
 
     private void bindView(){

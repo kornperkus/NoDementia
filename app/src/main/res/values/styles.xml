@@ -7,11 +7,43 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="menuStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/menuPrimary</item>
+        <item name="colorPrimaryDark">@color/menuPrimary</item>
+        <item name="android:windowBackground">@color/menuPrimary</item>
+    </style>
     <style name="Page1" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/page1Primary</item>
         <item name="colorPrimaryDark">@color/page1PrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/page1Background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="Page2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/page2Primary</item>
+        <item name="colorPrimaryDark">@color/page2PrimaryDark</item>
+        <item name="android:windowBackground">@color/page2Background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="Page3" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/page3Primary</item>
+        <item name="colorPrimaryDark">@color/page3PrimaryDark</item>
+        <item name="android:windowBackground">@color/page3Background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="Page4" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/page6Primary</item>
+        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
+        <item name="android:windowBackground">@color/page6Background</item>
+    </style>
+    <style name="Page5" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/page6Primary</item>
+        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
+        <item name="android:windowBackground">@color/page6Background</item>
+    </style>
+    <style name="Page6" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/page6Primary</item>
+        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
+        <item name="android:windowBackground">@color/page6Background</item>
     </style>
     <style name="menu_ic">
         <item name="android:layout_width">0dp</item>
