@@ -13,7 +13,7 @@
             android:layout_height="45dp" />
         <ImageView
             android:id="@+id/ic_head1"
-            android:src="@drawable/ic_page4"
+            android:src="@drawable/ic_page6"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_centerHorizontal="true"/>

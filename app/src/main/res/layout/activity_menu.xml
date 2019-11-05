@@ -51,11 +51,11 @@
             android:layout_weight="0.5"
             android:layout_height="wrap_content"/>
         <ImageView
-            android:src="@drawable/ic_page5"
+            android:src="@drawable/ic_page6"
             style="@style/menu_ic"
             android:id="@+id/page5_btn"/>
         <ImageView
-            android:src="@drawable/ic_page6"
+            android:src="@drawable/ic_page5"
             style="@style/menu_ic"
             android:id="@+id/page6_btn"/>
         <FrameLayout

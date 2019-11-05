@@ -8,6 +8,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class Page5Activity extends AppCompatActivity {
 
     private TextView title, headline, body;
@@ -15,7 +21,7 @@ public class Page5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page);
+        setContentView(R.layout.activity_menu);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -23,9 +29,35 @@ public class Page5Activity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
 
-        bindView();
-        title.setText(getString(R.string.page5_title));
-        headline.setText(getString(R.string.page5_headline));
+        //bindView();
+
+        /*Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        String dayString;
+        switch(day) {
+            case 1:
+                dayString = "อาทิตย์";
+                break;
+            case 2:
+                dayString = "จันทร์";
+                break;
+            case 3:
+                dayString = "อังคาร";
+                break;
+            case 4:
+                dayString = "พุธ";
+                break;
+            case 5:
+                dayString = "พฤหัส";
+                break;
+            default:
+                dayString = "none";
+        }
+        title.setText(dayString);
+        headline.setText("วัน"+ dayString +
+                "วันที่" +calendar.get(Calendar.DAY_OF_MONTH)+
+                "เดือน" +(calendar.get(Calendar.MONTH)+1)+
+                "ปี"+(calendar.get(Calendar.YEAR)+543));
         body.setText(getString(R.string.page5_body));
 
         //set color
@@ -36,7 +68,7 @@ public class Page5Activity extends AppCompatActivity {
     private void bindView(){
         title = findViewById(R.id.page_title);
         headline = findViewById(R.id.page_headline);
-        body = findViewById(R.id.page_body);
+        body = findViewById(R.id.page_body);*/
     }
 
     @Override
