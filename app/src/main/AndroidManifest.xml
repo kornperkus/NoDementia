@@ -32,8 +32,16 @@
             android:theme="@style/Page5">
         </activity>
         <activity android:name=".Page6Activity"
-            android:theme="@style/Page6">
+            android:theme="@style/Page5">
         </activity>
+        <activity android:name=".Page7Activity"
+            android:theme="@style/Page5">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
 
         <!-- MMSE -->
         <activity android:name=".mmse.Mmse1_1Activity"
@@ -69,10 +77,7 @@
         </activity>
         <activity android:name=".mmse.Mmse2_2_1Activity"
         android:theme="@style/Page1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".mmse.Mmse2_2_2Activity"
             android:theme="@style/Page1">
@@ -89,6 +94,37 @@
         <activity android:name=".mmse.Mmse6_1Activity"
             android:theme="@style/Page1">
         </activity>
+
+        <!-- Page 7 -->
+        <activity android:name=".page7.Page1Activity"
+            android:theme="@style/Page7_1">
+        </activity>
+        <activity android:name=".page7.Page2Activity"
+            android:theme="@style/Page7_2">
+        </activity>
+        <activity android:name=".page7.Page3Activity"
+            android:theme="@style/Page7_3">
+        </activity>
+        <activity android:name=".page7.Page4Activity"
+            android:theme="@style/Page7_4">
+        </activity>
+        <activity android:name=".page7.Page5Activity"
+            android:theme="@style/Page7_5">
+        </activity>
+        <activity android:name=".page7.Page6Activity"
+            android:theme="@style/Page7_6">
+        </activity>
+        <activity android:name=".page7.Page7Activity"
+            android:theme="@style/Page7_7">
+        </activity>
+        <activity android:name=".page7.Page8Activity"
+            android:theme="@style/Page7_8">
+        </activity>
+        <activity android:name=".page7.Page9Activity"
+            android:theme="@style/Page7_9">
+        </activity>
+
+
 
     </application>
 

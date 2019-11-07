@@ -46,6 +46,7 @@
         </LinearLayout>
     </ScrollView>
     <ImageView
+        android:id="@+id/backImg"
         android:src="@drawable/ic_back"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -54,6 +55,7 @@
         android:layout_margin="8dp"
         android:layout_marginLeft="16dp"/>
     <ImageView
+        android:id="@+id/forwardImg"
         android:src="@drawable/ic_forward"
         android:layout_width="70dp"
         android:layout_height="70dp"

@@ -7,47 +7,92 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="menuStyle" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/menuPrimary</item>
-        <item name="colorPrimaryDark">@color/menuPrimary</item>
-        <item name="android:windowBackground">@color/menuPrimary</item>
-    </style>
-    <style name="Page1" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/page1Primary</item>
-        <item name="colorPrimaryDark">@color/page1PrimaryDark</item>
-        <item name="android:windowBackground">@color/page1Background</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <style name="Page2" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/page2Primary</item>
-        <item name="colorPrimaryDark">@color/page2PrimaryDark</item>
-        <item name="android:windowBackground">@color/page2Background</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <style name="Page3" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/page3Primary</item>
-        <item name="colorPrimaryDark">@color/page3PrimaryDark</item>
-        <item name="android:windowBackground">@color/page3Background</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <style name="Page4" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/page6Primary</item>
-        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
-        <item name="android:windowBackground">@color/page6Background</item>
-    </style>
-    <style name="Page5" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/page6Primary</item>
-        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
-        <item name="android:windowBackground">@color/page6Background</item>
-    </style>
-    <style name="Page6" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/page6Primary</item>
-        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
-        <item name="android:windowBackground">@color/page6Background</item>
-    </style>
+
     <style name="menu_ic">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">100dp</item>
+    </style>
+
+    <style name="menuStyle" parent="AppTheme">
+        <item name="colorPrimary">@color/menuPrimary</item>
+        <item name="colorPrimaryDark">@color/menuPrimary</item>
+        <item name="android:windowBackground">@color/menuPrimary</item>
+    </style>
+    <style name="Page1" parent="AppTheme">
+        <item name="colorPrimary">@color/page1Primary</item>
+        <item name="colorPrimaryDark">@color/page1PrimaryDark</item>
+        <item name="android:windowBackground">@color/page1Background</item>
+    </style>
+    <style name="Page2" parent="AppTheme">
+        <item name="colorPrimary">@color/page2Primary</item>
+        <item name="colorPrimaryDark">@color/page2PrimaryDark</item>
+        <item name="android:windowBackground">@color/page2Background</item>
+    </style>
+    <style name="Page3" parent="AppTheme">
+        <item name="colorPrimary">@color/page3Primary</item>
+        <item name="colorPrimaryDark">@color/page3PrimaryDark</item>
+        <item name="android:windowBackground">@color/page3Background</item>
+    </style>
+    <style name="Page4" parent="AppTheme">
+        <item name="colorPrimary">@color/page6Primary</item>
+        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
+        <item name="android:windowBackground">@color/page6Background</item>
+    </style>
+    <style name="Page5" parent="AppTheme">
+        <item name="colorPrimary">@color/page6Primary</item>
+        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
+        <item name="android:windowBackground">@color/page6Background</item>
+    </style>
+    <style name="Page6" parent="AppTheme">
+        <item name="colorPrimary">@color/page6Primary</item>
+        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
+        <item name="android:windowBackground">@color/page6Background</item>
+    </style>
+
+    <style name="Page7_1" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_1Primary</item>
+        <item name="colorPrimaryDark">@color/page7_1Primary</item>
+        <item name="android:windowBackground">@color/page7_1Background</item>
+    </style>
+    <style name="Page7_2" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_2Primary</item>
+        <item name="colorPrimaryDark">@color/page7_2PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7_2Background</item>
+    </style>
+    <style name="Page7_3" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_3Primary</item>
+        <item name="colorPrimaryDark">@color/page7_3PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7_3Background</item>
+    </style>
+    <style name="Page7_4" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_4Primary</item>
+        <item name="colorPrimaryDark">@color/page7_4PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7_4Background</item>
+    </style>
+    <style name="Page7_5" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_5Primary</item>
+        <item name="colorPrimaryDark">@color/page7_5PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7_5Background</item>
+    </style>
+    <style name="Page7_6" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_6Primary</item>
+        <item name="colorPrimaryDark">@color/page7_6PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7_6Background</item>
+    </style>
+    <style name="Page7_7" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_7Primary</item>
+        <item name="colorPrimaryDark">@color/page7_7PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7_7Background</item>
+    </style>
+    <style name="Page7_8" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_8Primary</item>
+        <item name="colorPrimaryDark">@color/page7_8PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7_8Background</item>
+    </style>
+    <style name="Page7_9" parent="AppTheme">
+        <item name="colorPrimary">@color/page7_9Primary</item>
+        <item name="colorPrimaryDark">@color/page7_9Primary</item>
+        <item name="android:windowBackground">@color/page7_9Background</item>
     </style>
 </resources>
