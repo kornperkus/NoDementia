@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse1_1Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
-    private TextView pageTitle, titleTv;
+    private TextView pageTitle, bigTitleTv, titleTv;
     private RadioButton correct, inCorrect;
     private ImageView forwardImg;
 
@@ -35,8 +35,9 @@ public class Mmse1_1Activity extends AppCompatActivity implements CompoundButton
 
         bindView();
 
-        pageTitle.setText("แบบประเมินสภาวะสมองเสื่อม");
-        titleTv.setText("1.1 วันนี้ วันที่เท่าไหร่ ?");
+        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
+        bigTitleTv.setText("Orientation for time ทดสอบการรับรู้เกี่ยวกับเวลาปัจจุบัน");
+        titleTv.setText("\t1. วันนี้ วันที่เท่าไหร่");
         forwardImg.setVisibility(View.INVISIBLE);
 
         //set color
@@ -57,6 +58,7 @@ public class Mmse1_1Activity extends AppCompatActivity implements CompoundButton
 
     private void bindView(){
         pageTitle = findViewById(R.id.page_title);
+        bigTitleTv = findViewById(R.id.bigTitleTv);
         titleTv = findViewById(R.id.titleTv);
         correct = findViewById(R.id.correct);
         inCorrect = findViewById(R.id.incorrect);

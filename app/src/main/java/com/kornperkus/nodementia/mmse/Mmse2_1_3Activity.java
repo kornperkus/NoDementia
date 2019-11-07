@@ -17,8 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.R;
 
-public class Mmse1_4Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
-    private TextView pageTitle, titleTv, bigTitleTv;
+public class Mmse2_1_3Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+    private TextView pageTitle, bigTitleTv, titleTv;
     private RadioButton correct, inCorrect;
     private ImageView forwardImg;
 
@@ -36,8 +36,8 @@ public class Mmse1_4Activity extends AppCompatActivity implements CompoundButton
         bindView();
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Orientation for time ทดสอบการรับรู้เกี่ยวกับเวลาปัจจุบัน");
-        titleTv.setText("\t4. ปีนี้ ปีอะไร");
+        bigTitleTv.setText("Orientation for place ทดสอบการรับรู้เกี่ยวกับที่อยู่ปัจจุบัน");
+        titleTv.setText("\t3. ที่นี่อยู่ในอําเภออะไร – เขตอะไร");
         forwardImg.setVisibility(View.INVISIBLE);
 
         //set color
@@ -49,9 +49,9 @@ public class Mmse1_4Activity extends AppCompatActivity implements CompoundButton
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(correct.isChecked()) Toast.makeText(Mmse1_4Activity.this, "ถูก", Toast.LENGTH_SHORT).show();
-                else if(inCorrect.isChecked()) Toast.makeText(Mmse1_4Activity.this, "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse1_5Activity.class));
+                if(correct.isChecked()) Toast.makeText(Mmse2_1_3Activity.this, "ถูก", Toast.LENGTH_SHORT).show();
+                else if(inCorrect.isChecked()) Toast.makeText(Mmse2_1_3Activity.this, "ผิด", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), Mmse2_1_4Activity.class));
             }
         });
     }
