@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="education_array">
+        <item>โปรดเลือก</item>
+        <item>ไม่ได้เรียนหนังสือ (อ่านไม่ออก-เขียนไม่ได้)</item>
+        <item>เรียนระดับประถมศึกษา</item>
+        <item>เรียนระดับสูงกว่าประถมศึกษา</item>
+    </string-array>
+</resources>
