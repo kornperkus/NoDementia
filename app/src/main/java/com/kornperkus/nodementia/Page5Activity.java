@@ -1,76 +1,46 @@
 package com.kornperkus.nodementia;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import com.kornperkus.nodementia.mmse.Mmse1_1Activity;
 
 public class Page5Activity extends AppCompatActivity {
 
     private TextView title, headline, body;
+    Button beginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_page5);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
-        //TODO: สร้างหน้าแรกของ MMSE
         //TODO: เพิ่มเนื้อหาให้ครบ
         //TODO: คิดคะแนน และแสดงผลลัพธ์
-        //bindView();
+        bindView();
 
-        /*Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
-        String dayString;
-        switch(day) {
-            case 1:
-                dayString = "อาทิตย์";
-                break;
-            case 2:
-                dayString = "จันทร์";
-                break;
-            case 3:
-                dayString = "อังคาร";
-                break;
-            case 4:
-                dayString = "พุธ";
-                break;
-            case 5:
-                dayString = "พฤหัส";
-                break;
-            default:
-                dayString = "none";
-        }
-        title.setText(dayString);
-        headline.setText("วัน"+ dayString +
-                "วันที่" +calendar.get(Calendar.DAY_OF_MONTH)+
-                "เดือน" +(calendar.get(Calendar.MONTH)+1)+
-                "ปี"+(calendar.get(Calendar.YEAR)+543));
-        body.setText(getString(R.string.page5_body));
-
-        //set color
-        FrameLayout frame = findViewById(R.id.frame);
-        frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
+        beginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Mmse1_1Activity.class));
+            }
+        });
     }
 
-    private void bindView(){
-        title = findViewById(R.id.page_title);
-        headline = findViewById(R.id.page_headline);
-        body = findViewById(R.id.page_body);*/
+    public void bindView() {
+        beginBtn = findViewById(R.id.beginBtn);
     }
 
     @Override

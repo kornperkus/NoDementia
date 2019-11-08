@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.R;
 
-public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+public class Mmse2Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private TextView pageTitle, bigTitleTv, titleTv;
     private RadioButton correct, inCorrect;
     private ImageView forwardImg;
@@ -37,21 +37,23 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
         bigTitleTv.setText("Orientation for place ทดสอบการรับรู้เกี่ยวกับที่อยู่ปัจจุบัน");
-        titleTv.setText("\t1. สถานที่ทำแบบทดสอบ");
+        titleTv.setText("\t(ให้เลือกทําข้อใดข้อหนึ่ง)");
         forwardImg.setVisibility(View.INVISIBLE);
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
 
+        correct.setText("กรณีอยู่ที่สถานพยาบาล");
+        inCorrect.setText("กรณีอยู่ที่บ้านของผู้ถูกทดสอบ");
+
         correct.setOnCheckedChangeListener(this);
         inCorrect.setOnCheckedChangeListener(this);
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(correct.isChecked()) Toast.makeText(getApplicationContext(), "ถูก", Toast.LENGTH_SHORT).show();
-                else if(inCorrect.isChecked()) Toast.makeText(getApplicationContext(), "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse2_1_2Activity.class));
+                if(correct.isChecked()) startActivity(new Intent(getApplicationContext(), Mmse2_1_1Activity.class));
+                else if(inCorrect.isChecked()) startActivity(new Intent(getApplicationContext(), Mmse2_2_1Activity.class));
             }
         });
     }

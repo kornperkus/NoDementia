@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.R;
 
-public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+public class Mmse7Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private TextView pageTitle, bigTitleTv, titleTv;
     private RadioButton correct, inCorrect;
     private ImageView forwardImg;
@@ -36,9 +36,12 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
         bindView();
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Orientation for place ทดสอบการรับรู้เกี่ยวกับที่อยู่ปัจจุบัน");
-        titleTv.setText("\t1. สถานที่ทำแบบทดสอบ");
+        bigTitleTv.setText("Repetition ทดสอบการพูดซ้ำคําที่ได้ยิน (พูดตามได้ถูกต้อง 1 คะแนน)");
+        titleTv.setText("\"ตั้งใจฟังผม(ดิฉัน) นะ เมื่อผม(ดิฉัน) พูดข้อความนี้แล้วให้คุณ(ตา,ยาย,...) พูดตามผม(ดิฉัน) จะบอกเพียงเที่ยวเดียว\"\n\n\"ใครใคร่ขายไก่ไข่\"");
         forwardImg.setVisibility(View.INVISIBLE);
+
+        correct.setText("พูดตามได้");
+        inCorrect.setText("พูดตามไม่ได้");
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -49,9 +52,9 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(correct.isChecked()) Toast.makeText(getApplicationContext(), "ถูก", Toast.LENGTH_SHORT).show();
-                else if(inCorrect.isChecked()) Toast.makeText(getApplicationContext(), "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse2_1_2Activity.class));
+                if(correct.isChecked()) Toast.makeText(Mmse7Activity.this, "ถูก", Toast.LENGTH_SHORT).show();
+                else if(inCorrect.isChecked()) Toast.makeText(Mmse7Activity.this, "ผิด", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), Mmse1_2Activity.class));
             }
         });
     }

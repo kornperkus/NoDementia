@@ -28,8 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         bindView();
-        //TODO: ถ้าเคยเข้าสู่ระบบแล้ว จะบันทึกข้อมูลและไม่ต้องเข้าอีก
-
         final ArrayAdapter<CharSequence> educationList = ArrayAdapter.createFromResource(this, R.array.education_array, android.R.layout.simple_spinner_item);
         educationList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         educationSpinner.setAdapter(educationList);
@@ -47,12 +45,13 @@ public class LoginActivity extends AppCompatActivity {
                 int educationLevel = educationSpinner.getSelectedItemPosition();
                 if(educationLevel == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกระดับการศึกษา", Toast.LENGTH_SHORT).show();
                 else {
-                    SharedPreferences pref = getApplicationContext().getSharedPreferences("educationPref", 0);
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("mainPref", 0);
                     SharedPreferences.Editor editor = pref.edit();
+                    editor.putBoolean("login_status", true);
                     editor.putInt("educationLevel", educationLevel);
                     editor.apply();
-                    Toast.makeText(getApplicationContext(), "Level: "+pref.getInt("educationLevel", 0), Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                    finish();
                 }
             }
         });

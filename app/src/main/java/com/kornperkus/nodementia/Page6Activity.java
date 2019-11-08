@@ -21,7 +21,7 @@ public class Page6Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bmi);
+        setContentView(R.layout.activity_page6);
 
         //TODO: แสดงผลลัพธ์โดยใช้รูปภาพในไลน์
 

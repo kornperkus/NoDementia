@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -17,15 +17,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.R;
 
-public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+public class Mmse8Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private TextView pageTitle, bigTitleTv, titleTv;
-    private RadioButton correct, inCorrect;
+    private CheckBox option1, option2, option3;
     private ImageView forwardImg;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mmse);
+        setContentView(R.layout.activity_mmse_8);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -36,32 +36,37 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
         bindView();
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Orientation for place ทดสอบการรับรู้เกี่ยวกับที่อยู่ปัจจุบัน");
-        titleTv.setText("\t1. สถานที่ทำแบบทดสอบ");
+        bigTitleTv.setText("Verbal Command ทดสอบการเข้าใจความหมายและทําตามคําสั่ง");
+        titleTv.setText("\t\"ฟังดีๆ นะเดี๋ยวผม(ดิฉัน) จะส่งกระดาษให้ แล้วให้คุณ(ตา,ยาย,...)รับด้วยมือขวา พับครึ่งด้วยมือทั้งสองข้าง แล้ววางไว้ที่...........\" (พื้น, โต๊ะ, เตียง) \n\n\"ผู้ทดสอบแสดงกระดาษเปล่าขนาดประมาณ เอ-4ไม่มีรอยพับ ให้ผู้ถูกทดสอบ\"");
         forwardImg.setVisibility(View.INVISIBLE);
+
+        option1.setText("รับด้วยมือขวา");
+        option2.setText("พับครึ่ง");
+        option3.setText("วางไว้ที่........... (พื้น, โต๊ะ, เตียง)");
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
 
+        /*
         correct.setOnCheckedChangeListener(this);
         inCorrect.setOnCheckedChangeListener(this);
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(correct.isChecked()) Toast.makeText(getApplicationContext(), "ถูก", Toast.LENGTH_SHORT).show();
-                else if(inCorrect.isChecked()) Toast.makeText(getApplicationContext(), "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse2_1_2Activity.class));
+                if(correct.isChecked()) startActivity(new Intent(getApplicationContext(), Mmse4_1Activity.class));
+                else if(inCorrect.isChecked()) startActivity(new Intent(getApplicationContext(), Mmse4_2Activity.class));
             }
-        });
+        });*/
     }
 
     private void bindView(){
         pageTitle = findViewById(R.id.page_title);
         bigTitleTv = findViewById(R.id.bigTitleTv);
         titleTv = findViewById(R.id.titleTv);
-        correct = findViewById(R.id.correct);
-        inCorrect = findViewById(R.id.incorrect);
+        option1 = findViewById(R.id.option1);
+        option2 = findViewById(R.id.option2);
+        option3 = findViewById(R.id.option3);
         forwardImg = findViewById(R.id.forwardBtn);
     }
 

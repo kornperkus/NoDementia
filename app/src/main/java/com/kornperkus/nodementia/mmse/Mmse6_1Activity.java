@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse6_1Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
-    private TextView pageTitle, titleTv;
+    private TextView pageTitle, bigTitleTv, titleTv;
     private RadioButton correct, inCorrect;
     private ImageView forwardImg;
 
@@ -35,9 +35,13 @@ public class Mmse6_1Activity extends AppCompatActivity implements CompoundButton
 
         bindView();
 
-        pageTitle.setText("แบบประเมินสภาวะสมองเสื่อม");
-        titleTv.setText("1.1 วันนี้ วันที่เท่าไหร่");
+        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
+        bigTitleTv.setText("Naming ทดสอบการบอกชื่อสิ่งของที่ได้เห็น");
+        titleTv.setText("\t1. ยื่นดินสอให้ผู้ถูกทดสอบดูและถามว่า \"ของสิ่งนี้เรียกว่าอะไร\" ");
         forwardImg.setVisibility(View.INVISIBLE);
+
+        correct.setText("ตอบได้");
+        inCorrect.setText("ตอบไม่ได้");
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -50,13 +54,14 @@ public class Mmse6_1Activity extends AppCompatActivity implements CompoundButton
             public void onClick(View v) {
                 if(correct.isChecked()) Toast.makeText(Mmse6_1Activity.this, "ถูก", Toast.LENGTH_SHORT).show();
                 else if(inCorrect.isChecked()) Toast.makeText(Mmse6_1Activity.this, "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse1_2Activity.class));
+                startActivity(new Intent(getApplicationContext(), Mmse6_2Activity.class));
             }
         });
     }
 
     private void bindView(){
         pageTitle = findViewById(R.id.page_title);
+        bigTitleTv = findViewById(R.id.bigTitleTv);
         titleTv = findViewById(R.id.titleTv);
         correct = findViewById(R.id.correct);
         inCorrect = findViewById(R.id.incorrect);

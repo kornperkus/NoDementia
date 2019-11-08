@@ -51,7 +51,7 @@ public class Mmse1_5Activity extends AppCompatActivity implements CompoundButton
             public void onClick(View v) {
                 if(correct.isChecked()) Toast.makeText(Mmse1_5Activity.this, "ถูก", Toast.LENGTH_SHORT).show();
                 else if(inCorrect.isChecked()) Toast.makeText(Mmse1_5Activity.this, "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse1_2Activity.class));
+                startActivity(new Intent(getApplicationContext(), Mmse2Activity.class));
             }
         });
     }
