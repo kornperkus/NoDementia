@@ -28,7 +28,9 @@ public class Page5Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
-
+        //TODO: สร้างหน้าแรกของ MMSE
+        //TODO: เพิ่มเนื้อหาให้ครบ
+        //TODO: คิดคะแนน และแสดงผลลัพธ์
         //bindView();
 
         /*Calendar calendar = Calendar.getInstance();

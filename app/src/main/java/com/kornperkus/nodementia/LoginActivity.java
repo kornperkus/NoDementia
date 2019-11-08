@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
@@ -16,7 +18,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText nameEdit, ageEdit, jobEdit, deseaseEdit;
+    private EditText nameEdit;//, ageEdit, jobEdit, deseaseEdit;
+    private RadioGroup religionRadio;//sexRadio, ;
     private Spinner educationSpinner;
     private Button confirmBtn;
 
@@ -25,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         bindView();
+        //TODO: ถ้าเคยเข้าสู่ระบบแล้ว จะบันทึกข้อมูลและไม่ต้องเข้าอีก
 
         final ArrayAdapter<CharSequence> educationList = ArrayAdapter.createFromResource(this, R.array.education_array, android.R.layout.simple_spinner_item);
         educationList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -33,6 +37,13 @@ public class LoginActivity extends AppCompatActivity {
         confirmBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                String name = nameEdit.getText().toString();
+
+                //int sexId = sexRadio.getCheckedRadioButtonId();
+               // RadioButton sex = findViewById(sexId);
+                int religionId = religionRadio.getCheckedRadioButtonId();
+                RadioButton religion = findViewById(religionId);
+
                 int educationLevel = educationSpinner.getSelectedItemPosition();
                 if(educationLevel == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกระดับการศึกษา", Toast.LENGTH_SHORT).show();
                 else {
@@ -41,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putInt("educationLevel", educationLevel);
                     editor.apply();
                     Toast.makeText(getApplicationContext(), "Level: "+pref.getInt("educationLevel", 0), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                 }
             }
         });
@@ -48,9 +60,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void bindView(){
         nameEdit = findViewById(R.id.nameEdit);
-        ageEdit = findViewById(R.id.ageEdit);
+        /*ageEdit = findViewById(R.id.ageEdit);
         jobEdit = findViewById(R.id.jobEdit);
         deseaseEdit = findViewById(R.id.diseaseEdit);
+        sexRadio = findViewById(R.id.sex_radio);*/
+        religionRadio = findViewById(R.id.religion_radio);
         educationSpinner = findViewById(R.id.educationSpinner);
         confirmBtn = findViewById(R.id.confirmBtn);
     }

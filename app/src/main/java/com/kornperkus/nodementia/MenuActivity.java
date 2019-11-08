@@ -88,7 +88,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 clss = Page6Activity.class;
                 break;
             case R.id.page7_btn:
-                Toast.makeText(getApplicationContext(), "Btn 7 ", Toast.LENGTH_SHORT).show();
+                clss = Page7Activity.class;
                 break;
             case R.id.page8_btn:
                 Toast.makeText(getApplicationContext(), "Btn 8 ", Toast.LENGTH_SHORT).show();

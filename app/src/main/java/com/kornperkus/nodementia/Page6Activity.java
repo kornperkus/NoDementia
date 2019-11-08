@@ -23,6 +23,8 @@ public class Page6Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
 
+        //TODO: แสดงผลลัพธ์โดยใช้รูปภาพในไลน์
+
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
