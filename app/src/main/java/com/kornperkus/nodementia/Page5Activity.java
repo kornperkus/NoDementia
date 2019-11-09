@@ -1,11 +1,13 @@
 package com.kornperkus.nodementia;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +16,7 @@ import com.kornperkus.nodementia.mmse.Mmse1_1Activity;
 
 public class Page5Activity extends AppCompatActivity {
 
-    private TextView title, headline, body;
+    public static final String MMSE_SCORE_KEY = "mmseScoreKey";
     Button beginBtn;
 
     @Override
@@ -27,7 +29,7 @@ public class Page5Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
-        //TODO: คิดคะแนน และแสดงผลลัพธ์
+        //TODO: คิดคะแนน และแสดงผลลัพธ์ (ขาด 4-5-8-11)
         bindView();
 
         beginBtn.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +42,14 @@ public class Page5Activity extends AppCompatActivity {
 
     public void bindView() {
         beginBtn = findViewById(R.id.beginBtn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     @Override

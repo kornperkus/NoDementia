@@ -45,6 +45,10 @@
         <!-- MMSE -->
         <activity android:name=".mmse.Mmse1_1Activity"
             android:theme="@style/Page1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".mmse.Mmse1_2Activity"
             android:theme="@style/Page1">
@@ -132,10 +136,7 @@
         </activity>
         <activity android:name=".mmse.MmseFinalActivity"
             android:theme="@style/Page1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <!-- Page 7 -->

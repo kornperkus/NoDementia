@@ -1,5 +1,6 @@
 package com.kornperkus.nodementia.mmse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -8,17 +9,21 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse4_2Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private TextView pageTitle, bigTitleTv, text1Tv, text2Tv;
     private RadioButton option1, option2, option3, option4, option5;
     private ImageView forwardImg;
+    private int score;
+    private boolean exitConfirm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class Mmse4_2Activity extends AppCompatActivity implements CompoundButton
         getSupportActionBar().setElevation(0);
 
         bindView();
+        score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
         bigTitleTv.setText("Attention / Calculation ทดสอบสมาธิโดยให้คิดเลขในใจ");
@@ -48,17 +54,6 @@ public class Mmse4_2Activity extends AppCompatActivity implements CompoundButton
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
-/*
-        correct.setOnCheckedChangeListener(this);
-        inCorrect.setOnCheckedChangeListener(this);
-        forwardImg.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                if(correct.isChecked()) Toast.makeText(Mmse4_1Activity.this, "ถูก", Toast.LENGTH_SHORT).show();
-                else if(inCorrect.isChecked()) Toast.makeText(Mmse4_1Activity.this, "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse2_2_1Activity.class));
-            }
-        });*/
     }
 
     private void bindView(){
@@ -72,6 +67,20 @@ public class Mmse4_2Activity extends AppCompatActivity implements CompoundButton
         option4 = findViewById(R.id.option4);
         option5 = findViewById(R.id.option5);
         forwardImg = findViewById(R.id.forwardBtn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(exitConfirm){
+            super.onBackPressed();
+            Intent intent = new Intent(getApplicationContext(), Page5Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), getString(R.string.exit_confirm), Toast.LENGTH_SHORT).show();
+            exitConfirm = true;
+        }
     }
 
     @Override

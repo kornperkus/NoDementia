@@ -10,17 +10,21 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse8Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private TextView pageTitle, bigTitleTv, titleTv;
     private CheckBox option1, option2, option3;
     private ImageView forwardImg;
+    private int score;
+    private boolean exitConfirm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class Mmse8Activity extends AppCompatActivity implements CompoundButton.O
         getSupportActionBar().setElevation(0);
 
         bindView();
+        score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
         bigTitleTv.setText("Verbal Command ทดสอบการเข้าใจความหมายและทําตามคําสั่ง");
@@ -68,6 +73,20 @@ public class Mmse8Activity extends AppCompatActivity implements CompoundButton.O
         option2 = findViewById(R.id.option2);
         option3 = findViewById(R.id.option3);
         forwardImg = findViewById(R.id.forwardBtn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(exitConfirm){
+            super.onBackPressed();
+            Intent intent = new Intent(getApplicationContext(), Page5Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), getString(R.string.exit_confirm), Toast.LENGTH_SHORT).show();
+            exitConfirm = true;
+        }
     }
 
     @Override

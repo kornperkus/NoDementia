@@ -2,6 +2,7 @@ package com.kornperkus.nodementia.mmse;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -15,12 +16,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private TextView pageTitle, bigTitleTv, titleTv;
     private RadioButton correct, inCorrect;
     private ImageView forwardImg;
+    private int score;
+    private boolean exitConfirm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButt
         getSupportActionBar().setElevation(0);
 
         bindView();
+        score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
         bigTitleTv.setText("Orientation for place ทดสอบการรับรู้เกี่ยวกับที่อยู่ปัจจุบัน");
@@ -49,11 +54,13 @@ public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButt
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(correct.isChecked()) Toast.makeText(Mmse2_1_2Activity.this, "ถูก", Toast.LENGTH_SHORT).show();
-                else if(inCorrect.isChecked()) Toast.makeText(Mmse2_1_2Activity.this, "ผิด", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Mmse2_1_3Activity.class));
+                if(correct.isChecked()) score +=1;
+                Intent intent = new Intent(getApplicationContext(), Mmse2_1_3Activity.class);
+                intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
+                startActivity(intent);
             }
         });
+        Log.i("SCORE", "Score = "+score);
     }
 
     private void bindView(){
@@ -63,6 +70,20 @@ public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButt
         correct = findViewById(R.id.correct);
         inCorrect = findViewById(R.id.incorrect);
         forwardImg = findViewById(R.id.forwardBtn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(exitConfirm){
+            super.onBackPressed();
+            Intent intent = new Intent(getApplicationContext(), Page5Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), getString(R.string.exit_confirm), Toast.LENGTH_SHORT).show();
+            exitConfirm = true;
+        }
     }
 
     @Override

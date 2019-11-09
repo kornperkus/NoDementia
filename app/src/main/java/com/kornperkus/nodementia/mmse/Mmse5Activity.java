@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse5Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
@@ -23,6 +24,8 @@ public class Mmse5Activity extends AppCompatActivity implements CompoundButton.O
     private ImageView forwardImg;
     private RadioGroup option1, option2;
     private RadioButton option1_1, option1_2, option1_3, option2_1, option2_2, option2_3;
+    private int score;
+    private boolean exitConfirm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class Mmse5Activity extends AppCompatActivity implements CompoundButton.O
         getSupportActionBar().setElevation(0);
 
         bindView();
+        score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
         forwardImg.setVisibility(View.INVISIBLE);
@@ -75,6 +79,20 @@ public class Mmse5Activity extends AppCompatActivity implements CompoundButton.O
         option2_1 = findViewById(R.id.option2_1);
         option2_2 = findViewById(R.id.option2_2);
         option2_3 = findViewById(R.id.option2_3);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(exitConfirm){
+            super.onBackPressed();
+            Intent intent = new Intent(getApplicationContext(), Page5Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), getString(R.string.exit_confirm), Toast.LENGTH_SHORT).show();
+            exitConfirm = true;
+        }
     }
 
     @Override

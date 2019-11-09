@@ -15,12 +15,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse4Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private TextView pageTitle, bigTitleTv, titleTv;
     private RadioButton correct, inCorrect;
     private ImageView forwardImg;
+    private int score;
+    private boolean exitConfirm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class Mmse4Activity extends AppCompatActivity implements CompoundButton.O
         getSupportActionBar().setElevation(0);
 
         bindView();
+        score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
         pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
         bigTitleTv.setText("Attention / Calculation ทดสอบสมาธิโดยให้คิดเลขในใจ");
@@ -64,6 +68,20 @@ public class Mmse4Activity extends AppCompatActivity implements CompoundButton.O
         correct = findViewById(R.id.correct);
         inCorrect = findViewById(R.id.incorrect);
         forwardImg = findViewById(R.id.forwardBtn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(exitConfirm){
+            super.onBackPressed();
+            Intent intent = new Intent(getApplicationContext(), Page5Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), getString(R.string.exit_confirm), Toast.LENGTH_SHORT).show();
+            exitConfirm = true;
+        }
     }
 
     @Override

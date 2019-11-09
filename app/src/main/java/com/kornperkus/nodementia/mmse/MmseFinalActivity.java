@@ -9,11 +9,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
 public class MmseFinalActivity extends AppCompatActivity {
 
     private TextView title, score, body;
+    private int scoreInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,9 @@ public class MmseFinalActivity extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
 
         bindView();
+        scoreInt = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
+
+
         title.setText("แบบประเมินสภาพสมองเสื่อม");
         score.setText("คะแนนที่ได้รับ 15/20");
         body.setText("ไม่มีความเสี่ยงของภาวะสมองเสื่อมจากเครื่องมือนี้");
