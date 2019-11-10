@@ -37,7 +37,7 @@ public class Page4_4Activity extends AppCompatActivity {
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Page4_4Activity.class);
+                Intent intent = new Intent(getApplicationContext(), Page4_5Activity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();

@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.page8.Page4_1Activity;
+import com.kornperkus.nodementia.page8.Page9_1_1Activity;
 
 public class Page8Activity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
     private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn;
@@ -18,8 +19,6 @@ public class Page8Activity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page8);
-
-        //TODO: เพิ่มเนื้อหาหน้า 9 และเกมหน้า 4
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -94,7 +93,7 @@ public class Page8Activity extends AppCompatActivity implements View.OnClickList
                 clss = com.kornperkus.nodementia.page8.Page8Activity.class;
                 break;
             case R.id.page9_btn:
-                clss = com.kornperkus.nodementia.page8.Page9Activity.class;
+                clss = Page9_1_1Activity.class;
                 break;
         }
         if(clss != null) startActivity(new Intent(getApplicationContext(), clss));

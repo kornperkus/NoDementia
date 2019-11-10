@@ -4,24 +4,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.R;
 
-public class Page4_5Activity extends AppCompatActivity {
+public class Page4_6Activity extends AppCompatActivity {
 
-    private TextView title, headline, body, body2;
+    public static final String PREF_KEY_LEVEL = "levelPrefKey";
+    private TextView title, headline, body;
+    private Spinner stageSpin;
+    private Button playBtn;
     private ImageView backImg, forwardImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page8_4_5);
+        setContentView(R.layout.activity_page8_4_6);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -31,19 +38,27 @@ public class Page4_5Activity extends AppCompatActivity {
 
         bindView();
         title.setText(getString(R.string.page8_4_title));
-        headline.setText(getString(R.string.page8_4_5_headline));
-        body.setText(getText(R.string.page8_4_5_body));
-        body2.setText(getText(R.string.page8_4_5_body2));
+        headline.setText(getString(R.string.page8_4_6_headline));
+        body.setText(getText(R.string.page8_4_6_body));
 
-        forwardImg.setOnClickListener(new View.OnClickListener(){
+        final ArrayAdapter<CharSequence> stageList = ArrayAdapter.createFromResource(this, R.array.stage_array, android.R.layout.simple_spinner_item);
+        stageList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        stageSpin.setAdapter(stageList);
+
+        playBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Page4_6Activity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
+                if(stageSpin.getSelectedItemPosition() > 0) {
+                    Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
+                    intent.putExtra(PREF_KEY_LEVEL, stageSpin.getSelectedItemPosition());
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(getApplicationContext(), "โปรดเลือกด่านก่อนเล่น", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+        forwardImg.setVisibility(View.GONE);
         backImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -60,7 +75,8 @@ public class Page4_5Activity extends AppCompatActivity {
         title = findViewById(R.id.page_title);
         headline = findViewById(R.id.page_headline);
         body = findViewById(R.id.page_body);
-        body2 = findViewById(R.id.page_body2);
+        stageSpin = findViewById(R.id.stage_spin);
+        playBtn = findViewById(R.id.play_btn);
         backImg = findViewById(R.id.backImg);
         forwardImg = findViewById(R.id.forwardImg);
     }

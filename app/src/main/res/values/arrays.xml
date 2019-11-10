@@ -6,4 +6,12 @@
         <item>เรียนระดับประถมศึกษา</item>
         <item>เรียนระดับสูงกว่าประถมศึกษา</item>
     </string-array>
+    <string-array name="stage_array">
+        <item>โปรดเลือกด่าน</item>
+        <item>ด่านที่ 1</item>
+        <item>ด่านที่ 2</item>
+        <item>ด่านที่ 3</item>
+        <item>ด่านที่ 4</item>
+        <item>ด่านที่ 5</item>
+    </string-array>
 </resources>
