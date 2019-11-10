@@ -1,5 +1,6 @@
-package com.kornperkus.nodementia.page7;
+package com.kornperkus.nodementia.page8;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -12,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.R;
 
-public class Page1Activity extends AppCompatActivity {
+public class Page4_4Activity extends AppCompatActivity {
 
     private TextView title, headline, body;
     private ImageView backImg, forwardImg;
@@ -20,22 +21,38 @@ public class Page1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page);
+        setContentView(R.layout.activity_page8_4_4);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page7_1);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page8_4);
         getSupportActionBar().setElevation(0);
 
         bindView();
-        title.setText(getString(R.string.page7_1_title));
-        headline.setVisibility(View.GONE);
-        //body.setText(getString(R.string.page1_body));
+        title.setText(getString(R.string.page8_4_title));
+        headline.setText(getString(R.string.page8_4_4_headline));
+        body.setText(getText(R.string.page8_4_4_body));
+
+        forwardImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Page4_4Activity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+        backImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
-        frame.setBackgroundColor(getResources().getColor(R.color.page7_1PrimaryDark));
+        frame.setBackgroundColor(getResources().getColor(R.color.page7_4PrimaryDark));
     }
 
     private void bindView(){

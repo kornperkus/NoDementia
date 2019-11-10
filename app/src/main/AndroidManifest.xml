@@ -12,10 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Page1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -37,14 +34,24 @@
             android:theme="@style/Page4"></activity>
         <activity
             android:name=".Page5Activity"
-            android:theme="@style/Page5"></activity>
+            android:theme="@style/Page5">
+
+        </activity>
+
         <activity
             android:name=".Page6Activity"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".Page7Activity"
             android:theme="@style/Page5">
-
+        </activity>
+        <activity
+            android:name=".Page8Activity"
+            android:theme="@style/Page5">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
 
@@ -118,6 +125,7 @@
         <activity
             android:name=".mmse.Mmse5Activity"
             android:theme="@style/Page5">
+
         </activity>
         <activity
             android:name=".mmse.Mmse6_1Activity"
@@ -146,33 +154,49 @@
             android:theme="@style/Page5">
         </activity>
 
-        <!-- Page 7 -->
+        <!-- Page 8 Child -->
         <activity
-            android:name=".page7.Page1Activity"
+            android:name=".page8.Page1Activity"
             android:theme="@style/Page7_1"></activity>
         <activity
-            android:name=".page7.Page2Activity"
+            android:name=".page8.Page2Activity"
             android:theme="@style/Page7_2"></activity>
         <activity
-            android:name=".page7.Page3Activity"
+            android:name=".page8.Page3Activity"
             android:theme="@style/Page7_3"></activity>
         <activity
-            android:name=".page7.Page4Activity"
+            android:name=".page8.Page4_1Activity"
             android:theme="@style/Page7_4"></activity>
         <activity
-            android:name=".page7.Page5Activity"
-            android:theme="@style/Page7_5"></activity>
+            android:name=".page8.Page4_2Activity"
+            android:theme="@style/Page7_4"></activity>
         <activity
-            android:name=".page7.Page6Activity"
-            android:theme="@style/Page7_6"></activity>
+            android:name=".page8.Page4_3Activity"
+            android:theme="@style/Page7_4"></activity>
         <activity
-            android:name=".page7.Page7Activity"
+            android:name=".page8.Page4_4Activity"
+            android:theme="@style/Page7_4"></activity>
+        <activity
+            android:name=".page8.Page4_5Activity"
+            android:theme="@style/Page7_4"></activity>
+        <activity
+            android:name=".page8.Page5Activity"
+            android:theme="@style/Page7_5">
+        </activity>
+        <activity
+            android:name=".page8.Page6Activity"
+            android:theme="@style/Page7_6">
+
+        </activity>
+
+        <activity
+            android:name=".page8.Page7Activity"
             android:theme="@style/Page7_7"></activity>
         <activity
-            android:name=".page7.Page8Activity"
+            android:name=".page8.Page8Activity"
             android:theme="@style/Page7_8"></activity>
         <activity
-            android:name=".page7.Page9Activity"
+            android:name=".page8.Page9Activity"
             android:theme="@style/Page7_9"></activity>
 
 

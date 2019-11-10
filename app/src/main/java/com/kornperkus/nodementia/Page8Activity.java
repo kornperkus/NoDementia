@@ -3,25 +3,28 @@ package com.kornperkus.nodementia;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
-    private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, page10Btn;
+import com.kornperkus.nodementia.page8.Page4_1Activity;
+
+public class Page8Activity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+    private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_page8);
+
+        //TODO: เพิ่มเนื้อหาหน้า 9 และเกมหน้า 4
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_menu);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page8);
         getSupportActionBar().setElevation(0);
 
         bindView();
@@ -38,7 +41,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page7Btn = findViewById(R.id.page7_btn);
         page8Btn = findViewById(R.id.page8_btn);
         page9Btn = findViewById(R.id.page9_btn);
-        page10Btn = findViewById(R.id.page10_btn);
     }
 
     public void setOnCLick() {
@@ -51,7 +53,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page7Btn.setOnClickListener(this);
         page8Btn.setOnClickListener(this);
         page9Btn.setOnClickListener(this);
-        page10Btn.setOnClickListener(this);
         page1Btn.setOnLongClickListener(this);
         page2Btn.setOnLongClickListener(this);
         page3Btn.setOnLongClickListener(this);
@@ -61,7 +62,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page7Btn.setOnLongClickListener(this);
         page8Btn.setOnLongClickListener(this);
         page9Btn.setOnLongClickListener(this);
-        page10Btn.setOnLongClickListener(this);
     }
 
     @Override
@@ -70,34 +70,31 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         Class clss = null;
         switch (id) {
             case R.id.page1_btn:
-                clss = Page1Activity.class;
+                clss = com.kornperkus.nodementia.page8.Page1Activity.class;
                 break;
             case R.id.page2_btn:
-                clss = Page2Activity.class;
+                clss = com.kornperkus.nodementia.page8.Page2Activity.class;
                 break;
             case R.id.page3_btn:
-                clss = Page3Activity.class;
+                clss = com.kornperkus.nodementia.page8.Page3Activity.class;
                 break;
             case R.id.page4_btn:
-                clss = Page4Activity.class;
+                clss = Page4_1Activity.class;
                 break;
             case R.id.page5_btn:
-                clss = Page5Activity.class;
+                clss = com.kornperkus.nodementia.page8.Page5Activity.class;
                 break;
             case R.id.page6_btn:
-                clss = Page6Activity.class;
+                clss = com.kornperkus.nodementia.page8.Page6Activity.class;
                 break;
             case R.id.page7_btn:
-                clss = Page7Activity.class;
+                clss = com.kornperkus.nodementia.page8.Page7Activity.class;
                 break;
             case R.id.page8_btn:
-                clss = Page8Activity.class;
+                clss = com.kornperkus.nodementia.page8.Page8Activity.class;
                 break;
             case R.id.page9_btn:
-                Toast.makeText(getApplicationContext(), "Btn 9 ", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.page10_btn:
-                Toast.makeText(getApplicationContext(), "Btn 10 ", Toast.LENGTH_SHORT).show();
+                clss = com.kornperkus.nodementia.page8.Page9Activity.class;
                 break;
         }
         if(clss != null) startActivity(new Intent(getApplicationContext(), clss));
@@ -108,44 +105,35 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         switch (id) {
             case R.id.page1_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page1_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_1_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page2_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page2_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_2_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page3_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page3_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_3_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page4_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page4_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_4_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page5_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page5_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_5_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page6_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page6_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_6_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page7_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page7_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_7_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page8_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page8_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_8_title), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page9_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page9_title), Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.page10_btn:
-                Toast.makeText(getApplicationContext(), getString(R.string.page10_title), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.page8_9_title), Toast.LENGTH_SHORT).show();
                 break;
             default:
                 return false;
         }
         return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finishAffinity();
     }
 }

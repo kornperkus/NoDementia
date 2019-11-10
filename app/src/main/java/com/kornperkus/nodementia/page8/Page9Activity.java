@@ -1,4 +1,4 @@
-package com.kornperkus.nodementia.page7;
+package com.kornperkus.nodementia.page8;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,11 +23,11 @@ public class Page9Activity extends AppCompatActivity {
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page7_9);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page8_9);
         getSupportActionBar().setElevation(0);
 
         bindView();
-        title.setText(getString(R.string.page7_9_title));
+        title.setText(getString(R.string.page8_9_title));
         headline.setVisibility(View.GONE);
         //body.setText(getString(R.string.page1_body));
 

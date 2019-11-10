@@ -1,9 +1,10 @@
-package com.kornperkus.nodementia.page7;
+package com.kornperkus.nodementia.page8;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
@@ -11,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.R;
 
-public class Page8Activity extends AppCompatActivity {
+public class Page7Activity extends AppCompatActivity {
 
     private TextView title, headline, body;
+    private ImageView backImg, forwardImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,23 +25,33 @@ public class Page8Activity extends AppCompatActivity {
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page7_8);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page8_7);
         getSupportActionBar().setElevation(0);
 
         bindView();
-        title.setText(getString(R.string.page7_8_title));
+        title.setText(getString(R.string.page8_7_title));
         headline.setVisibility(View.GONE);
-        //body.setText(getString(R.string.page1_body));
+        body.setText(getString(R.string.page8_7_body));
+
+        forwardImg.setVisibility(View.GONE);
+        backImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
-        frame.setBackgroundColor(getResources().getColor(R.color.page7_8PrimaryDark));
+        frame.setBackgroundColor(getResources().getColor(R.color.page7_7PrimaryDark));
     }
 
     private void bindView(){
         title = findViewById(R.id.page_title);
         headline = findViewById(R.id.page_headline);
         body = findViewById(R.id.page_body);
+        backImg = findViewById(R.id.backImg);
+        forwardImg = findViewById(R.id.forwardImg);
     }
 
     @Override
