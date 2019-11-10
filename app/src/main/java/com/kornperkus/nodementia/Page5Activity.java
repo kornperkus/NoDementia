@@ -29,7 +29,6 @@ public class Page5Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
-        //TODO: คิดคะแนน และแสดงผลลัพธ์ (ขาด 4-5-8-11)
         bindView();
 
         beginBtn.setOnClickListener(new View.OnClickListener() {

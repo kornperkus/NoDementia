@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:padding="12dp">
         <TextView
-            android:text="Visuoconstructionทดสอบความสัมพันธ์ระหว่าง ตา กับ มือ"
+            android:text="@string/mmse_11_title"
             android:id="@+id/bigTitleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

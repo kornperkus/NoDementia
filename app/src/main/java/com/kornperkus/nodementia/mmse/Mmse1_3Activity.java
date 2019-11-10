@@ -40,9 +40,9 @@ public class Mmse1_3Activity extends AppCompatActivity implements CompoundButton
         bindView();
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
-        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Orientation for time ทดสอบการรับรู้เกี่ยวกับเวลาปัจจุบัน");
-        titleTv.setText("\t3. เดือนนี้ เดือนอะไร");
+        pageTitle.setText(getString(R.string.page5_title));
+        bigTitleTv.setText(getString(R.string.mmse_1_title));
+        titleTv.setText(getString(R.string.mmse_1_3));
         forwardImg.setVisibility(View.INVISIBLE);
 
         //set color
@@ -57,6 +57,7 @@ public class Mmse1_3Activity extends AppCompatActivity implements CompoundButton
                 if(correct.isChecked()) score +=1;
                 Intent intent = new Intent(getApplicationContext(), Mmse1_4Activity.class);
                 intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

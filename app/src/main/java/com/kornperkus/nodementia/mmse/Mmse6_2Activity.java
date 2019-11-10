@@ -40,8 +40,8 @@ public class Mmse6_2Activity extends AppCompatActivity implements CompoundButton
         bindView();
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
-        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Naming ทดสอบการบอกชื่อสิ่งของที่ได้เห็น");
+        pageTitle.setText(getString(R.string.page5_title));
+        bigTitleTv.setText(getString(R.string.mmse_6_title));
         titleTv.setText("\t2. ชี้นาฬิกาข้อมือให้ผู้ถูกทดสอบดูและถามว่า \"ของสิ่งนี้เรียกว่าอะไร\"");
         forwardImg.setVisibility(View.INVISIBLE);
 
@@ -58,8 +58,9 @@ public class Mmse6_2Activity extends AppCompatActivity implements CompoundButton
             @Override
             public void onClick(View v) {
                 if(correct.isChecked()) score +=1;
-                Intent intent = new Intent(getApplicationContext(), Mmse6_2Activity.class);
+                Intent intent = new Intent(getApplicationContext(), Mmse7Activity.class);
                 intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

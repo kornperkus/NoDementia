@@ -40,12 +40,40 @@
 </string>
 
     <!-- Page 5 -->
-    <string name="page5_title">แบบทดสอบสภาพสมองเบื้องต้น (MMSE)</string>
-    <string name="page5_headline">สาเหตุ</string>
-    <string name="page5_body">test</string>
+    <string name="page5_title">แบบทดสอบสภาพสมองเบื้องต้น</string>
+    <string name="mmse_1_title">Orientation for time ทดสอบการรับรู้เกี่ยวกับเวลาปัจจุบัน</string>
+    <string name="mmse_2_title">Orientation for place ทดสอบการรับรู้เกี่ยวกับที่อยู่ปัจจุบัน</string>
+    <string name="mmse_3_title">Registration ทดสอบการบันทึกความจําโดยให้จําชื่อของ 3 อย่าง</string>
+    <string name="mmse_4_title">Attention / Calculation ทดสอบสมาธิโดยให้คิดเลขในใจ</string>
+    <string name="mmse_5_title">Recall ทดสอบความจําระยะสั้นของชื่อสิ่งของ 3 อย่างที่ให้จําไว้แล้ว</string>
+    <string name="mmse_6_title">Naming ทดสอบการบอกชื่อสิ่งของที่ได้เห็น</string>
+    <string name="mmse_7_title">Repetition ทดสอบการพูดซ้ำคําที่ได้ยิน</string>
+    <string name="mmse_8_title">Verbal Command ทดสอบการเข้าใจความหมายและทําตามคําสั่ง</string>
+    <string name="mmse_9_title">Written command ทดสอบการอ่าน การเข้าใจความหมาย สามารถทําตามได้</string>
+    <string name="mmse_10_title">Writing ทดสอบการเขียนภาษาอย่างมีความหมาย</string>
+    <string name="mmse_11_title">Visuoconstruction ทดสอบความสัมพันธ์ระหว่าง ตา กับ มือ</string>
+
+    <string name="mmse_1_1">\t1. วันนี้ วันที่เท่าไหร่</string>
+    <string name="mmse_1_2">\t2. วันนี้ วันอะไร</string>
+    <string name="mmse_1_3">\t3. เดือนนี้ เดือนอะไร</string>
+    <string name="mmse_1_4">\t4. ปีนี้ ปีอะไร</string>
+    <string name="mmse_1_5">\t5. ฤดูนี้ ฤดูอะไร</string>
+    <string name="mmse_2_1_1">\t1. สถานที่ทำแบบทดสอบ</string>
+    <string name="mmse_2_1_2">\t2. ขณะนี้อยู่ที่ชั้นที่เท่าไหร่ ของตัว อาคา</string>
+    <string name="mmse_2_1_3">\t3. ที่นี่อยู่ในอําเภออะไร - เขตอะไร</string>
+    <string name="mmse_2_1_4">\t4. ที่นี่จังหวัดอะไร</string>
+    <string name="mmse_2_1_5">\t5. ที่นี่ภาคอะไร</string>
+    <string name="mmse_2_2_1">\t1. สถานที่ตรงนี้เรียกว่าอะไร และบ้านเลขที่เท่าไหร่</string>
+    <string name="mmse_2_2_2">\t2. ที่นี่หมู่บ้าน (หรือละแวก/คุ้ม/ย่าน/ถนน) อะไร </string>
+    <string name="mmse_2_2_3">\t3. ที่นี่อยู่ในอําเภอ หรือ / เขตอะไร</string>
+    <string name="mmse_2_2_4">\t4. ที่นี่จังหวัดอะไร </string>
+    <string name="mmse_2_2_5">\t5. ที่นี่ภาคอะไร</string>
+    <string name="mmse_2_option1">กรณีอยู่ที่สถานพยาบาล</string>
+    <string name="mmse_2_option2">กรณีอยู่ที่บ้านของผู้ถูกทดสอบ</string>
     <string name="mmse_3_text1">\"ทดสอบความจํา ผม(ดิฉัน) จะบอกชื่อของ 3 อย่าง คุณ(ตา,ยาย,...) ตั้งใจฟังให้ดีนะ เพราะจะบอกเพียงครั้งเดียว ไม่มีการบอกซ้ำอีก เมื่อผม(ดิฉัน)พูดจบ ให้คุณ(ตา,ยาย,...) พูดทบทวนตามที่ได้ยินให้ครบทั้ง 3 ชื่อ แล้วพยายามจําไว้ให้ดี เดี๋ยวผม(ดิฉัน)จะถามซ้ำ\"</string>
-    <string name="mmse_3_text2">\t\tการบอกชื่อแต่ละคําให้ห่างกันประมาณหนึ่งวินาที ต้องไม่ซ้ำหรือเร็วเกินไป</string>
-    <string name="mmse_3_text3">\t\tหมายเหตุ : ในกรณีที่ทําแบบทดสอบซ้ำภายใน 2 เดือน ให้ใช้คําถามว่า</string>
+    <string name="mmse_3_text2">การบอกชื่อแต่ละคําให้ห่างกันประมาณหนึ่งวินาที ต้องไม่ซ้ำหรือเร็วเกินไป</string>
+    <string name="mmse_3_text3">หมายเหตุ : ในกรณีที่ทําแบบทดสอบซ้ำภายใน 2 เดือน ให้ใช้คําถามว่า</string>
+    <string name="mmse_4_text">\tข้อนี้เป็นการคิดเลขในใจเพื่อทดสอบสมาธิ คุณ (ตา,ยาย,...) คิดเลขในใจเป็นไหม ?</string>
     <string name="mmse_4_text1_1">\"ข้อนี้ให้คิดในใจเอา 100 ตั้ง ลบออกทีละ 7 ไปเรื่อย ๆ ได้ผลลัพธ์เท่าไหร่บอกมา\"</string>
     <string name="mmse_4_text1_2">หมายเหตุ : บันทึกคําตอบตัวเลขไว้ทุกกครั้ง (ทั้งคําตอบที่ถูกและผิด) ทําทั้งหมด 5 ครั้ง</string>
     <string name="mmse_4_text2_1">\"ผม(ดิฉัน) จะสะกดคําว่า มะนาวให้ คุณ(ตา,ยาย,...) ฟังแล้วให้คุณ(ตา,ยาย,...) สะกดถอยหลังจากพยัญชนะตัวหลังไปตัวแรก\"</string>

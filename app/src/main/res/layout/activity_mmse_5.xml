@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:padding="12dp">
         <TextView
-            android:text="Recall ทดสอบความจําระยะสั้นของชื่อสิ่งของ 3 อย่างที่ให้จําไว้แล้ว"
+            android:text="@string/mmse_5_title"
             android:id="@+id/bigTitleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,35 +47,34 @@
             android:layout_below="@id/bigTitleTv"
             style="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"/>
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textTv1"
-            android:orientation="horizontal"
             android:layout_marginBottom="16dp">
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option1_1"
                 android:text="ดอกไม้"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option1_2"
                 android:text="แม่น้ำ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option1_3"
                 android:text="รถไฟ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-        </RadioGroup>
+        </LinearLayout>
         <TextView
             android:text="@string/mmse_3_text3"
             android:id="@+id/textTv3"
@@ -85,34 +84,34 @@
             android:layout_below="@id/option1"
             style="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"/>
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textTv3"
-            android:orientation="horizontal">
-            <RadioButton
+            android:layout_below="@id/textTv3">
+            <CheckBox
                 android:id="@+id/option2_1"
                 android:text="ต้นไม้"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option2_2"
                 android:text="ทะเล"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option2_3"
                 android:text="รถยนต์"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                style="@style/TextAppearance.AppCompat.Body1"/>
-        </RadioGroup>
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
     </RelativeLayout>
     </ScrollView>
     <ImageView

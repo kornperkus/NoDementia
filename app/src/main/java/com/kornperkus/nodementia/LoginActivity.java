@@ -45,10 +45,10 @@ public class LoginActivity extends AppCompatActivity {
                 int educationLevel = educationSpinner.getSelectedItemPosition();
                 if(educationLevel == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกระดับการศึกษา", Toast.LENGTH_SHORT).show();
                 else {
-                    SharedPreferences pref = getApplicationContext().getSharedPreferences("mainPref", 0);
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0);
                     SharedPreferences.Editor editor = pref.edit();
-                    editor.putBoolean("login_status", true);
-                    editor.putInt("educationLevel", educationLevel);
+                    editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, true);
+                    editor.putInt(MainActivity.PREF_KEY_EDUCATION, educationLevel);
                     editor.apply();
                     startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                     finish();

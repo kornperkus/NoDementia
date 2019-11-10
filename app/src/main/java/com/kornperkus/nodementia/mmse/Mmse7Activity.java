@@ -40,8 +40,8 @@ public class Mmse7Activity extends AppCompatActivity implements CompoundButton.O
         bindView();
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
-        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Repetition ทดสอบการพูดซ้ำคําที่ได้ยิน (พูดตามได้ถูกต้อง 1 คะแนน)");
+        pageTitle.setText(getString(R.string.page5_title));
+        bigTitleTv.setText(getString(R.string.mmse_7_title));
         titleTv.setText("\"ตั้งใจฟังผม(ดิฉัน) นะ เมื่อผม(ดิฉัน) พูดข้อความนี้แล้วให้คุณ(ตา,ยาย,...) พูดตามผม(ดิฉัน) จะบอกเพียงเที่ยวเดียว\"\n\n\"ใครใคร่ขายไก่ไข่\"");
         forwardImg.setVisibility(View.INVISIBLE);
 
@@ -60,6 +60,7 @@ public class Mmse7Activity extends AppCompatActivity implements CompoundButton.O
                 if(correct.isChecked()) score +=1;
                 Intent intent = new Intent(getApplicationContext(), Mmse8Activity.class);
                 intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

@@ -14,7 +14,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button page1Btn, page2Btn, page3Btn;
+    public static final String PREF_KEY_MAIN = "mainPrefKey";
+    public static final String PREF_KEY_LOGIN_STATUS = "loginStatusKey";
+    public static final String PREF_KEY_EDUCATION = "educationLevelKey";
+    private Button page1Btn, page2Btn, page3Btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         bindView();
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("mainPref", 0);
-        if(pref.getBoolean("login_status", false)) startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+        SharedPreferences pref = getApplicationContext().getSharedPreferences(PREF_KEY_MAIN, 0);
+        if(pref.getBoolean(PREF_KEY_LOGIN_STATUS, false)) startActivity(new Intent(getApplicationContext(), MenuActivity.class));
         else startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
         finish();

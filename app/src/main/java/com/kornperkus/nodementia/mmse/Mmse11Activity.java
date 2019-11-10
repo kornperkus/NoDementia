@@ -40,7 +40,8 @@ public class Mmse11Activity extends AppCompatActivity implements CompoundButton.
         bindView();
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
-        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
+        pageTitle.setText(getString(R.string.page5_title));
+        bigTitleTv.setText(getString(R.string.mmse_11_title));
         forwardImg.setVisibility(View.INVISIBLE);
 
         //set color
@@ -54,6 +55,7 @@ public class Mmse11Activity extends AppCompatActivity implements CompoundButton.
             public void onClick(View v) {
                 if(correct.isChecked()) score +=1;
                 Intent intent = new Intent(getApplicationContext(), MmseFinalActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
                 startActivity(intent);
             }

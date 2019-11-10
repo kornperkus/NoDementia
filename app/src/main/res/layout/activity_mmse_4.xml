@@ -53,43 +53,44 @@
             android:layout_below="@id/textTv1"
             style="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"/>
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/optionRadio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textTv2"
-            android:layout_marginBottom="16dp">
-            <RadioButton
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+            <CheckBox
                 android:id="@+id/option1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
+            <CheckBox
                 android:id="@+id/option5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 style="@style/TextAppearance.AppCompat.Body1"/>
-        </RadioGroup>
+        </LinearLayout>
     </RelativeLayout>
     </ScrollView>
     <ImageView

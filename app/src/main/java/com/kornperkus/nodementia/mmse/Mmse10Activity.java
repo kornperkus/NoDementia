@@ -40,8 +40,8 @@ public class Mmse10Activity extends AppCompatActivity implements CompoundButton.
         bindView();
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
-        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Writing ทดสอบการเขียนภาษาอย่างมีความหมาย");
+        pageTitle.setText(getString(R.string.page5_title));
+        bigTitleTv.setText(getString(R.string.mmse_10_title));
         titleTv.setText("\tข้อนี้เป็นคําสั่ง \"ให้คุณ (ตา,ยาย) เขียนข้อความอะไรก็ได้ที่อ่านแล้วรู้เรื่องหรือมีความหมายมา 1 ประโยค\"\n\nผู้ทดสอบยื่นกระดาษเปล่าให้ผู้ถูกทดสอบ");
         forwardImg.setVisibility(View.INVISIBLE);
 
@@ -60,6 +60,7 @@ public class Mmse10Activity extends AppCompatActivity implements CompoundButton.
                 if(correct.isChecked()) score +=1;
                 Intent intent = new Intent(getApplicationContext(), Mmse11Activity.class);
                 intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

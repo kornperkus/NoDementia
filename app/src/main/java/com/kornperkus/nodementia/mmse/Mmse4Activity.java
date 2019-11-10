@@ -39,9 +39,9 @@ public class Mmse4Activity extends AppCompatActivity implements CompoundButton.O
         bindView();
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
-        pageTitle.setText("แบบประเมินสภาพสมองเสื่อม");
-        bigTitleTv.setText("Attention / Calculation ทดสอบสมาธิโดยให้คิดเลขในใจ");
-        titleTv.setText("\tข้อนี้เป็นการคิดเลขในใจเพื่อทดสอบสมาธิ คุณ (ตา,ยาย,...) คิดเลขในใจเป็นไหม ?");
+        pageTitle.setText(getString(R.string.page5_title));
+        bigTitleTv.setText(getString(R.string.mmse_4_title));
+        titleTv.setText(getString(R.string.mmse_4_text));
         forwardImg.setVisibility(View.INVISIBLE);
         correct.setText("ตอบคิดเป็น");
         inCorrect.setText("ตอบคิดไม่เป็นหรือไม่ตอบ");
@@ -55,8 +55,13 @@ public class Mmse4Activity extends AppCompatActivity implements CompoundButton.O
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(correct.isChecked()) startActivity(new Intent(getApplicationContext(), Mmse4_1Activity.class));
-                else if(inCorrect.isChecked()) startActivity(new Intent(getApplicationContext(), Mmse4_2Activity.class));
+                Intent intent = null;
+                if(correct.isChecked()) intent = new Intent(getApplicationContext(), Mmse4_1Activity.class);
+                else if(inCorrect.isChecked()) intent = new Intent(getApplicationContext(), Mmse4_2Activity.class);
+
+                intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }
