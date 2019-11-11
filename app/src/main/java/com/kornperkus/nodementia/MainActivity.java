@@ -24,7 +24,13 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
     public static final String PREF_KEY_MAIN = "mainPrefKey";
     public static final String PREF_KEY_LOGIN_STATUS = "loginStatusKey";
-    public static final String PREF_KEY_EDUCATION = "educationLevelKey";
+    public static final String PREF_KEY_NAME = "nameKey";
+    public static final String PREF_KEY_GENDER = "genderKey";
+    public static final String PREF_KEY_AGE = "ageKey";
+    public static final String PREF_KEY_RELIGION = "religionKey";
+    public static final String PREF_KEY_JOB= "jobKey";
+    public static final String PREF_KEY_EDUCATION = "educationKey";
+    public static final String PREF_KEY_DISEASE = "diseaseKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
