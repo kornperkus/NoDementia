@@ -24,6 +24,7 @@ import com.kornperkus.nodementia.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView[] imgCards;
@@ -44,12 +45,9 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         getSupportActionBar().setCustomView(R.layout.action_bar_page8_4);
         getSupportActionBar().setElevation(0);
 
-        Intent intent = getIntent();
-        if(intent != null) {
-            level = intent.getIntExtra(Page4_6Activity.PREF_KEY_LEVEL, 0);
-            showMessage("ด่านที่ "+level);
+        for(int i =0; i<=10; i++) {
+            level = new Random().nextInt(10) + 1;
         }
-
         //Load layout and setup bord size
         imgCards = new ImageView[12];
         initViews();
@@ -121,15 +119,10 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
 
     private void gameWin() {
         showMessage("ชนะแล้ว!");
-        if(level <5) {
-            Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
-            intent.putExtra(Page4_6Activity.PREF_KEY_LEVEL, level + 1);
-            startActivity(intent);
-            finish();
-        }else {
-            navigateUpTo(new Intent(this, Page4_6Activity.class));
-        }
-
+        Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
+        intent.putExtra(Page4_6Activity.PREF_KEY_LEVEL, level + 1);
+        startActivity(intent);
+        finish();
     }
 
     private void showMessage(String text) {

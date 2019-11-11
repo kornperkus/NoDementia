@@ -2,16 +2,27 @@ package com.kornperkus.nodementia;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+import com.google.android.material.navigation.NavigationView;
+
+public class MenuActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener, NavigationView.OnNavigationItemSelectedListener {
+
     private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, page10Btn;
+    private ImageView menuImg, alarmImg;
+    private DrawerLayout drawer;
+    private NavigationView navView;
+    private boolean isOpen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -25,10 +36,15 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setElevation(0);
 
         bindView();
-        setOnCLick();
+        setOnClick();
+        setupNav();
     }
 
     private void bindView() {
+        drawer = findViewById(R.id.drawer);
+        navView = findViewById(R.id.nav_view);
+        menuImg = findViewById(R.id.ic_menu);
+        alarmImg = findViewById(R.id.ic_clock);
         page1Btn = findViewById(R.id.page1_btn);
         page2Btn = findViewById(R.id.page2_btn);
         page3Btn = findViewById(R.id.page3_btn);
@@ -41,7 +57,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page10Btn = findViewById(R.id.page10_btn);
     }
 
-    public void setOnCLick() {
+    public void setOnClick() {
         page1Btn.setOnClickListener(this);
         page2Btn.setOnClickListener(this);
         page3Btn.setOnClickListener(this);
@@ -62,6 +78,30 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page8Btn.setOnLongClickListener(this);
         page9Btn.setOnLongClickListener(this);
         page10Btn.setOnLongClickListener(this);
+    }
+
+    public void setupNav() {
+        menuImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(!isOpen) {
+                    drawer.openDrawer(GravityCompat.START);
+                    isOpen = true;
+                }else {
+                    drawer.closeDrawer(GravityCompat.START);
+                    isOpen = false;
+                }
+            }
+        });
+        alarmImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+        navView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -147,5 +187,20 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         super.onBackPressed();
         finishAffinity();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_accout:
+                Toast.makeText(getApplicationContext(), "Account", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_settings:
+                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        isOpen = false;
+        return true;
     }
 }

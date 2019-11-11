@@ -3,21 +3,32 @@ package com.kornperkus.nodementia;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.kornperkus.nodementia.mmse.Mmse1_1Activity;
 
-public class Page5Activity extends AppCompatActivity {
+public class Page5Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     public static final String MMSE_SCORE_KEY = "mmseScoreKey";
-    Button beginBtn;
+    private Button beginBtn;
+    private ImageView menuImg, alarmImg;
+    private DrawerLayout drawer;
+    private NavigationView navView;
+    private boolean isOpen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +41,7 @@ public class Page5Activity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
         bindView();
+        setupNav();
 
         beginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +52,50 @@ public class Page5Activity extends AppCompatActivity {
     }
 
     public void bindView() {
+        drawer = findViewById(R.id.drawer);
+        navView = findViewById(R.id.nav_view);
+        menuImg = findViewById(R.id.ic_menu);
+        alarmImg = findViewById(R.id.ic_clock);
         beginBtn = findViewById(R.id.beginBtn);
+    }
+
+    public void setupNav() {
+        menuImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(!isOpen) {
+                    drawer.openDrawer(GravityCompat.START);
+                    isOpen = true;
+                }else {
+                    drawer.closeDrawer(GravityCompat.START);
+                    isOpen = false;
+                }
+            }
+        });
+        alarmImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+        navView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_accout:
+                Toast.makeText(getApplicationContext(), "Account", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_settings:
+                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        isOpen = false;
+        return true;
     }
 
     @Override

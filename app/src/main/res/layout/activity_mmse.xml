@@ -1,73 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
-    <FrameLayout
-        android:id="@+id/frame"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp">
-        <TextView
-            android:id="@+id/page_title"
-            android:textColor="#ffffff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="38sp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/kwang"
-            style="@style/TextAppearance.AppCompat.Headline"/>
-    </FrameLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/frame"
-        android:padding="12dp">
-        <TextView
-            android:id="@+id/bigTitleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:textSize="20sp"
-            android:layout_marginBottom="16dp"/>
-        <TextView
-            android:id="@+id/titleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            android:layout_below="@id/bigTitleTv"/>
-        <RadioGroup
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/frame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/titleTv">
-            <RadioButton
-                android:id="@+id/correct"
-                android:text="ถูกต้อง"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/page_title"
+                style="@style/TextAppearance.AppCompat.Headline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                style="@style/TextAppearance.AppCompat.Body1"/>
-            <RadioButton
-                android:id="@+id/incorrect"
-                android:text="ตอบผิด"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/kwang"
+                android:textColor="#ffffff"
+                android:textSize="38sp" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/frame"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/bigTitleTv"
+                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                style="@style/TextAppearance.AppCompat.Body1"/>
-        </RadioGroup>
+                android:layout_marginBottom="16dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/titleTv"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bigTitleTv"
+                android:layout_marginBottom="16dp"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleTv">
+
+                <RadioButton
+                    android:id="@+id/correct"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ถูกต้อง"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/incorrect"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ตอบผิด"
+                    android:textSize="18sp" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/forwardBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_forward" />
     </RelativeLayout>
-    <ImageView
-        android:id="@+id/forwardBtn"
-        android:src="@drawable/ic_forward"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="8dp"
-        android:layout_marginRight="16dp"/>
-</RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

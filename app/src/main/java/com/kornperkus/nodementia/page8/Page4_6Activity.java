@@ -21,7 +21,6 @@ public class Page4_6Activity extends AppCompatActivity {
 
     public static final String PREF_KEY_LEVEL = "levelPrefKey";
     private TextView title, headline, body;
-    private Spinner stageSpin;
     private Button playBtn;
     private ImageView backImg, forwardImg;
 
@@ -41,20 +40,11 @@ public class Page4_6Activity extends AppCompatActivity {
         headline.setText(getString(R.string.page8_4_6_headline));
         body.setText(getText(R.string.page8_4_6_body));
 
-        final ArrayAdapter<CharSequence> stageList = ArrayAdapter.createFromResource(this, R.array.stage_array, android.R.layout.simple_spinner_item);
-        stageList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        stageSpin.setAdapter(stageList);
-
         playBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(stageSpin.getSelectedItemPosition() > 0) {
-                    Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
-                    intent.putExtra(PREF_KEY_LEVEL, stageSpin.getSelectedItemPosition());
-                    startActivity(intent);
-                }else {
-                    Toast.makeText(getApplicationContext(), "โปรดเลือกด่านก่อนเล่น", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -75,7 +65,6 @@ public class Page4_6Activity extends AppCompatActivity {
         title = findViewById(R.id.page_title);
         headline = findViewById(R.id.page_headline);
         body = findViewById(R.id.page_body);
-        stageSpin = findViewById(R.id.stage_spin);
         playBtn = findViewById(R.id.play_btn);
         backImg = findViewById(R.id.backImg);
         forwardImg = findViewById(R.id.forwardImg);
