@@ -13,7 +13,7 @@
         android:layout_marginTop="6dp">
         <TextView
             android:id="@+id/page_title"
-            android:text="@string/page_bmi_title"
+            android:text="@string/page6_title"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_below="@id/frame"
         android:padding="16dp">
@@ -39,8 +39,9 @@
             android:id="@+id/edit_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="3" />
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:layout_marginBottom="16dp"/>
         <TextView
             android:text="น้ำหนัก"
             android:layout_width="wrap_content"
@@ -51,8 +52,9 @@
             android:id="@+id/edit_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="3"/>
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:layout_marginBottom="36dp"/>
         <Button
             android:id="@+id/bnt_cal"
             android:text="คำนวณ"
@@ -61,15 +63,7 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_gravity="center"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"/>
-        <TextView
-            android:id="@+id/result_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="80sp"
-            android:layout_gravity="center"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_marginTop="18dp"/>
+            android:layout_marginTop="16dp" />
     </LinearLayout>
     <ImageView
         android:src="@drawable/ic_back"
@@ -79,12 +73,4 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="8dp"
         android:layout_marginLeft="16dp"/>
-    <ImageView
-        android:src="@drawable/ic_forward"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="8dp"
-        android:layout_marginRight="16dp"/>
 </RelativeLayout>

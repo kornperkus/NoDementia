@@ -24,6 +24,10 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
     public static final String PREF_KEY_MAIN = "mainPrefKey";
     public static final String PREF_KEY_LOGIN_STATUS = "loginStatusKey";
+    public static final String PREF_KEY_EDIT_ACCOUNT = "editAccountKey";
+    public static final String PREF_KEY_BMI_VALUE = "bmiValueKey";
+    public static final String PREF_KEY_MMSE_VALUE = "mmseValueKey";
+
     public static final String PREF_KEY_NAME = "nameKey";
     public static final String PREF_KEY_GENDER = "genderKey";
     public static final String PREF_KEY_AGE = "ageKey";
@@ -36,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //TODO: หน้า Account
-        //TODO: หน้า Settings
         //TODO: เพิ่ม Drawer ให้ครับทุกหน้า
         //TODO: เพิ่มเนื้อหาหน้า 9 10
         //TODO: แก้ไขลูกศรไปกลับให้ถูกต้อง

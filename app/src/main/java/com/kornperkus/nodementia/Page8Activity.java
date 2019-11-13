@@ -13,7 +13,8 @@ import com.kornperkus.nodementia.page8.Page4_1Activity;
 import com.kornperkus.nodementia.page8.Page9_1_1Activity;
 
 public class Page8Activity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
-    private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn;
+
+    private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, backImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -28,9 +29,17 @@ public class Page8Activity extends AppCompatActivity implements View.OnClickList
 
         bindView();
         setOnCLick();
+
+        backImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void bindView() {
+        backImg = findViewById(R.id.backImg);
         page1Btn = findViewById(R.id.page1_btn);
         page2Btn = findViewById(R.id.page2_btn);
         page3Btn = findViewById(R.id.page3_btn);

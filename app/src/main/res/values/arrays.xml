@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="education_array">
-        <item>โปรดเลือก</item>
-        <item>ไม่ได้เรียนหนังสือ (อ่านไม่ออก-เขียนไม่ได้)</item>
-        <item>เรียนระดับประถมศึกษา</item>
-        <item>เรียนระดับสูงกว่าประถมศึกษา</item>
+        <item>@string/education_0</item>
+        <item>@string/education_1</item>
+        <item>@string/education_2</item>
+        <item>@string/education_3</item>
     </string-array>
     <string-array name="stage_array">
         <item>โปรดเลือกด่าน</item>

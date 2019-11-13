@@ -14,15 +14,15 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Page1">
-
-        </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
         </activity>
         <activity
             android:name=".MenuActivity"
@@ -49,12 +49,16 @@
             android:theme="@style/Page4"></activity>
         <activity
             android:name=".Page5Activity"
-            android:theme="@style/Page5">
-
-        </activity>
+            android:theme="@style/Page5"></activity>
 
         <activity
             android:name=".Page6Activity"
+            android:theme="@style/Page5"></activity>
+        <activity
+            android:name=".Page6BmiActivity"
+            android:theme="@style/Page5"></activity>
+        <activity
+            android:name=".Page6ResultActivity"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".Page7Activity"

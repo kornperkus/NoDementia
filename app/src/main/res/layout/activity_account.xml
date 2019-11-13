@@ -32,7 +32,6 @@
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="นายชากรณ์ มะระ"
             android:textSize="20dp" />
     </LinearLayout>
 
@@ -62,7 +61,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
-                android:text="ชาย"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -86,7 +84,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:text="22"
                 android:textSize="20dp" />
 
             <TextView
@@ -125,7 +122,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
-                android:text="อิสลาม"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -148,7 +144,6 @@
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="รับจ้าง"
                 android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>
@@ -164,7 +159,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:text="ระดับกาสรศึกษา:"
+            android:text="ระดับการศึกษา:"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -173,7 +168,6 @@
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ปวช."
             android:textSize="20dp" />
     </LinearLayout>
 
@@ -197,7 +191,6 @@
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ไม่มี"
             android:textSize="20dp" />
     </LinearLayout>
 </LinearLayout>

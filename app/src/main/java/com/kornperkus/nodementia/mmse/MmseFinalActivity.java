@@ -12,6 +12,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kornperkus.nodementia.MainActivity;
+import com.kornperkus.nodementia.MenuActivity;
 import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
@@ -32,8 +33,8 @@ public class MmseFinalActivity extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
 
         bindView();
-        score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
         SharedPreferences pref = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0);
+        score = pref.getInt(MainActivity.PREF_KEY_MMSE_VALUE, 0);
         int educationLevel = pref.getInt(MainActivity.PREF_KEY_EDUCATION, 0);
 
         //get max score
@@ -69,7 +70,7 @@ public class MmseFinalActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(), Page5Activity.class);
+        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

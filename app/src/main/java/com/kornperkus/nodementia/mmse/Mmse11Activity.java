@@ -1,6 +1,7 @@
 package com.kornperkus.nodementia.mmse;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kornperkus.nodementia.MainActivity;
 import com.kornperkus.nodementia.Page5Activity;
 import com.kornperkus.nodementia.R;
 
@@ -56,7 +58,10 @@ public class Mmse11Activity extends AppCompatActivity implements CompoundButton.
                 if(correct.isChecked()) score +=1;
                 Intent intent = new Intent(getApplicationContext(), MmseFinalActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
+
+                SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).edit();
+                editor.putInt(MainActivity.PREF_KEY_MMSE_VALUE, score);
+                editor.apply();
                 startActivity(intent);
             }
         });

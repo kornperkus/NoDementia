@@ -1,63 +1,62 @@
 package com.kornperkus.nodementia;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class Page6Activity extends AppCompatActivity {
 
-    private EditText editHeight, editWeight;
-    private Button btnCal;
-    private TextView resultTv;
+    private TextView title, headline, body;
+    private ImageView backImg, forwardImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page6);
-
-        //TODO: แสดงผลลัพธ์โดยใช้รูปภาพในไลน์
+        setContentView(R.layout.activity_page);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page6);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page1);
         getSupportActionBar().setElevation(0);
 
         bindView();
-        btnCal.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String h = editHeight.getText().toString();
-                String w = editWeight .getText().toString();
-                if(h.isEmpty() || w.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "กรุณาป้อนข้อมูลให้ครบถ้วนค่ะ", Toast.LENGTH_SHORT).show();
-                }else {
-                    int height = Integer.parseInt(h);
-                    int weight = Integer.parseInt(w);
-                    double result = weight/(Math.pow(height, 2));
-                    resultTv.setText(String.format("%.1f", result*10000));
-                }
-            }
-        });
+        title.setText(getString(R.string.page6_title));
+        headline.setVisibility(View.GONE);
+        body.setText(getString(R.string.page6_body));
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
-        frame.setBackgroundColor(getResources().getColor(R.color.page6PrimaryDark));
+        frame.setBackgroundColor(getResources().getColor(R.color.page1PrimaryDark));
+
+
+        backImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        forwardImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Page6BmiActivity.class));
+            }
+        });
     }
 
     private void bindView(){
-        editHeight = findViewById(R.id.edit_height);
-        editWeight = findViewById(R.id.edit_weight);
-        btnCal = findViewById(R.id.bnt_cal);
-        resultTv = findViewById(R.id.result_tv);
+        title = findViewById(R.id.page_title);
+        headline = findViewById(R.id.page_headline);
+        body = findViewById(R.id.page_body);
+        forwardImg = findViewById(R.id.forwardImg);
+        backImg = findViewById(R.id.backImg);
     }
 
     @Override

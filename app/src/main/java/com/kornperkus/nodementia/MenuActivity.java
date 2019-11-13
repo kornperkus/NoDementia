@@ -1,5 +1,7 @@
 package com.kornperkus.nodementia;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.AlarmClock;
@@ -15,6 +17,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,7 +28,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isOpen;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
@@ -81,19 +84,19 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void setupNav() {
-        menuImg.setOnClickListener(new View.OnClickListener(){
+        menuImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isOpen) {
+                if (!isOpen) {
                     drawer.openDrawer(GravityCompat.START);
                     isOpen = true;
-                }else {
+                } else {
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
             }
         });
-        alarmImg.setOnClickListener(new View.OnClickListener(){
+        alarmImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
@@ -102,6 +105,29 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         navView.setNavigationItemSelectedListener(this);
+    }
+
+    public void showConfirm() {
+        new AlertDialog.Builder(MenuActivity.this)
+                .setTitle("ออกจากระบบ")
+                .setMessage("หากออกจากระบบข้อมูลทั้งหมดของท่านจะศูนย์หาย")
+                .setCancelable(false)
+                .setPositiveButton("ออกจากระบบ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        logout();
+                    }
+                }).setNegativeButton("ยกเลิก",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }).show();
+    }
+
+    public void logout() {
+        //TODO: เพิ่มการออกจากระบบ
     }
 
     @Override
@@ -140,7 +166,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(getApplicationContext(), "Btn 10 ", Toast.LENGTH_SHORT).show();
                 break;
         }
-        if(clss != null) startActivity(new Intent(getApplicationContext(), clss));
+        if (clss != null) startActivity(new Intent(getApplicationContext(), clss));
     }
 
     @Override
@@ -193,10 +219,21 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_accout:
-                Toast.makeText(getApplicationContext(), "Account", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), AccountActivity.class));
                 break;
-            case R.id.nav_settings:
-                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+            case R.id.nav_edit:
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra(MainActivity.PREF_KEY_EDIT_ACCOUNT, true);
+                startActivity(intent);
+                break;
+            case R.id.nav_bmi:
+                startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
+                break;
+            case R.id.nav_mmse:
+                startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
+                break;
+            case R.id.nav_logout:
+                showConfirm();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

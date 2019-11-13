@@ -29,6 +29,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
+    private ImageView backImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,13 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
                 startActivity(new Intent(getApplicationContext(), Mmse1_1Activity.class));
             }
         });
+
+        backImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void bindView() {
@@ -57,6 +65,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         menuImg = findViewById(R.id.ic_menu);
         alarmImg = findViewById(R.id.ic_clock);
         beginBtn = findViewById(R.id.beginBtn);
+        backImg = findViewById(R.id.backImg);
     }
 
     public void setupNav() {
@@ -89,7 +98,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
             case R.id.nav_accout:
                 Toast.makeText(getApplicationContext(), "Account", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_settings:
+            case R.id.nav_edit:
                 Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
                 break;
         }

@@ -44,9 +44,18 @@ public class Page2Activity extends AppCompatActivity {
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_2PrimaryDark));
+
+        forwardImg.setVisibility(View.GONE);
+        backImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void bindView(){
+
         title = findViewById(R.id.page_title);
         headline = findViewById(R.id.page_headline);
         body = findViewById(R.id.page_body);

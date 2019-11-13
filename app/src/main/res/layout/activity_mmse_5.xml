@@ -69,7 +69,7 @@
                 style="@style/TextAppearance.AppCompat.Body1"/>
             <CheckBox
                 android:id="@+id/option1_3"
-                android:text="รถไฟ"
+                android:text="รถยนต์"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
