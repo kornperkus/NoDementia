@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.AlarmClock;
 import android.view.Gravity;
 import android.view.Menu;
@@ -42,19 +43,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //TODO: เพิ่มเนื้อหาหน้า 9 10
         //TODO: แก้ไขลูกศรไปกลับให้ถูกต้อง
-        //Setting actionbar
-        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page1);
-        getSupportActionBar().setElevation(0);
-
         bindView();
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences(PREF_KEY_MAIN, 0);
-        if(pref.getBoolean(PREF_KEY_LOGIN_STATUS, false)) startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-        else startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        final SharedPreferences pref = getApplicationContext().getSharedPreferences(PREF_KEY_MAIN, 0);
 
-        finish();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(pref.getBoolean(PREF_KEY_LOGIN_STATUS, false)) startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                else startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+            }
+        }, 1500);
     }
 
     private void bindView(){
