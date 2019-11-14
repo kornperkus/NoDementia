@@ -1,5 +1,7 @@
 package com.kornperkus.nodementia;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.kornperkus.nodementia.mmse.Mmse1_1Activity;
+import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class Page5Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
@@ -69,19 +72,19 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
     }
 
     public void setupNav() {
-        menuImg.setOnClickListener(new View.OnClickListener(){
+        menuImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isOpen) {
+                if (!isOpen) {
                     drawer.openDrawer(GravityCompat.START);
                     isOpen = true;
-                }else {
+                } else {
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
             }
         });
-        alarmImg.setOnClickListener(new View.OnClickListener(){
+        alarmImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
@@ -92,14 +95,53 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         navView.setNavigationItemSelectedListener(this);
     }
 
+    public void showConfirm() {
+        new AlertDialog.Builder(Page5Activity.this)
+                .setTitle("ออกจากระบบ")
+                .setMessage("หากออกจากระบบข้อมูลทั้งหมดของท่านจะศูนย์หาย")
+                .setCancelable(false)
+                .setPositiveButton("ออกจากระบบ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        logout();
+                    }
+                }).setNegativeButton("ยกเลิก",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }).show();
+    }
+
+    public void logout() {
+        SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).edit();
+        editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, false);
+        editor.apply();
+        Toast.makeText(getApplicationContext(), "ออกจากระบบแล้ว", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_accout:
-                Toast.makeText(getApplicationContext(), "Account", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), AccountActivity.class));
                 break;
             case R.id.nav_edit:
-                Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra(MainActivity.PREF_KEY_EDIT_ACCOUNT, true);
+                startActivity(intent);
+                break;
+            case R.id.nav_bmi:
+                startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
+                break;
+            case R.id.nav_mmse:
+                startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
+                break;
+            case R.id.nav_logout:
+                showConfirm();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

@@ -3,6 +3,7 @@ package com.kornperkus.nodementia;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.MenuItem;
@@ -127,7 +128,38 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void logout() {
-        //TODO: เพิ่มการออกจากระบบ
+        SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).edit();
+        editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, false);
+        editor.apply();
+        Toast.makeText(getApplicationContext(), "ออกจากระบบแล้ว", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_accout:
+                startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                break;
+            case R.id.nav_edit:
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra(MainActivity.PREF_KEY_EDIT_ACCOUNT, true);
+                startActivity(intent);
+                break;
+            case R.id.nav_bmi:
+                startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
+                break;
+            case R.id.nav_mmse:
+                startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
+                break;
+            case R.id.nav_logout:
+                showConfirm();
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        isOpen = false;
+        return true;
     }
 
     @Override
@@ -213,31 +245,5 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         super.onBackPressed();
         finishAffinity();
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.nav_accout:
-                startActivity(new Intent(getApplicationContext(), AccountActivity.class));
-                break;
-            case R.id.nav_edit:
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                intent.putExtra(MainActivity.PREF_KEY_EDIT_ACCOUNT, true);
-                startActivity(intent);
-                break;
-            case R.id.nav_bmi:
-                startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
-                break;
-            case R.id.nav_mmse:
-                startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
-                break;
-            case R.id.nav_logout:
-                showConfirm();
-                break;
-        }
-        drawer.closeDrawer(GravityCompat.START);
-        isOpen = false;
-        return true;
     }
 }

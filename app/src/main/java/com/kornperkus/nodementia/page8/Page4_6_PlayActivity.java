@@ -1,38 +1,49 @@
 package com.kornperkus.nodementia.page8;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
+import android.provider.AlarmClock;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
+import com.kornperkus.nodementia.AccountActivity;
 import com.kornperkus.nodementia.Data.Card;
 import com.kornperkus.nodementia.Data.CardProvider;
-import com.kornperkus.nodementia.Data.Contract;
+import com.kornperkus.nodementia.LoginActivity;
+import com.kornperkus.nodementia.MainActivity;
+import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
+import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnClickListener {
+public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
     private ImageView[] imgCards;
     private CardProvider provider;
     private List<Card> cards;
     private List<Card> openned;
     private int clickCount, correctCount, level;
     private Animation fadeIn, fadeOut;
+    private ImageView menuImg, alarmImg;
+    private DrawerLayout drawer;
+    private NavigationView navView;
+    private boolean isOpen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +61,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         }
         //Load layout and setup bord size
         imgCards = new ImageView[12];
-        initViews();
+        bindViews();
 
         fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
@@ -58,6 +69,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         provider = new CardProvider(this);
         cards = provider.getCardLists(level);
         openned = new ArrayList<>();
+        setupNav();
     }
 
     @Override
@@ -129,12 +141,94 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
-    private void initViews() {
+    private void bindViews() {
         for(int i=0; i<imgCards.length; i++) {
             int resId = getResources().getIdentifier("card_"+(i+1), "id", getPackageName());
             imgCards[i] = findViewById(resId);
             imgCards[i].setOnClickListener(this);
             imgCards[i].setTag(i);
         }
+        drawer = findViewById(R.id.drawer);
+        navView = findViewById(R.id.nav_view);
+        menuImg = findViewById(R.id.ic_menu);
+        alarmImg = findViewById(R.id.ic_clock);
+    }
+
+    public void setupNav() {
+        menuImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isOpen) {
+                    drawer.openDrawer(GravityCompat.START);
+                    isOpen = true;
+                } else {
+                    drawer.closeDrawer(GravityCompat.START);
+                    isOpen = false;
+                }
+            }
+        });
+        alarmImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+        navView.setNavigationItemSelectedListener(this);
+    }
+
+    public void showConfirm() {
+        new AlertDialog.Builder(Page4_6_PlayActivity.this)
+                .setTitle("ออกจากระบบ")
+                .setMessage("หากออกจากระบบข้อมูลทั้งหมดของท่านจะศูนย์หาย")
+                .setCancelable(false)
+                .setPositiveButton("ออกจากระบบ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        logout();
+                    }
+                }).setNegativeButton("ยกเลิก",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }).show();
+    }
+
+    public void logout() {
+        SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).edit();
+        editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, false);
+        editor.apply();
+        Toast.makeText(getApplicationContext(), "ออกจากระบบแล้ว", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_accout:
+                startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                break;
+            case R.id.nav_edit:
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra(MainActivity.PREF_KEY_EDIT_ACCOUNT, true);
+                startActivity(intent);
+                break;
+            case R.id.nav_bmi:
+                startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
+                break;
+            case R.id.nav_mmse:
+                startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
+                break;
+            case R.id.nav_logout:
+                showConfirm();
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        isOpen = false;
+        return true;
     }
 }

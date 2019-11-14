@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <FrameLayout
             android:id="@+id/frame"
             android:layout_width="match_parent"
@@ -29,7 +30,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/frame">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:text="สรุปผลการพิจารณา"
+                    android:id="@+id/page_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:text="คะแนนที่ได้รับ 15/20"
+                    android:id="@+id/page_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="26sp"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:id="@+id/page_body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
         </ScrollView>
         <ImageView
             android:id="@+id/backImg"
@@ -40,15 +71,6 @@
             android:layout_alignParentBottom="true"
             android:layout_margin="8dp"
             android:layout_marginLeft="16dp"/>
-        <ImageView
-            android:id="@+id/forwardImg"
-            android:src="@drawable/ic_forward"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="8dp"
-            android:layout_marginRight="16dp"/>
     </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

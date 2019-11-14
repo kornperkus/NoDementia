@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //TODO: เพิ่ม Drawer ให้ครับทุกหน้า
         //TODO: เพิ่มเนื้อหาหน้า 9 10
         //TODO: แก้ไขลูกศรไปกลับให้ถูกต้อง
         //Setting actionbar
