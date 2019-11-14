@@ -44,6 +44,13 @@
                     style="@style/TextAppearance.AppCompat.Title"
                     android:layout_marginBottom="16dp"
                     android:layout_gravity="center_horizontal"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:id="@+id/result_img"
+                    android:src="@drawable/mmse_1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"/>
                 <TextView
                     android:text="คะแนนที่ได้รับ 15/20"
                     android:id="@+id/page_score"
@@ -59,7 +66,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"/>
             </LinearLayout>
         </ScrollView>
         <ImageView

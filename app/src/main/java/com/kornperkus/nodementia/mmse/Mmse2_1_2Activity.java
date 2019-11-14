@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.util.Log;
@@ -42,6 +43,7 @@ public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButt
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,6 +81,8 @@ public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButt
             }
         });
         setupNav();
+        player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_2_1_2);
+        player.start();
         Log.i("SCORE", "Score = "+score);
     }
 
@@ -106,6 +110,26 @@ public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButt
         else {
             Toast.makeText(getApplicationContext(), getString(R.string.exit_confirm), Toast.LENGTH_SHORT).show();
             exitConfirm = true;
+        }
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(player != null) player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
         }
     }
 

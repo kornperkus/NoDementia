@@ -5,7 +5,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.provider.AlarmClock;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -44,6 +46,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
+    private CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +59,8 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         getSupportActionBar().setCustomView(R.layout.action_bar_page8_4);
         getSupportActionBar().setElevation(0);
 
-        for(int i =0; i<=10; i++) {
-            level = new Random().nextInt(10) + 1;
-        }
+        level = new Random().nextInt(10) + 1;
+
         //Load layout and setup bord size
         imgCards = new ImageView[12];
         bindViews();
@@ -70,6 +72,29 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         cards = provider.getCardLists(level);
         openned = new ArrayList<>();
         setupNav();
+
+        timer = new CountDownTimer(60000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                if(millisUntilFinished/1000 == 30) Toast.makeText(getApplicationContext(), "เหลือเวลาอีก 30 วินาที", Toast.LENGTH_SHORT).show();
+                if(millisUntilFinished/1000 == 10) Toast.makeText(getApplicationContext(), "เหลือเวลาอีก 10 วินาที!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFinish() {
+                Toast.makeText(getApplicationContext(), "หมดเวลา! คุณแพ้", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        };
+        timer.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(timer != null) timer.cancel();
     }
 
     @Override
@@ -132,7 +157,6 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
     private void gameWin() {
         showMessage("ชนะแล้ว!");
         Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
-        intent.putExtra(Page4_6Activity.PREF_KEY_LEVEL, level + 1);
         startActivity(intent);
         finish();
     }

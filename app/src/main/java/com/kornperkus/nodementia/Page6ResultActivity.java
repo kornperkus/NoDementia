@@ -26,7 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class Page6ResultActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg, backImg;
+    private ImageView menuImg, alarmImg, backImg, bmiImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -53,19 +53,24 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
         String resultText;
         if(bmiValue <= 0) {
             resultTextTv.setText("ไม่มีข้อมูล");
+            bmiImg.setVisibility(View.INVISIBLE);
             resultTextBodyTv.setVisibility(View.INVISIBLE);
         }else if(bmiValue <= 18.5) {
             resultTextTv.setText(getText(R.string.bmi_1_title));
             resultTextBodyTv.setText(getText(R.string.bmi_1_body));
+            bmiImg.setImageResource(R.drawable.bmi_1);
         }else if(bmiValue <= 24.9) {
             resultTextTv.setText(getText(R.string.bmi_2_title));
             resultTextBodyTv.setText(getText(R.string.bmi_2_body));
+            bmiImg.setImageResource(R.drawable.bmi_2);
         }else if(bmiValue <= 29.9) {
             resultTextTv.setText(getText(R.string.bmi_3_title));
             resultTextBodyTv.setText(getText(R.string.bmi_3_body));
+            bmiImg.setImageResource(R.drawable.bmi_3);
         }else {
             resultTextTv.setText(getText(R.string.bmi_4_title));
             resultTextBodyTv.setText(getText(R.string.bmi_4_body));
+            bmiImg.setImageResource(R.drawable.bmi_4);
         }
 
         backImg.setOnClickListener(new View.OnClickListener(){
@@ -91,6 +96,7 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
         menuImg = findViewById(R.id.ic_menu);
         alarmImg = findViewById(R.id.ic_clock);
         backImg = findViewById(R.id.backImg);
+        bmiImg = findViewById(R.id.bmi_img);
     }
 
     public void setupNav() {

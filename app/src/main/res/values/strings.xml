@@ -69,7 +69,7 @@
     <string name="mmse_1_4">\t4. ปีนี้ ปีอะไร</string>
     <string name="mmse_1_5">\t5. ฤดูนี้ ฤดูอะไร</string>
     <string name="mmse_2_1_1">\t1. สถานที่ทำแบบทดสอบ</string>
-    <string name="mmse_2_1_2">\t2. ขณะนี้อยู่ที่ชั้นที่เท่าไหร่ ของตัว อาคา</string>
+    <string name="mmse_2_1_2">\t2. ขณะนี้อยู่ที่ชั้นที่เท่าไหร่ ของตัว อาคาร</string>
     <string name="mmse_2_1_3">\t3. ที่นี่อยู่ในอําเภออะไร - เขตอะไร</string>
     <string name="mmse_2_1_4">\t4. ที่นี่จังหวัดอะไร</string>
     <string name="mmse_2_1_5">\t5. ที่นี่ภาคอะไร</string>

@@ -31,7 +31,7 @@ import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
 
 public class MmseFinalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg, backImg;
+    private ImageView menuImg, alarmImg, backImg, resultImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -62,15 +62,26 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
         if(score <=0) {
             scoreTv.setText("ไม่มีข้อมูล");
             body.setVisibility(View.INVISIBLE);
+            resultImg.setVisibility(View.INVISIBLE);
         } else scoreTv.setText("คะแนนที่ได้รับ " + score + "/" + maxScore);
 
         String resultText = "ไม่มีความเสี่ยงของภาวะสมองเสื่อมจากเครื่องมือนี้";
+        resultImg.setImageResource(R.drawable.mmse_1);
         if (educationLevel == 1) {
-            if (score <= 14) resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+            if (score <= 14) {
+                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+                resultImg.setImageResource(R.drawable.mmse_3);
+            }
         } else if (educationLevel == 2) {
-            if (score <= 17) resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+            if (score <= 17) {
+                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+                resultImg.setImageResource(R.drawable.mmse_3);
+            }
         } else if (educationLevel == 2) {
-            if (score <= 22) resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+            if (score <= 22) {
+                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+                resultImg.setImageResource(R.drawable.mmse_3);
+            }
         }
         body.setText(resultText);
 
@@ -98,6 +109,7 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
         menuImg = findViewById(R.id.ic_menu);
         alarmImg = findViewById(R.id.ic_clock);
         backImg = findViewById(R.id.backImg);
+        resultImg = findViewById(R.id.result_img);
     }
 
     public void setupNav() {
