@@ -195,7 +195,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(getApplicationContext(), "Btn 9 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.page10_btn:
-                Toast.makeText(getApplicationContext(), "Btn 10 ", Toast.LENGTH_SHORT).show();
+                clss = Page10Activity.class;
                 break;
         }
         if (clss != null) startActivity(new Intent(getApplicationContext(), clss));

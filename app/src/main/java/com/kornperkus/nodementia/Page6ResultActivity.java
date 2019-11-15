@@ -76,7 +76,7 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
         backImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                finish();
+                onBackPressed();
             }
         });
 
@@ -152,6 +152,14 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_accout:
@@ -163,7 +171,7 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
                 startActivity(intent);
                 break;
             case R.id.nav_bmi:
-                startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
+                //startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
                 break;
             case R.id.nav_mmse:
                 startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));

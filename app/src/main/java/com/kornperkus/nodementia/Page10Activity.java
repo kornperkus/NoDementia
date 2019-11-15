@@ -1,7 +1,6 @@
 package com.kornperkus.nodementia;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +9,7 @@ import android.provider.AlarmClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,76 +21,56 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.kornperkus.nodementia.mmse.Mmse1_1Activity;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
+import com.kornperkus.nodementia.page10.Page1Activity;
+import com.kornperkus.nodementia.page10.Rate2Activity;
 
-public class AccountActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg, backImg;
+public class Page10Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+
+    public static final String RATE_SCORE_KEY = "rateScoreKey";
+    private Button beginBtn;
+    private ImageView menuImg, alarmImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
-    private TextView nameTv, ageTv, genderTv, religionTv, jobTv, educationTv, diseaseTv;
+    private ImageView backImg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        setContentView(R.layout.activity_page10);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_menu);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
         bindView();
-        //แสดงผลข้อมูลทั้งหมด
-        SharedPreferences pref = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0);
-        nameTv.setText(pref.getString(MainActivity.PREF_KEY_NAME, "ไม่ระบุ"));
-        ageTv.setText(pref.getString(MainActivity.PREF_KEY_AGE, "ไม่ระบุ"));
-        jobTv.setText(pref.getString(MainActivity.PREF_KEY_JOB, "ไม่ระบุ"));
-        diseaseTv.setText(pref.getString(MainActivity.PREF_KEY_DISEASE, "ไม่ระบุ"));
+        setupNav();
 
-        int gender = pref.getInt(MainActivity.PREF_KEY_GENDER, 0);
-        if(gender == R.id.sex_male) genderTv.setText(getString(R.string.gender_male));
-        else genderTv.setText(getString(R.string.gender_female));
-
-        int education = pref.getInt(MainActivity.PREF_KEY_EDUCATION, 0);
-        if(education == 1) educationTv.setText(getString(R.string.education_1));
-        else if(education == 2) educationTv.setText(getString(R.string.education_2));
-        else if(education == 3) educationTv.setText(getString(R.string.education_3));
-
-        int religion = pref.getInt(MainActivity.PREF_KEY_RELIGION, 0);
-        if(religion == R.id.religion_thai) religionTv.setText(getString(R.string.religion_thai));
-        else religionTv.setText(getString(R.string.religion_islam));
-
-        backImg.setOnClickListener(new View.OnClickListener(){
+        beginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                startActivity(new Intent(getApplicationContext(), Rate2Activity.class));
             }
         });
-        setupNav();
+
+        backImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
-
-    private void bindView(){
-        backImg = findViewById(R.id.backImg);
-        nameTv = findViewById(R.id.name_tv);
-        ageTv = findViewById(R.id.age_tv);
-        genderTv = findViewById(R.id.gender_tv);
-        jobTv = findViewById(R.id.job_tv);
-        educationTv = findViewById(R.id.education_tv);
-        diseaseTv = findViewById(R.id.dissease_tv);
-        religionTv = findViewById(R.id.religion_tv);
+    public void bindView() {
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
         alarmImg = findViewById(R.id.ic_clock);
+        beginBtn = findViewById(R.id.beginBtn);
+        backImg = findViewById(R.id.backImg);
     }
 
     public void setupNav() {
@@ -119,7 +98,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
     }
 
     public void showConfirm() {
-        new AlertDialog.Builder(AccountActivity.this)
+        new AlertDialog.Builder(Page10Activity.this)
                 .setTitle("ออกจากระบบ")
                 .setMessage("หากออกจากระบบข้อมูลทั้งหมดของท่านจะศูนย์หาย")
                 .setCancelable(false)
@@ -150,7 +129,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_accout:
-                //startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                startActivity(new Intent(getApplicationContext(), AccountActivity.class));
                 break;
             case R.id.nav_edit:
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
@@ -170,6 +149,14 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         drawer.closeDrawer(GravityCompat.START);
         isOpen = false;
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     @Override

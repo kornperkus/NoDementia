@@ -21,212 +21,282 @@
         </activity>
         <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
         <activity
             android:name=".MenuActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/menuStyle">
-
 
         </activity>
         <activity
             android:name=".AccountActivity"
-            android:theme="@style/menuStyle">
-
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/menuStyle"></activity>
         <activity
             android:name=".Page1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page1"></activity>
         <activity
             android:name=".Page2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page2"></activity>
         <activity
             android:name=".Page3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page3"></activity>
         <activity
             android:name=".Page4Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page4"></activity>
         <activity
             android:name=".Page5Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
 
         <activity
             android:name=".Page6Activity"
-            android:theme="@style/Page5"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Page6"></activity>
         <activity
             android:name=".Page6BmiActivity"
-            android:theme="@style/Page5"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Page6"></activity>
         <activity
             android:name=".Page6ResultActivity"
-            android:theme="@style/Page5"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Page6"></activity>
         <activity
             android:name=".Page7Activity"
-            android:theme="@style/Page5"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Page8"></activity>
         <activity
             android:name=".Page8Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page7">
+
+        </activity>
+        <activity
+            android:name=".Page10Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5">
 
         </activity>
 
+        <!-- Rate -->
+        <activity
+            android:name=".page10.Rate2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page5"></activity>
+
         <!-- MMSE -->
         <activity
             android:name=".mmse.Mmse1_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse1_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse1_3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse1_4Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse1_5Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_1_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_1_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_1_3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_1_4Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_1_5Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_2_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_2_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_2_3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_2_4Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse2_2_5Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse4Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse4_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse4_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse5Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse6_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse6_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse7Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse8Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse9Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse10Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse11Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.MmseFinalActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
 
         <!-- Page 8 Child -->
         <activity
             android:name=".page8.Page1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_1"></activity>
         <activity
             android:name=".page8.Page2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_2"></activity>
         <activity
             android:name=".page8.Page3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_3"></activity>
         <activity
             android:name=".page8.Page4_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_4"></activity>
         <activity
             android:name=".page8.Page4_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_4"></activity>
         <activity
             android:name=".page8.Page4_3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_4"></activity>
         <activity
             android:name=".page8.Page4_4Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_4"></activity>
         <activity
             android:name=".page8.Page4_5Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_4"></activity>
         <activity
             android:name=".page8.Page4_6Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_4">
 
         </activity>
         <activity
             android:name=".page8.Page4_6_PlayActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_4">
 
         </activity>
         <activity
             android:name=".page8.Page5Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_5"></activity>
         <activity
             android:name=".page8.Page6Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_6"></activity>
         <activity
             android:name=".page8.Page7Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_7"></activity>
         <activity
             android:name=".page8.Page8Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity
             android:name=".page8.Page9_1_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_9">
-
 
         </activity>
         <activity
             android:name=".page8.Page9_1_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity
             android:name=".page8.Page9_1_3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity
             android:name=".page8.Page9_2_1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_8">
 
         </activity>
         <activity
             android:name=".page8.Page9_2_2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity
             android:name=".page8.Page9_2_3Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
     </application>
 

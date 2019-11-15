@@ -46,7 +46,7 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page1);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
 
         bindView();
@@ -94,7 +94,7 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
-        frame.setBackgroundColor(getResources().getColor(R.color.page1PrimaryDark));
+        frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
 
         setupNav();
         Log.i("SCORE", "Score = " + score);
@@ -179,7 +179,7 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
                 startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
                 break;
             case R.id.nav_mmse:
-                startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
+                //startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
                 break;
             case R.id.nav_logout:
                 showConfirm();

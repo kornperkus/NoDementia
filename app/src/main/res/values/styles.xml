@@ -56,19 +56,29 @@
         <item name="android:windowBackground">@color/page3Background</item>
     </style>
     <style name="Page4" parent="AppTheme">
-        <item name="colorPrimary">@color/page6Primary</item>
-        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
-        <item name="android:windowBackground">@color/page6Background</item>
+        <item name="colorPrimary">@color/page4Primary</item>
+        <item name="colorPrimaryDark">@color/page4PrimaryDark</item>
+        <item name="android:windowBackground">@color/page4Background</item>
     </style>
     <style name="Page5" parent="AppTheme">
-        <item name="colorPrimary">@color/page6Primary</item>
-        <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
-        <item name="android:windowBackground">@color/page6Background</item>
+        <item name="colorPrimary">@color/page5Primary</item>
+        <item name="colorPrimaryDark">@color/page5PrimaryDark</item>
+        <item name="android:windowBackground">@color/page5Background</item>
     </style>
     <style name="Page6" parent="AppTheme">
         <item name="colorPrimary">@color/page6Primary</item>
         <item name="colorPrimaryDark">@color/page6PrimaryDark</item>
         <item name="android:windowBackground">@color/page6Background</item>
+    </style>
+    <style name="Page7" parent="AppTheme">
+        <item name="colorPrimary">@color/page7Primary</item>
+        <item name="colorPrimaryDark">@color/page7PrimaryDark</item>
+        <item name="android:windowBackground">@color/page7Background</item>
+    </style>
+    <style name="Page8" parent="AppTheme">
+        <item name="colorPrimary">@color/page8Primary</item>
+        <item name="colorPrimaryDark">@color/page8PrimaryDark</item>
+        <item name="android:windowBackground">@color/page8Background</item>
     </style>
 
     <style name="Page7_1" parent="AppTheme">

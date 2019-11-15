@@ -270,8 +270,33 @@
 </string>
 
     <!-- PAge 9 -->
-    <string name="page9_title">ความหมายของสภาวะสมองเสื่อม</string>
+    <string name="page9_title">คู่มือการใช้งาน</string>
 
     <!-- PAge 10 -->
-    <string name="page10_title">ความหมายของสภาวะสมองเสื่อม</string>
+    <string name="page10_title">แบบประเมินความพึงพอใจ</string>
+    <string name="page10_headline"><b>คำชี้แจง</b>: โปรดให้รายละเอียดที่เกี่ยวกับตัวท่าน โดยเขียนเครื่องหมาย √ ลงใน  ( ) หน้าข้อความตามความเป็นจริง</string>
+    <string name="page10_rate1">น้อยที่สุด</string>
+    <string name="page10_rate2">น้อย</string>
+    <string name="page10_rate3">ปานกลาง</string>
+    <string name="page10_rate4">มาก</string>
+    <string name="page10_rate5">มากที่สุด</string>
+    <string name="page10_1_title">ด้านการใช้งานของแอพพลิเคชั่น</string>
+    <string name="page10_1_1">1. การเข้าใช้แอพพลิเคชั่นง่าย/ไม่ซับซ้อน</string>
+    <string name="page10_1_2">2. การใช้งานเหมาะสมสำหรับผู้สูงอายุ</string>
+    <string name="page10_2_title">ด้านเนื้อหาในแอพพลิเคชั่น</string>
+    <string name="page10_2_1">1. เนื้อหามีความชัดเจนคลอบคลุมและเข้าใจง่าย</string>
+    <string name="page10_2_2">2. เนื้อหามีความเหมาะสมตามวิถีพหุวัฒนธรรม</string>
+    <string name="page10_2_3">3. เนื้อหามีความน่าสนใจและเหมาะสมกับผู้สูงอายุ</string>
+    <string name="page10_2_4">4. ปริมาณของเนื้อหามีความเหมาะสม</string>
+    <string name="page10_2_5">5. เนื้อหามความสอดคล้องกับการดำเนินชีวิต</string>
+    <string name="page10_3_title">ด้านรูปแบบของแอพพลิเคชั่น</string>
+    <string name="page10_3_1">1. รูปแบบ ขนาด และสีของตัวอักษร เหมาะสม สวยงาม</string>
+    <string name="page10_3_2">2. มีความชัดเจนของภาพ เสียง หรือตัวอักษร</string>
+    <string name="page10_3_3">3. มีความทันสมัย และมีความคิดสร้างสรรค์</string>
+    <string name="page10_3_4">4. ภาพประกอบมีเทคนิคทางศิลปะและสื่อความหมายได้ดี</string>
+    <string name="page10_3_5">5. การใช้ภาษาถูกต้องเหมาะสม</string>
+    <string name="page10_4_title">ด้านประสิทธิภาพ</string>
+    <string name="page10_4_1">1. มีความรู้ความเข้าใจเกี่ยวกับภาวะสมองเสื่อมในผู้สูงอายุ</string>
+    <string name="page10_4_2">2. สามารถนำความรู้การป้องกันภาวะสมองเสื่อมมาใช้ในชีวิตประจำวันได้</string>
+    <string name="page10_4_3">3. สามารถป้องกันภาวะสมองเสื่อมได้</string>
 </resources>

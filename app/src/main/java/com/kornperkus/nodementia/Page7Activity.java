@@ -39,7 +39,7 @@ public class Page7Activity extends AppCompatActivity implements NavigationView.O
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page2);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page7);
         getSupportActionBar().setElevation(0);
 
         bindView();

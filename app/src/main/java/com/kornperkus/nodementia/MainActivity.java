@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 else startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
-        }, 1500);
+        }, 1000);
     }
 
     private void bindView(){
