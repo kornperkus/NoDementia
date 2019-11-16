@@ -104,25 +104,7 @@ public class Page9_1_3Activity extends AppCompatActivity implements NavigationVi
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.nav_accout:
-                startActivity(new Intent(getApplicationContext(), AccountActivity.class));
-                break;
-            case R.id.nav_edit:
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                intent.putExtra(MainActivity.PREF_KEY_EDIT_ACCOUNT, true);
-                startActivity(intent);
-                break;
-            case R.id.nav_bmi:
-                startActivity(new Intent(getApplicationContext(), Page6ResultActivity.class));
-                break;
-            case R.id.nav_mmse:
-                startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
-                break;
-            case R.id.nav_logout:
-                MainActivity.showLogoutConfirm(this);
-                break;
-        }
+        MainActivity.onNavbarSelect(this, menuItem.getItemId());
         drawer.closeDrawer(GravityCompat.START);
         isOpen = false;
         return true;

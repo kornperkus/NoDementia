@@ -196,6 +196,7 @@
         android:text="ยืนยัน"
         android:layout_gravity="center"
         android:textSize="26sp"
-        android:fontFamily="@font/kwang"/>
+        android:fontFamily="@font/kwang"
+        android:layout_margin="16dp"/>
 </LinearLayout>
 </ScrollView>

@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class MainActivity extends AppCompatActivity {
     public static final String PREF_KEY_MAIN = "mainPrefKey";
@@ -88,6 +89,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(activity, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         activity.startActivity(intent);
+    }
+
+    public static void onNavbarSelect(Activity activity, int id) {
+        switch (id) {
+            case R.id.nav_accout:
+                activity.startActivity(new Intent(activity.getApplicationContext(), AccountActivity.class));
+                break;
+            case R.id.nav_edit:
+                Intent intent = new Intent(activity.getApplicationContext(), LoginActivity.class);
+                intent.putExtra(MainActivity.PREF_KEY_EDIT_ACCOUNT, true);
+                activity.startActivity(intent);
+                break;
+            case R.id.nav_bmi:
+                activity.startActivity(new Intent(activity.getApplicationContext(), Page6ResultActivity.class));
+                break;
+            case R.id.nav_mmse:
+                activity.startActivity(new Intent(activity.getApplicationContext(), MmseFinalActivity.class));
+                break;
+            case R.id.nav_logout:
+               showLogoutConfirm(activity);
+                break;
+        }
     }
 
     private void bindView(){
