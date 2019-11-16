@@ -46,7 +46,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
-    private CountDownTimer timer;
+    private CountDownTimer timer, flipTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,11 +99,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
-        if(clickCount==2) {
-            closeCard();
-        }
         openCard(Integer.parseInt(view.getTag().toString()));
-        clickCount++;
 
         if(clickCount==2) {
             checkMatch();
@@ -119,17 +115,17 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         ImageView img = imgCards[index];
         img.setImageResource(card.getImgeResource());
         img.startAnimation(fadeIn);
+        clickCount++;
     }
 
     private void closeCard() {
         for(int i=0; i<cards.size(); i++) {
             Card card = cards.get(i);
-            if(card.isCorrect()) {
-                continue;
+            if(!card.isCorrect()) {
+                card.setIsOpen(false);
+                imgCards[i].startAnimation(fadeOut);
+                imgCards[i].setImageResource(0);
             }
-            card.setIsOpen(false);
-            imgCards[i].startAnimation(fadeOut);
-            imgCards[i].setImageResource(0);
         }
         clickCount = 0;
     }
@@ -144,13 +140,30 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
             }
         }
         //if matches set isCorrect to true (both)
-        if(openned.get(0).getValue()==openned.get(1).getValue()) {
+        if(openned.get(0).getImgeResource() == openned.get(1).getImgeResource()) {
             cards.get(openned.get(0).getIndex()).setIsCorrect(true);
             cards.get(openned.get(1).getIndex()).setIsCorrect(true);
             correctCount += 2;
         }
-        if(correctCount>=cards.size()) {
-            gameWin();
+
+        if(correctCount >= cards.size()) gameWin();
+
+        if(flipTime == null) {
+            flipTime = new CountDownTimer(1000, 1000) {
+
+                @Override
+                public void onTick(long millisUntilFinished) {
+
+                }
+
+                @Override
+                public void onFinish() {
+                    closeCard();
+                }
+            }.start();
+        } else {
+            flipTime.cancel();
+            flipTime.start();
         }
     }
 

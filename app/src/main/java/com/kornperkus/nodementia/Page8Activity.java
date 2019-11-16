@@ -21,6 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 import com.kornperkus.nodementia.page8.Page4_1Activity;
 import com.kornperkus.nodementia.page8.Page9_1_1Activity;
+import com.kornperkus.nodementia.page8.Page9_2_1Activity;
 
 public class Page8Activity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener, NavigationView.OnNavigationItemSelectedListener {
     private ImageView menuImg, alarmImg;
@@ -120,7 +121,10 @@ public class Page8Activity extends AppCompatActivity implements View.OnClickList
                 clss = com.kornperkus.nodementia.page8.Page8Activity.class;
                 break;
             case R.id.page9_btn:
-                clss = Page9_1_1Activity.class;
+                int religion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0)
+                        .getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+                if(religion_id == R.id.religion_thai) clss = Page9_1_1Activity.class;
+                else clss = Page9_2_1Activity.class;
                 break;
         }
         if(clss != null) startActivity(new Intent(getApplicationContext(), clss));

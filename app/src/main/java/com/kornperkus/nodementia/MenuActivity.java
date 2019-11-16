@@ -25,8 +25,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, page10Btn;
     private ImageView menuImg, alarmImg;
     private DrawerLayout drawer;
-    private NavigationView navView;
-    private boolean isOpen;
+    private NavigationView navView, navAlarm;
+    private boolean isOpen, isAlramOpen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private void bindView() {
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
+        navAlarm = findViewById(R.id.nav_alarm);
         menuImg = findViewById(R.id.ic_menu);
         alarmImg = findViewById(R.id.ic_clock);
         page1Btn = findViewById(R.id.page1_btn);
@@ -89,10 +90,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 if (!isOpen) {
-                    drawer.openDrawer(GravityCompat.START);
+                    drawer.openDrawer(navView);
                     isOpen = true;
                 } else {
-                    drawer.closeDrawer(GravityCompat.START);
+                    drawer.closeDrawer(navView);
                     isOpen = false;
                 }
             }
@@ -100,9 +101,16 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         alarmImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+                if (!isAlramOpen) {
+                    drawer.openDrawer(navAlarm);
+                    isAlramOpen = true;
+                } else {
+                    drawer.closeDrawer(navAlarm);
+                    isAlramOpen = false;
+                }
+               /* Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
         navView.setNavigationItemSelectedListener(this);
