@@ -51,7 +51,8 @@
                     android:layout_marginBottom="16dp"
                     android:layout_below="@id/bigTitleTv"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:justificationMode="inter_word"/>
                 <TextView
                     android:text="@string/mmse_3_text2"
                     android:id="@+id/textTv2"

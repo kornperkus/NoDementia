@@ -46,7 +46,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:justificationMode="inter_word"/>
             </LinearLayout>
         </ScrollView>
         <ImageView

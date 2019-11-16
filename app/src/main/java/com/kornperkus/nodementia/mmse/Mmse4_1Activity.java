@@ -157,34 +157,6 @@ public class Mmse4_1Activity extends AppCompatActivity implements NavigationView
         navView.setNavigationItemSelectedListener(this);
     }
 
-    public void showConfirm() {
-        new AlertDialog.Builder(Mmse4_1Activity.this)
-                .setTitle("ออกจากระบบ")
-                .setMessage("หากออกจากระบบข้อมูลทั้งหมดของท่านจะศูนย์หาย")
-                .setCancelable(false)
-                .setPositiveButton("ออกจากระบบ", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        logout();
-                    }
-                }).setNegativeButton("ยกเลิก",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                }).show();
-    }
-
-    public void logout() {
-        SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).edit();
-        editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, false);
-        editor.apply();
-        Toast.makeText(getApplicationContext(), "ออกจากระบบแล้ว", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-        finish();
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -203,7 +175,7 @@ public class Mmse4_1Activity extends AppCompatActivity implements NavigationView
                 startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
                 break;
             case R.id.nav_logout:
-                showConfirm();
+                MainActivity.showLogoutConfirm(this);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

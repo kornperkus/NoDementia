@@ -10,10 +10,30 @@
     <string name="education_3">สูงกว่าประถมศึกษา</string>
     <string name="religion_thai">ไทยพุธ</string>
     <string name="religion_islam">อิสลาม</string>
+    <string name="job_0">โปรดเลือก</string>
+    <string name="job_1">เกษตรกร</string>
+    <string name="job_2">ประมง</string>
+    <string name="job_3">ค้าขาย</string>
+    <string name="job_4">แม่บ้าน</string>
+    <string name="job_5">ข้าราชการบำนาญ</string>
+    <string name="job_6">ไม่ประกอบอาชีพ</string>
+    <string name="job_7">อื่นๆ</string>
+    <string name="disease_0">โปรดเลือก</string>
+    <string name="disease_1">ไม่มี</string>
+    <string name="disease_2">เบาหวาน</string>
+    <string name="disease_3">ความดันโลหิต</string>
+    <string name="disease_4">หลอดเลือดสมอง</string>
+    <string name="disease_5">หัวใจ</string>
+    <string name="disease_6">อื่นๆ</string>
+
+    <string name="logout_title">ออกจากระบบ</string>
+    <string name="logout_confirm">หากออกจากระบบข้อมูลทั้งหมดของท่านจะสูญหาย</string>
+    <string name="logout_ok">ออกจากระบบ</string>
+    <string name="logout_cancel">ยกเลิก</string>
 
     <!-- PAge 1 -->
     <string name="page1_title">ความหมายของสภาวะสมองเสื่อม</string>
-    <string name="page1_body">\t\tภาวะสมองเสื่อมเป็นกลุ่มอาการที่เป็นผลมาจากความผิดปกติในการทำงานของสมองในส่วนของเปลือกสมองหรือโรคของเนื้อสมอง โรคจะดำเนินไปช้าๆ และต่อเนื่อง ทำให้มีความบกพร่องของความจำทั้งระยะสั้นและระยะยาว มีความบกพร่องในด้านความคิดนามธรรม การตัดสินใจ การเรียนรู้ การสื่อสาร การใช้ภาษ การเคลื่อนไหวผิดปกติ ไม่สามารถแยกแยะวัตถุสิ่งของได้ มีการเปลี่ยนแปลงด้านอารมณ์ บุคลิกภาพและพฤติกรรม ซึ่งส่งผลรบกวนการทำงาน การทำกิจวัตรประจำวัน และการเข้าสังคม</string>
+    <string name="page1_body">\t\tภาวะสมองเสื่อมเป็นกลุ่มอาการที่เป็นผลมาจากความผิดปกติในการทำงานของสมองในส่วนของเปลือกสมองหรือโรคของเนื้อสมอง โรคจะดำเนินไปช้าๆ และต่อเนื่อง ทำให้มีความบกพร่องของความจำทั้งระยะสั้นและระยะยาว มีความบกพร่องในด้านความคิดนามธรรม การตัดสินใจ การเรียนรู้ การสื่อสาร การใช้ภาษ การเคลื่อนไหวผิดปกติ ไม่สามารถแยกแยะวัตถุสิ่งของได้ มีการเปลี่ยนแปลงด้านอารมณ์ บุคลิกภาพและพฤติกรรม ซึ่งส่งผลรบกวนการทำงาน การทำกิจวัตรประจำวัน และการเข้าสังคม\n\n\n</string>
 
     <!-- Page 2 -->
     <string name="page2_title">สาเหตุของสภาวะสมองเสื่อม</string>

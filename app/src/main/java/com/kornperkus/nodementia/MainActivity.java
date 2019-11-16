@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -56,6 +59,35 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }, 1000);
+    }
+
+    public static void showLogoutConfirm(final Activity activity){
+        new AlertDialog.Builder(activity)
+                .setTitle(activity.getString(R.string.logout_title))
+                .setMessage(activity.getString(R.string.logout_confirm))
+                .setCancelable(false)
+                .setPositiveButton(activity.getString(R.string.logout_ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        logout(activity);
+                    }
+                }).setNegativeButton(activity.getString(R.string.logout_cancel),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }).show();
+    }
+
+    private static void logout(Activity activity) {
+        SharedPreferences.Editor editor = activity.getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).edit();
+        editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, false);
+        editor.apply();
+        Toast.makeText(activity, "ออกจากระบบแล้ว", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(activity, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        activity.startActivity(intent);
     }
 
     private void bindView(){

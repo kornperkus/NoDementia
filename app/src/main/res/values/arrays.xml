@@ -6,12 +6,23 @@
         <item>@string/education_2</item>
         <item>@string/education_3</item>
     </string-array>
-    <string-array name="stage_array">
-        <item>โปรดเลือกด่าน</item>
-        <item>ด่านที่ 1</item>
-        <item>ด่านที่ 2</item>
-        <item>ด่านที่ 3</item>
-        <item>ด่านที่ 4</item>
-        <item>ด่านที่ 5</item>
+    <string-array name="job_array">
+        <item>@string/job_0</item>
+        <item>@string/job_1</item>
+        <item>@string/job_2</item>
+        <item>@string/job_3</item>
+        <item>@string/job_4</item>
+        <item>@string/job_5</item>
+        <item>@string/job_6</item>
+        <item>@string/job_7</item>
+    </string-array>
+    <string-array name="disease_array">
+        <item>@string/disease_0</item>
+        <item>@string/disease_1</item>
+        <item>@string/disease_2</item>
+        <item>@string/disease_3</item>
+        <item>@string/disease_4</item>
+        <item>@string/disease_5</item>
+        <item>@string/disease_6</item>
     </string-array>
 </resources>

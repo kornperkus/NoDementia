@@ -46,17 +46,32 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         SharedPreferences pref = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0);
         nameTv.setText(pref.getString(MainActivity.PREF_KEY_NAME, "ไม่ระบุ"));
         ageTv.setText(pref.getString(MainActivity.PREF_KEY_AGE, "ไม่ระบุ"));
-        jobTv.setText(pref.getString(MainActivity.PREF_KEY_JOB, "ไม่ระบุ"));
-        diseaseTv.setText(pref.getString(MainActivity.PREF_KEY_DISEASE, "ไม่ระบุ"));
 
         int gender = pref.getInt(MainActivity.PREF_KEY_GENDER, 0);
         if(gender == R.id.sex_male) genderTv.setText(getString(R.string.gender_male));
         else genderTv.setText(getString(R.string.gender_female));
 
+        int job = pref.getInt(MainActivity.PREF_KEY_JOB, 0);
+        if(job == 1) jobTv.setText(getString(R.string.job_1));
+        else if(job == 2) jobTv.setText(getString(R.string.job_2));
+        else if(job == 3) jobTv.setText(getString(R.string.job_3));
+        else if(job == 4) jobTv.setText(getString(R.string.job_4));
+        else if(job == 5) jobTv.setText(getString(R.string.job_5));
+        else if(job == 6) jobTv.setText(getString(R.string.job_6));
+        else if(job == 7) jobTv.setText(getString(R.string.job_7));
+
         int education = pref.getInt(MainActivity.PREF_KEY_EDUCATION, 0);
         if(education == 1) educationTv.setText(getString(R.string.education_1));
         else if(education == 2) educationTv.setText(getString(R.string.education_2));
         else if(education == 3) educationTv.setText(getString(R.string.education_3));
+
+        int disease = pref.getInt(MainActivity.PREF_KEY_DISEASE, 0);
+        if(disease == 1) diseaseTv.setText(getString(R.string.disease_1));
+        else if(disease == 2) diseaseTv.setText(getString(R.string.disease_2));
+        else if(disease == 3) diseaseTv.setText(getString(R.string.disease_3));
+        else if(disease == 4) diseaseTv.setText(getString(R.string.disease_4));
+        else if(disease == 5) diseaseTv.setText(getString(R.string.disease_5));
+        else if(disease == 6) diseaseTv.setText(getString(R.string.disease_6));
 
         int religion = pref.getInt(MainActivity.PREF_KEY_RELIGION, 0);
         if(religion == R.id.religion_thai) religionTv.setText(getString(R.string.religion_thai));
@@ -118,34 +133,6 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         navView.setNavigationItemSelectedListener(this);
     }
 
-    public void showConfirm() {
-        new AlertDialog.Builder(AccountActivity.this)
-                .setTitle("ออกจากระบบ")
-                .setMessage("หากออกจากระบบข้อมูลทั้งหมดของท่านจะศูนย์หาย")
-                .setCancelable(false)
-                .setPositiveButton("ออกจากระบบ", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        logout();
-                    }
-                }).setNegativeButton("ยกเลิก",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                }).show();
-    }
-
-    public void logout() {
-        SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).edit();
-        editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, false);
-        editor.apply();
-        Toast.makeText(getApplicationContext(), "ออกจากระบบแล้ว", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-        finish();
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -164,7 +151,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
                 startActivity(new Intent(getApplicationContext(), MmseFinalActivity.class));
                 break;
             case R.id.nav_logout:
-                showConfirm();
+                MainActivity.showLogoutConfirm(this);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

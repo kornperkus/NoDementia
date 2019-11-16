@@ -23,10 +23,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
     private ImageView logoImg;
     private TextView headerTv;
-    private EditText nameEdit, ageEdit, jobEdit, deseaseEdit;
+    private EditText nameEdit, ageEdit;
     private RadioGroup religionRadio, genderRadio;
     private RadioButton sexMale, sexFemale, religionThai, religionIslam;
-    private Spinner educationSpinner;
+    private Spinner educationSpinner, jobSpinner, diseaseSpinner;
     private Button confirmBtn;
     private SharedPreferences pref;
 
@@ -40,6 +40,14 @@ public class LoginActivity extends AppCompatActivity {
         educationList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         educationSpinner.setAdapter(educationList);
 
+        final ArrayAdapter<CharSequence> jobList = ArrayAdapter.createFromResource(this, R.array.job_array, android.R.layout.simple_spinner_item);
+        jobList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        jobSpinner.setAdapter(jobList);
+
+        final ArrayAdapter<CharSequence> diseaseList = ArrayAdapter.createFromResource(this, R.array.disease_array, android.R.layout.simple_spinner_item);
+        diseaseList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        diseaseSpinner.setAdapter(diseaseList);
+
         pref = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0);
 
         //ถ้าเข้าสู่ระบบแล้ว ให้เปลี่ยนเป็นโหมดแก้ไขข้อมูล
@@ -51,8 +59,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 nameEdit.setText(pref.getString(MainActivity.PREF_KEY_NAME, "ไม่ระบุ"));
                 ageEdit.setText(pref.getString(MainActivity.PREF_KEY_AGE, "ไม่ระบุ"));
-                jobEdit.setText(pref.getString(MainActivity.PREF_KEY_JOB, "ไม่ระบุ"));
-                deseaseEdit.setText(pref.getString(MainActivity.PREF_KEY_DISEASE, "ไม่ระบุ"));
 
                 int gender = pref.getInt(MainActivity.PREF_KEY_GENDER, 0);
                 if(gender == R.id.sex_male) sexMale.setChecked(true);
@@ -62,6 +68,23 @@ public class LoginActivity extends AppCompatActivity {
                 if (education == 1) educationSpinner.setSelection(1);
                 else if (education == 2) educationSpinner.setSelection(2);
                 else if (education == 3) educationSpinner.setSelection(3);
+
+                int job = pref.getInt(MainActivity.PREF_KEY_JOB, 0);
+                if (job == 1) educationSpinner.setSelection(1);
+                else if (job == 2) jobSpinner.setSelection(2);
+                else if (job == 3) jobSpinner.setSelection(3);
+                else if (job == 4) jobSpinner.setSelection(4);
+                else if (job == 5) jobSpinner.setSelection(5);
+                else if (job == 6) jobSpinner.setSelection(6);
+                else if (job == 7) jobSpinner.setSelection(7);
+
+                int disease = pref.getInt(MainActivity.PREF_KEY_DISEASE, 0);
+                if (disease == 1) diseaseSpinner.setSelection(1);
+                else if (disease == 2) diseaseSpinner.setSelection(2);
+                else if (disease == 3) diseaseSpinner.setSelection(3);
+                else if (disease == 4) diseaseSpinner.setSelection(4);
+                else if (disease == 5) diseaseSpinner.setSelection(5);
+                else if (disease == 6) diseaseSpinner.setSelection(6);
 
                 int religion = pref.getInt(MainActivity.PREF_KEY_RELIGION, 0);
                 if(religion == R.id.religion_thai) religionThai.setChecked(true);
@@ -79,31 +102,30 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = nameEdit.getText().toString();
                 String age = ageEdit.getText().toString();
-                String job = jobEdit.getText().toString();
-                String disease = deseaseEdit.getText().toString();
 
-                if(TextUtils.isEmpty(name) || TextUtils.isEmpty(age) || TextUtils.isEmpty(job)) {
+                if(TextUtils.isEmpty(name) || TextUtils.isEmpty(age)) {
                     Toast.makeText(getApplicationContext(), "กรุณาเลือกข้อมูลให้ครบถ้วน", Toast.LENGTH_SHORT).show();
                     return;
                 }else if(!sexMale.isChecked() && !sexFemale.isChecked() || !religionThai.isChecked()&& !religionIslam.isChecked()) {
                     Toast.makeText(getApplicationContext(), "กรุณาเลือกข้อมูลให้ครบถ้วน", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.isEmpty(disease)) {
-                    disease = "ไม่มี";
-                }
                 int gender = genderRadio.getCheckedRadioButtonId();
                 int religion = religionRadio.getCheckedRadioButtonId();
                 int education = educationSpinner.getSelectedItemPosition();
+                int job = jobSpinner.getSelectedItemPosition();
+                int disease = diseaseSpinner.getSelectedItemPosition();
 
-                if(education == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกระดับการศึกษา", Toast.LENGTH_SHORT).show();
+                if (job == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกอาชีพ", Toast.LENGTH_SHORT).show();
+                else if (education == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกระดับการศึกษา", Toast.LENGTH_SHORT).show();
+                else if(disease == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกโรคประจำตัว", Toast.LENGTH_SHORT).show();
                 else {
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, true);
                     editor.putString(MainActivity.PREF_KEY_NAME, name);
                     editor.putString(MainActivity.PREF_KEY_AGE, age);
-                    editor.putString(MainActivity.PREF_KEY_JOB, job);
-                    editor.putString(MainActivity.PREF_KEY_DISEASE, disease);
+                    editor.putInt(MainActivity.PREF_KEY_JOB, job);
+                    editor.putInt(MainActivity.PREF_KEY_DISEASE, disease);
                     editor.putInt(MainActivity.PREF_KEY_GENDER, gender);
                     editor.putInt(MainActivity.PREF_KEY_RELIGION, religion);
                     editor.putInt(MainActivity.PREF_KEY_EDUCATION, education);
@@ -121,8 +143,8 @@ public class LoginActivity extends AppCompatActivity {
         headerTv = findViewById(R.id.header);
         nameEdit = findViewById(R.id.nameEdit);
         ageEdit = findViewById(R.id.ageEdit);
-        jobEdit = findViewById(R.id.jobEdit);
-        deseaseEdit = findViewById(R.id.diseaseEdit);
+        jobSpinner = findViewById(R.id.jobSpinner);
+        diseaseSpinner = findViewById(R.id.diseaseSpinner);
         genderRadio = findViewById(R.id.sex_radio);
         religionRadio = findViewById(R.id.religion_radio);
         sexMale = findViewById(R.id.sex_male);
