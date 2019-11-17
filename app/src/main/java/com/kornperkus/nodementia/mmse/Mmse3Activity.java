@@ -45,7 +45,7 @@ public class Mmse3Activity extends AppCompatActivity implements CompoundButton.O
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page5);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page3);
         getSupportActionBar().setElevation(0);
 
         bindView();

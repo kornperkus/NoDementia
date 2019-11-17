@@ -66,20 +66,20 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
         } else scoreTv.setText("คะแนนที่ได้รับ " + score + "/" + maxScore);
 
         String resultText = "ไม่มีความเสี่ยงของภาวะสมองเสื่อมจากเครื่องมือนี้";
-        resultImg.setImageResource(R.drawable.mmse_1);
+        resultImg.setImageResource(R.drawable.mmse_2);
         if (educationLevel == 1) {
             if (score <= 14) {
-                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ให้คําแนะนํา และรักษา";
                 resultImg.setImageResource(R.drawable.mmse_3);
             }
         } else if (educationLevel == 2) {
             if (score <= 17) {
-                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ให้คําแนะนํา และรักษา";
                 resultImg.setImageResource(R.drawable.mmse_3);
             }
         } else if (educationLevel == 2) {
             if (score <= 22) {
-                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ส่งไปรักษาต่อ";
+                resultText = "สงสัยว่ามีสภาวะสมองเสื่อม ให้คําแนะนํา และรักษา";
                 resultImg.setImageResource(R.drawable.mmse_3);
             }
         }

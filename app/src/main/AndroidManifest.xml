@@ -58,7 +58,6 @@
             android:name=".Page5Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
-
         <activity
             android:name=".Page6Activity"
             android:screenOrientation="portrait"
@@ -84,7 +83,7 @@
         <activity
             android:name=".Page9Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/Page5">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
             android:name=".Page10Activity"
@@ -186,6 +185,14 @@
             android:theme="@style/Page5"></activity>
         <activity
             android:name=".mmse.Mmse5Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page5"></activity>
+        <activity
+            android:name=".mmse.Mmse5_1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page5"></activity>
+        <activity
+            android:name=".mmse.Mmse5_2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page5"></activity>
         <activity

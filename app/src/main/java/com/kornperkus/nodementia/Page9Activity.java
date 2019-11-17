@@ -18,12 +18,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Page9Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Page9Activity extends AppCompatActivity {
 
     private ImageView backImg, forwardImg;
-    private ImageView menuImg, alarmImg;
-    private DrawerLayout drawer;
-    private NavigationView navView;
+    //private ImageView menuImg, alarmImg;
+    //private DrawerLayout drawer;
+   // private NavigationView navView;
     private boolean isOpen;
     private ImageView displayimg;
 
@@ -33,10 +33,6 @@ public class Page9Activity extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_page9);
 
         //Setting actionbar
-        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page1);
-        getSupportActionBar().setElevation(0);
 
         bindView();
 
@@ -66,51 +62,19 @@ public class Page9Activity extends AppCompatActivity implements NavigationView.O
             });
         }
 
-        setupNav();
-        alarmImg.setVisibility(View.GONE);
+       // alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView() {
         forwardImg = findViewById(R.id.forwardImg);
         backImg = findViewById(R.id.backImg);
-        drawer = findViewById(R.id.drawer);
-        navView = findViewById(R.id.nav_view);
-        menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
+        //drawer = findViewById(R.id.drawer);
+       // navView = findViewById(R.id.nav_view);
+       // menuImg = findViewById(R.id.ic_menu);
+       // alarmImg = findViewById(R.id.ic_clock);
         displayimg = findViewById(R.id.display_img);
     }
 
-    public void setupNav() {
-        menuImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!isOpen) {
-                    drawer.openDrawer(GravityCompat.START);
-                    isOpen = true;
-                } else {
-                    drawer.closeDrawer(GravityCompat.START);
-                    isOpen = false;
-                }
-            }
-        });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
-        navView.setNavigationItemSelectedListener(this);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        MainActivity.onNavbarSelect(this, menuItem.getItemId());
-        drawer.closeDrawer(GravityCompat.START);
-        isOpen = false;
-        return true;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

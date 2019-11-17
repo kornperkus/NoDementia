@@ -1,6 +1,7 @@
 package com.kornperkus.nodementia.mmse;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.util.Log;
@@ -36,6 +37,7 @@ public class Mmse2_2_5Activity extends AppCompatActivity implements CompoundButt
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -75,7 +77,23 @@ public class Mmse2_2_5Activity extends AppCompatActivity implements CompoundButt
 
         setupNav();
         alarmImg.setVisibility(View.GONE);
+        player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_2_1_5);
+        player.start();
         Log.i("SCORE", "Score = "+score);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
+        }
     }
 
     private void bindView(){
