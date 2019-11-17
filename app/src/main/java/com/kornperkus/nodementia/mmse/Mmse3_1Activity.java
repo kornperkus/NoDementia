@@ -1,16 +1,22 @@
 package com.kornperkus.nodementia.mmse;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,25 +28,29 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.kornperkus.nodementia.AccountActivity;
+import com.kornperkus.nodementia.LoginActivity;
 import com.kornperkus.nodementia.MainActivity;
 import com.kornperkus.nodementia.Page5Activity;
+import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
 
-public class Mmse2_2_5Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, NavigationView.OnNavigationItemSelectedListener {
-    private TextView pageTitle, bigTitleTv, titleTv;
-    private RadioButton correct, inCorrect;
+public class Mmse3_1Activity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
+    private TextView pageTitle;
     private ImageView forwardImg;
+    private CheckBox option1_1, option1_2, option1_3;
     private int score;
     private boolean exitConfirm;
     private ImageView menuImg, alarmImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mmse);
+        setContentView(R.layout.activity_mmse_3);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -52,41 +62,74 @@ public class Mmse2_2_5Activity extends AppCompatActivity implements CompoundButt
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
         pageTitle.setText(getString(R.string.page5_title));
-        bigTitleTv.setText(getString(R.string.mmse_2_title));
-        titleTv.setText(getString(R.string.mmse_2_2_5));
-        forwardImg.setVisibility(View.INVISIBLE);
+        option1_1.setText("ดอกไม้");
+        option1_2.setText("แม่น้ำ");
+        option1_3.setText("รถยนต์");
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
 
-        correct.setOnCheckedChangeListener(this);
-        inCorrect.setOnCheckedChangeListener(this);
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(correct.isChecked()) score +=1;
-                Intent intent = new Intent(getApplicationContext(), Mmse3Activity.class);
+                if(option1_1.isChecked()) score+=1;
+                if(option1_2.isChecked()) score+=1;
+                if(option1_3.isChecked()) score+=1;
+
+                SharedPreferences pref = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0);
+                int educationLevel = pref.getInt(MainActivity.PREF_KEY_EDUCATION, 0);
+
+                Intent intent = null;
+
+                //Check education level
+                if(educationLevel == 1) intent = new Intent(getApplicationContext(), Mmse5Activity.class);
+                else intent = new Intent(getApplicationContext(), Mmse4Activity.class);
+
                 intent.putExtra(Page5Activity.MMSE_SCORE_KEY, score);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+
+                Log.i("SCORE", "Score = "+score);
             }
         });
         setupNav();
-        Log.i("SCORE", "Score = "+score);
+        player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_3_des);
+        player.setNextMediaPlayer(MediaPlayer.create(getApplicationContext(), R.raw.mmse_3_1));
+        player.start();
     }
 
     private void bindView(){
         pageTitle = findViewById(R.id.page_title);
-        bigTitleTv = findViewById(R.id.bigTitleTv);
-        titleTv = findViewById(R.id.titleTv);
-        correct = findViewById(R.id.correct);
-        inCorrect = findViewById(R.id.incorrect);
         forwardImg = findViewById(R.id.forwardBtn);
+        option1_1 = findViewById(R.id.option1_1);
+        option1_2 = findViewById(R.id.option1_2);
+        option1_3 = findViewById(R.id.option1_3);
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
         alarmImg = findViewById(R.id.ic_clock);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(player != null) player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
+        }
     }
 
     public void setupNav() {
@@ -138,10 +181,5 @@ public class Mmse2_2_5Activity extends AppCompatActivity implements CompoundButt
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        forwardImg.setVisibility(View.VISIBLE);
     }
 }

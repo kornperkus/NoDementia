@@ -1,9 +1,6 @@
 package com.kornperkus.nodementia.mmse;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.AlarmClock;
@@ -26,11 +23,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.kornperkus.nodementia.AccountActivity;
-import com.kornperkus.nodementia.LoginActivity;
 import com.kornperkus.nodementia.MainActivity;
 import com.kornperkus.nodementia.Page5Activity;
-import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse2_1_5Activity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, NavigationView.OnNavigationItemSelectedListener {

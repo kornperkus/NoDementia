@@ -46,7 +46,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
-    private CountDownTimer timer, flipTime;
+    private CountDownTimer timer, flipTime, beginTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,20 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         openned = new ArrayList<>();
         setupNav();
 
+        openAllCard();
+        beginTime = new CountDownTimer(5000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                closeAllCard();
+            }
+        };
+        beginTime.start();
+
         timer = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -90,7 +104,6 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         };
         timer.start();
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -99,10 +112,34 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
+        if(clickCount==2) {
+            closeCard();
+        }
         openCard(Integer.parseInt(view.getTag().toString()));
 
         if(clickCount==2) {
             checkMatch();
+        }
+    }
+
+    private void openAllCard() {
+        for(int i=0; i< cards.size(); i++) {
+            Card card = cards.get(i);
+            card.setIsOpen(true);
+            ImageView img = imgCards[i];
+            img.setImageResource(card.getImgeResource());
+            img.startAnimation(fadeIn);
+            img.setEnabled(false);
+        }
+    }
+    private void closeAllCard() {
+        for(int i=0; i< cards.size(); i++) {
+            Card card = cards.get(i);
+            card.setIsOpen(false);
+            ImageView img = imgCards[i];
+            img.setImageResource(0);
+            img.startAnimation(fadeOut);
+            img.setEnabled(true);
         }
     }
 
@@ -147,7 +184,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         }
 
         if(correctCount >= cards.size()) gameWin();
-
+/*
         if(flipTime == null) {
             flipTime = new CountDownTimer(1000, 1000) {
 
@@ -164,7 +201,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         } else {
             flipTime.cancel();
             flipTime.start();
-        }
+        }*/
     }
 
     private void gameWin() {

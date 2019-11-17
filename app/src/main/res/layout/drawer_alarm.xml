@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp" />
+
+    <LinearLayout
+        android:id="@+id/add_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_below="@id/frame">
+
+        <ImageView
+            android:id="@+id/alarm_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_alarm_add" />
+        <EditText
+            android:id="@+id/alarm_add_edittext"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="กิจกรรมใหม่"
+            android:inputType="text"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/alarm_add_save"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:text="บันทึก"
+            android:textSize="14sp"
+            android:background="#5655aa"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/alarm_list"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="test"
-        android:layout_gravity="center"
-        android:gravity="center"/>
-</LinearLayout>
+        android:layout_below="@id/add_bar"
+        android:layout_marginTop="24dp"/>
+</RelativeLayout>

@@ -31,36 +31,20 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/frame">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp">
-                <TextView
-                    android:text="สรุปผลการพิจารณา"
-                    android:id="@+id/page_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    style="@style/TextAppearance.AppCompat.Title"
-                    android:layout_marginBottom="16dp"
-                    android:layout_gravity="center_horizontal"/>
-                <TextView
-                    android:text="คะแนนที่ได้รับ 15/20"
-                    android:id="@+id/page_score"
+                    android:onClick="showNotification"
+                    android:text="SHOW"/>
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="26sp"
-                    style="@style/TextAppearance.AppCompat.Title"
-                    android:layout_marginBottom="16dp"
-                    android:layout_gravity="center_horizontal"/>
-                <TextView
-                    android:id="@+id/page_body"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:gravity="center_horizontal"/>
+                    android:onClick="showNotificationA"
+                    android:text="SHOW"/>
             </LinearLayout>
+
         </ScrollView>
         <ImageView
             android:id="@+id/backImg"
