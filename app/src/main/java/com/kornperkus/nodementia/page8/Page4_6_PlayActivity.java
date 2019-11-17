@@ -72,6 +72,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         cards = provider.getCardLists(level);
         openned = new ArrayList<>();
         setupNav();
+        alarmImg.setVisibility(View.GONE);
 
         openAllCard();
         beginTime = new CountDownTimer(5000, 1000) {

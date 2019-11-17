@@ -70,7 +70,9 @@ public class Page6BmiActivity extends AppCompatActivity implements NavigationVie
             }
         });
 
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);

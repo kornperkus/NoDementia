@@ -72,6 +72,7 @@ public class Page2Activity extends AppCompatActivity implements NavigationView.O
             }
         });
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){

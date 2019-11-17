@@ -64,7 +64,9 @@ public class Page6Activity extends AppCompatActivity implements NavigationView.O
                 startActivity(new Intent(getApplicationContext(), Page6BmiActivity.class));
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){

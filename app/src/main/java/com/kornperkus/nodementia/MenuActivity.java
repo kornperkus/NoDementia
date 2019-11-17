@@ -71,11 +71,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         bindView();
         setOnClick();
-        setupNav();
+
 
         notificationManagerCompat = NotificationManagerCompat.from(this);
         setUpAlarm();
-
+        setupNav();
     }
 
     public void setUpAlarm() {

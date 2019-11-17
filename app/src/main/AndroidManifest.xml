@@ -3,6 +3,7 @@
     package="com.kornperkus.nodementia">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App"
@@ -92,10 +93,6 @@
         </activity>
 
         <!-- Rate -->
-        <activity
-            android:name=".page10.Rate2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Page5"></activity>
 
         <!-- MMSE -->
         <activity
@@ -313,6 +310,24 @@
             android:name=".page8.Page9_2_3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
+        <activity
+            android:name=".page10.Page1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page5"></activity>
+        <activity
+            android:name=".page10.Page2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page5"></activity>
+        <activity
+            android:name=".page10.Page3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page5"></activity>
+        <activity
+            android:name=".page10.Page4Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page5"></activity>
+
+
         <receiver android:name=".AlarmReceiver"/>
     </application>
 

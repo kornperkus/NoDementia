@@ -92,6 +92,7 @@ public class Mmse4_1Activity extends AppCompatActivity implements NavigationView
             }
         });
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_4_1_1);
         player.start();
     }

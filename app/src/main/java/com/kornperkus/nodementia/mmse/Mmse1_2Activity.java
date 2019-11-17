@@ -80,7 +80,9 @@ public class Mmse1_2Activity extends AppCompatActivity implements CompoundButton
                 startActivity(intent);
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_1_2);
         player.start();
         Log.i("SCORE", "Score = "+score);

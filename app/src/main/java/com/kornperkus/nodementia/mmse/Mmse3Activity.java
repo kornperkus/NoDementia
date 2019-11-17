@@ -77,6 +77,7 @@ public class Mmse3Activity extends AppCompatActivity implements CompoundButton.O
             }
         });
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         Log.i("SCORE", "Score = "+score);
     }
 

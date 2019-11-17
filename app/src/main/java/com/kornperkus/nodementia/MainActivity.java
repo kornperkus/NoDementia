@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static void onNavbarSelect(Activity activity, int id) {
         switch (id) {
+            case R.id.nav_home:
+                activity.startActivity(new Intent(activity.getApplicationContext(), MenuActivity.class));
+                break;
             case R.id.nav_accout:
                 activity.startActivity(new Intent(activity.getApplicationContext(), AccountActivity.class));
                 break;

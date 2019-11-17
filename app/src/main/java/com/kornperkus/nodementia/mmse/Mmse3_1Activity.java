@@ -93,7 +93,9 @@ public class Mmse3_1Activity extends AppCompatActivity implements  NavigationVie
                 Log.i("SCORE", "Score = "+score);
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_3_des);
         player.setNextMediaPlayer(MediaPlayer.create(getApplicationContext(), R.raw.mmse_3_1));
         player.start();

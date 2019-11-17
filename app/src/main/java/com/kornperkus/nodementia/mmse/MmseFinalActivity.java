@@ -97,6 +97,7 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
         frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
 
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         Log.i("SCORE", "Score = " + score);
     }
 

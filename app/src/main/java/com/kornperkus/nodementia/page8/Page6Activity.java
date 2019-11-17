@@ -64,6 +64,7 @@ public class Page6Activity extends AppCompatActivity implements NavigationView.O
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_6PrimaryDark));
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){

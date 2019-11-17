@@ -84,6 +84,7 @@ public class Mmse4Activity extends AppCompatActivity implements CompoundButton.O
             }
         });
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_4_des);
         player.start();
     }

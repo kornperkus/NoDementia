@@ -95,7 +95,9 @@ public class Mmse8Activity extends AppCompatActivity implements NavigationView.O
         });
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_8_des);
         player.start();
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){

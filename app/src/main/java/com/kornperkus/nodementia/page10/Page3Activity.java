@@ -1,20 +1,12 @@
 package com.kornperkus.nodementia.page10;
 
-import android.app.AlertDialog;
-import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.AlarmClock;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,16 +18,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.kornperkus.nodementia.AccountActivity;
-import com.kornperkus.nodementia.LoginActivity;
 import com.kornperkus.nodementia.MainActivity;
 import com.kornperkus.nodementia.Page10Activity;
-import com.kornperkus.nodementia.Page5Activity;
-import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
-import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
-public class Page1Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Page3Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextView title;
     private ImageView forwardImg;
@@ -43,9 +30,8 @@ public class Page1Activity extends AppCompatActivity implements NavigationView.O
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
-    private TextView title1, title2;
-    private LinearLayout topic3, topic4, topic5;
-    private RadioGroup group1, group2;
+    private TextView title1, title2, title3, title4, title5;
+    private RadioGroup group1, group2, group3, group4, group5;
     private boolean exitConfirm;
 
     @Override
@@ -56,18 +42,17 @@ public class Page1Activity extends AppCompatActivity implements NavigationView.O
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page5);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page10);
         getSupportActionBar().setElevation(0);
 
         bindView();
-        title.setText(getString(R.string.page10_1_title));
+        title.setText(getString(R.string.page10_3_title));
 
-        title1.setText(getString(R.string.page10_1_1));
-        title2.setText(getString(R.string.page10_1_2));
-
-        topic3.setVisibility(View.GONE);
-        topic4.setVisibility(View.GONE);
-        topic5.setVisibility(View.GONE);
+        title1.setText(getString(R.string.page10_3_1));
+        title2.setText(getString(R.string.page10_3_2));
+        title3.setText(getString(R.string.page10_3_3));
+        title4.setText(getString(R.string.page10_3_4));
+        title5.setText(getString(R.string.page10_3_5));
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -116,18 +101,75 @@ public class Page1Activity extends AppCompatActivity implements NavigationView.O
                     default:
                         score2 = 5;
                 }
+                int score3;
+                int id3 = group3.getCheckedRadioButtonId();
+                switch (id3) {
+                    case R.id.option3_2:
+                        score3 = 2;
+                        break;
+                    case R.id.option3_3:
+                        score3 = 3;
+                        break;
+                    case R.id.option3_4:
+                        score3 = 4;
+                        break;
+                    case R.id.option3_1:
+                        score3 = 1;
+                        break;
+                    default:
+                        score3 = 5;
+                }
+                int score4;
+                int id4 = group4.getCheckedRadioButtonId();
+                switch (id4) {
+                    case R.id.option4_2:
+                        score4 = 2;
+                        break;
+                    case R.id.option4_3:
+                        score4 = 3;
+                        break;
+                    case R.id.option4_4:
+                        score4 = 4;
+                        break;
+                    case R.id.option4_1:
+                        score4 = 1;
+                        break;
+                    default:
+                        score4 = 5;
+                }
+                int score5;
+                int id5 = group5.getCheckedRadioButtonId();
+                switch (id5) {
+                    case R.id.option5_2:
+                        score5 = 2;
+                        break;
+                    case R.id.option5_3:
+                        score5 = 3;
+                        break;
+                    case R.id.option5_4:
+                        score5 = 4;
+                        break;
+                    case R.id.option5_5:
+                        score5 = 1;
+                        break;
+                    default:
+                        score5 = 5;
+                }
 
-                Bundle bundle = new Bundle();
-                bundle.putInt("1_1", score1);
-                bundle.putInt("1_2", score2);
-                Intent intent = new Intent(getApplicationContext(), Page2Activity.class);
+                Bundle bundle = getIntent().getExtras();
+                bundle.putInt("3_1", score1);
+                bundle.putInt("3_2", score2);
+                bundle.putInt("3_3", score2);
+                bundle.putInt("3_4", score2);
+                bundle.putInt("3_5", score2);
+
+                Intent intent = new Intent(getApplicationContext(), Page4Activity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
                 finish();
             }
         });
     }
-
     @Override
     public void onBackPressed() {
         if(exitConfirm){
@@ -150,11 +192,14 @@ public class Page1Activity extends AppCompatActivity implements NavigationView.O
         forwardImg = findViewById(R.id.forwardImg);
         title1 = findViewById(R.id.title_1);
         title2 = findViewById(R.id.title_2);
-        topic3 = findViewById(R.id.topic_3);
-        topic4 = findViewById(R.id.topic_4);
-        topic5 = findViewById(R.id.topic_5);
+        title3 = findViewById(R.id.title_3);
+        title4 = findViewById(R.id.title_4);
+        title5 = findViewById(R.id.title_5);
         group1 = findViewById(R.id.group_1);
         group2 = findViewById(R.id.group_2);
+        group3 = findViewById(R.id.group_3);
+        group4 = findViewById(R.id.group_4);
+        group5 = findViewById(R.id.group_5);
     }
 
     public void setupNav() {

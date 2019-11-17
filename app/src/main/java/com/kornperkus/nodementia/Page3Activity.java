@@ -59,7 +59,9 @@ public class Page3Activity extends AppCompatActivity implements NavigationView.O
                 finish();
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){

@@ -83,7 +83,9 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
                 onBackPressed();
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     @Override

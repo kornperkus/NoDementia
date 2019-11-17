@@ -74,7 +74,9 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_4PrimaryDark));
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.l_audio);
         player.start();
     }

@@ -50,7 +50,9 @@ public class Page8Activity extends AppCompatActivity implements View.OnClickList
                 finish();
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView() {

@@ -46,19 +46,20 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/topic_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/title_1"
-                            style="@style/TextAppearance.AppCompat.Title"
+                            style="@style/TextAppearance.AppCompat.Headline"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="17sp" />
+                            android:textSize="18sp" />
 
                         <RadioGroup
-                            android:id="@+id/topic_1"
+                            android:id="@+id/group_1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="24dp"
@@ -66,26 +67,31 @@
                             android:layout_marginBottom="16dp">
 
                             <RadioButton
+                                android:id="@+id/option1_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate5" />
 
                             <RadioButton
+                                android:id="@+id/option1_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate4" />
 
                             <RadioButton
+                                android:id="@+id/option1_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate3" />
 
                             <RadioButton
+                                android:id="@+id/option1_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate2" />
 
                             <RadioButton
+                                android:id="@+id/option1_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate1" />
@@ -94,6 +100,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/topic_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -103,10 +110,10 @@
                             style="@style/TextAppearance.AppCompat.Title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="17sp" />
+                            android:textSize="18sp" />
 
                         <RadioGroup
-                            android:id="@+id/topic_2"
+                            android:id="@+id/group_2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="24dp"
@@ -114,26 +121,31 @@
                             android:layout_marginBottom="16dp">
 
                             <RadioButton
+                                android:id="@+id/option2_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate5" />
 
                             <RadioButton
+                                android:id="@+id/option2_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate4" />
 
                             <RadioButton
+                                android:id="@+id/option2_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate3" />
 
                             <RadioButton
+                                android:id="@+id/option2_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate2" />
 
                             <RadioButton
+                                android:id="@+id/option2_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate1" />
@@ -142,6 +154,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/topic_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -151,10 +164,10 @@
                             style="@style/TextAppearance.AppCompat.Title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="17sp" />
+                            android:textSize="18sp" />
 
                         <RadioGroup
-                            android:id="@+id/topic_3"
+                            android:id="@+id/group_3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="24dp"
@@ -162,26 +175,31 @@
                             android:layout_marginBottom="16dp">
 
                             <RadioButton
+                                android:id="@+id/option3_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate5" />
 
                             <RadioButton
+                                android:id="@+id/option3_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate4" />
 
                             <RadioButton
+                                android:id="@+id/option3_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate3" />
 
                             <RadioButton
+                                android:id="@+id/option3_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate2" />
 
                             <RadioButton
+                                android:id="@+id/option3_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate1" />
@@ -190,6 +208,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/topic_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -199,10 +218,10 @@
                             style="@style/TextAppearance.AppCompat.Title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="17sp" />
+                            android:textSize="18sp" />
 
                         <RadioGroup
-                            android:id="@+id/topic_4"
+                            android:id="@+id/group_4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="24dp"
@@ -210,26 +229,31 @@
                             android:layout_marginBottom="16dp">
 
                             <RadioButton
+                                android:id="@+id/option4_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate5" />
 
                             <RadioButton
+                                android:id="@+id/option4_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate4" />
 
                             <RadioButton
+                                android:id="@+id/option4_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate3" />
 
                             <RadioButton
+                                android:id="@+id/option4_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate2" />
 
                             <RadioButton
+                                android:id="@+id/option4_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate1" />
@@ -238,6 +262,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/topic_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -247,10 +272,10 @@
                             style="@style/TextAppearance.AppCompat.Title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="17sp" />
+                            android:textSize="18sp" />
 
                         <RadioGroup
-                            android:id="@+id/topic_5"
+                            android:id="@+id/group_5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="24dp"
@@ -258,32 +283,38 @@
                             android:layout_marginBottom="16dp">
 
                             <RadioButton
+                                android:id="@+id/option5_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate5" />
 
                             <RadioButton
+                                android:id="@+id/option5_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate4" />
 
                             <RadioButton
+                                android:id="@+id/option5_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate3" />
 
                             <RadioButton
+                                android:id="@+id/option5_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate2" />
 
                             <RadioButton
+                                android:id="@+id/option5_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/page10_rate1" />
 
                         </RadioGroup>
                     </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

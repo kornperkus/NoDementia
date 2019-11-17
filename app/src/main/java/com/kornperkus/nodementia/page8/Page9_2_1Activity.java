@@ -71,7 +71,9 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_9PrimaryDark));
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){

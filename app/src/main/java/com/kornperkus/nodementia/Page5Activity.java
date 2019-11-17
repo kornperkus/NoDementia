@@ -45,7 +45,9 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
         bindView();
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
 
         beginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +55,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
                 startActivity(new Intent(getApplicationContext(), Mmse1_1Activity.class));
             }
         });
+
 
         backImg.setOnClickListener(new View.OnClickListener() {
             @Override

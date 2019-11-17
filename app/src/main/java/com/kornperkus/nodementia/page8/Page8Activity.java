@@ -63,7 +63,9 @@ public class Page8Activity extends AppCompatActivity implements NavigationView.O
         //set color
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_8PrimaryDark));
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){

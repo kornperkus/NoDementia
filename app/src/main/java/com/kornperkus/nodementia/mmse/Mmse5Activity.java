@@ -93,6 +93,7 @@ public class Mmse5Activity extends AppCompatActivity implements View.OnClickList
             }
         });
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_5_des);
         player.start();
     }

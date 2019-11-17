@@ -72,7 +72,9 @@ public class Mmse2_2_5Activity extends AppCompatActivity implements CompoundButt
                 startActivity(intent);
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         Log.i("SCORE", "Score = "+score);
     }
 

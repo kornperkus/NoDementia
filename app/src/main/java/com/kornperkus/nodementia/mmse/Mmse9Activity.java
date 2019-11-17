@@ -59,7 +59,7 @@ public class Mmse9Activity extends AppCompatActivity implements CompoundButton.O
         bindView();
         score = getIntent().getIntExtra(Page5Activity.MMSE_SCORE_KEY, 0);
 
-        pageTitle.setText(getString(R.string.page5_title));;
+        pageTitle.setText(getString(R.string.page5_title));
         bigTitleTv.setText(getString(R.string.mmse_9_title));
         titleTv.setText("\t\"ต่อไปนี้เป็นคําสั่งที่เขียนเป็นตัวหนังสือ ต้องการให้คุณ(ตา,ยาย,...) อ่านแล้วทําตามคุณ (ตา,ยาย,...) จะอ่านออกเสียงหรืออ่านในใจก็ได้\"\n\nผู้ทดสอบแสดงกระดาษที่เขียนว่า \"หลับตา\"");
         forwardImg.setVisibility(View.INVISIBLE);
@@ -83,7 +83,9 @@ public class Mmse9Activity extends AppCompatActivity implements CompoundButton.O
                 startActivity(intent);
             }
         });
+
         setupNav();
+        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_9_des);
         player.start();
         Log.i("SCORE", "Score = "+score);
