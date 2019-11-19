@@ -41,8 +41,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //TODO: เพิ่มเนื้อหาหน้า 9 10
-        //TODO: แก้ไขลูกศรไปกลับให้ถูกต้อง
+        //TODO: หัวข้อหน้าแรกกับหน้าป้องกัน
+        //TODO: เปลี่ยนเสียง mmse
+        //TODO: เสียงด้านจิตวิญญาน
+        //TODO: เพิ่มเสียงทุกหน้า
+        //TODO: ใส่รูปหน้าเนื้อหา
+        //TODO: สรุปผลประเมินความพึงพอใจ
+        //TODO: สรุปคะแนนที่ส่งในเมล
+        //TODO: วิดีโอหน้าอาการกับจีบแอล
+        //TODO: เพิ่มคู่มือการใช้งาน
+        //TODO: เสียงประกอบหน้าแรก
+        //TODO: นาฬิกาปลุก
+        //TODO: pre-post test พึงพอใจ
         bindView();
 
         final SharedPreferences pref = getApplicationContext().getSharedPreferences(PREF_KEY_MAIN, 0);
