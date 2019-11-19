@@ -25,7 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class AccountActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg, backImg;
+    private ImageView menuImg, backImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -85,7 +85,6 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         });
 
         setupNav();
-        alarmImg.setVisibility(View.GONE);
     }
 
     @Override
@@ -108,7 +107,6 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
     }
 
     public void setupNav() {
@@ -124,14 +122,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
                 }
             }
         });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+
         navView.setNavigationItemSelectedListener(this);
     }
 

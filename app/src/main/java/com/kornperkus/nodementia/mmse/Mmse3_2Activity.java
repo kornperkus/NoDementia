@@ -33,7 +33,7 @@ public class Mmse3_2Activity extends AppCompatActivity implements  NavigationVie
     private CheckBox option1_1, option1_2, option1_3;
     private int score;
     private boolean exitConfirm;
-    private ImageView menuImg, alarmImg;
+    private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -86,7 +86,6 @@ public class Mmse3_2Activity extends AppCompatActivity implements  NavigationVie
             }
         });
         setupNav();
-        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_3_des);
         player.setNextMediaPlayer(MediaPlayer.create(getApplicationContext(), R.raw.mmse_3_2));
         player.start();
@@ -101,7 +100,6 @@ public class Mmse3_2Activity extends AppCompatActivity implements  NavigationVie
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
     }
 
     @Override
@@ -138,14 +136,7 @@ public class Mmse3_2Activity extends AppCompatActivity implements  NavigationVie
                 }
             }
         });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+
         navView.setNavigationItemSelectedListener(this);
     }
 

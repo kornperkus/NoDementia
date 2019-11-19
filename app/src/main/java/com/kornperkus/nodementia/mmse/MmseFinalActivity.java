@@ -31,7 +31,7 @@ import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
 
 public class MmseFinalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg, backImg, resultImg;
+    private ImageView menuImg, backImg, resultImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -97,7 +97,6 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
         frame.setBackgroundColor(getResources().getColor(R.color.page5PrimaryDark));
 
         setupNav();
-        alarmImg.setVisibility(View.GONE);
         Log.i("SCORE", "Score = " + score);
     }
 
@@ -108,7 +107,6 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
         backImg = findViewById(R.id.backImg);
         resultImg = findViewById(R.id.result_img);
     }
@@ -126,14 +124,7 @@ public class MmseFinalActivity extends AppCompatActivity implements NavigationVi
                 }
             }
         });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+
         navView.setNavigationItemSelectedListener(this);
     }
 

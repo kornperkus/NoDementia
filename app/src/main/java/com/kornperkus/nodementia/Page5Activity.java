@@ -28,7 +28,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
 
     public static final String MMSE_SCORE_KEY = "mmseScoreKey";
     private Button beginBtn;
-    private ImageView menuImg, alarmImg;
+    private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -45,9 +45,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         getSupportActionBar().setCustomView(R.layout.action_bar_page5);
         getSupportActionBar().setElevation(0);
         bindView();
-
         setupNav();
-        alarmImg.setVisibility(View.GONE);
 
         beginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +67,6 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
         beginBtn = findViewById(R.id.beginBtn);
         backImg = findViewById(R.id.backImg);
     }
@@ -85,14 +82,6 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
-            }
-        });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
             }
         });
         navView.setNavigationItemSelectedListener(this);

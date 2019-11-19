@@ -21,9 +21,6 @@ import com.google.android.material.navigation.NavigationView;
 public class Page9Activity extends AppCompatActivity {
 
     private ImageView backImg, forwardImg;
-    //private ImageView menuImg, alarmImg;
-    //private DrawerLayout drawer;
-   // private NavigationView navView;
     private boolean isOpen;
     private ImageView displayimg;
 
@@ -61,17 +58,11 @@ public class Page9Activity extends AppCompatActivity {
                 }
             });
         }
-
-       // alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView() {
         forwardImg = findViewById(R.id.forwardImg);
         backImg = findViewById(R.id.backImg);
-        //drawer = findViewById(R.id.drawer);
-       // navView = findViewById(R.id.nav_view);
-       // menuImg = findViewById(R.id.ic_menu);
-       // alarmImg = findViewById(R.id.ic_clock);
         displayimg = findViewById(R.id.display_img);
     }
 

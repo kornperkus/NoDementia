@@ -35,7 +35,7 @@ import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
 
 public class Mmse8Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg;
+    private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -97,7 +97,6 @@ public class Mmse8Activity extends AppCompatActivity implements NavigationView.O
         player.start();
 
         setupNav();
-        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){
@@ -111,7 +110,6 @@ public class Mmse8Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
     }
 
     public void setupNav() {
@@ -127,14 +125,7 @@ public class Mmse8Activity extends AppCompatActivity implements NavigationView.O
                 }
             }
         });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+
         navView.setNavigationItemSelectedListener(this);
     }
     @Override

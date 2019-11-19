@@ -39,7 +39,7 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
     private ImageView forwardImg;
     private int score;
     private boolean exitConfirm;
-    private ImageView menuImg, alarmImg;
+    private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -82,7 +82,6 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
         });
 
         setupNav();
-        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_2_1_1);
         player.start();
         Log.i("SCORE", "Score = "+score);
@@ -98,7 +97,6 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
     }
 
     @Override
@@ -149,14 +147,7 @@ public class Mmse2_1_1Activity extends AppCompatActivity implements CompoundButt
                 }
             }
         });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+
         navView.setNavigationItemSelectedListener(this);
     }
 

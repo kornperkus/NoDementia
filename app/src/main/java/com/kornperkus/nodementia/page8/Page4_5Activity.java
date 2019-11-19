@@ -30,7 +30,7 @@ import com.kornperkus.nodementia.R;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class Page4_5Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg;
+    private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -42,7 +42,6 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page8_4_5);
-
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
@@ -76,7 +75,6 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
         frame.setBackgroundColor(getResources().getColor(R.color.page7_4PrimaryDark));
 
         setupNav();
-        alarmImg.setVisibility(View.GONE);
         player = MediaPlayer.create(getApplicationContext(), R.raw.l_audio);
         player.start();
     }
@@ -91,7 +89,6 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
     }
 
     @Override
@@ -126,14 +123,6 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
-            }
-        });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
             }
         });
         navView.setNavigationItemSelectedListener(this);

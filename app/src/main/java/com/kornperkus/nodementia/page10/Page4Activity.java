@@ -65,9 +65,6 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page1PrimaryDark));
 
-
-
-
         setupNav();
         forwardImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,15 +182,15 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
         group2 = findViewById(R.id.group_2);
         group3 = findViewById(R.id.group_3);
     }
+
     @Override
     public void onBackPressed() {
-        if(exitConfirm){
+        if (exitConfirm) {
             super.onBackPressed();
             Intent intent = new Intent(getApplicationContext(), Page10Activity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-        }
-        else {
+        } else {
             Toast.makeText(getApplicationContext(), getString(R.string.page10_exit_confirm), Toast.LENGTH_SHORT).show();
             exitConfirm = true;
         }

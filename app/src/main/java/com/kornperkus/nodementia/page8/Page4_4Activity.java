@@ -30,7 +30,7 @@ import com.kornperkus.nodementia.R;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class Page4_4Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-    private ImageView menuImg, alarmImg;
+    private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -75,7 +75,6 @@ public class Page4_4Activity extends AppCompatActivity implements NavigationView
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_4PrimaryDark));
         setupNav();
-        alarmImg.setVisibility(View.GONE);
     }
 
     @Override
@@ -108,7 +107,6 @@ public class Page4_4Activity extends AppCompatActivity implements NavigationView
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
         pos1Img = findViewById(R.id.pos_1_img);
         pos2Img = findViewById(R.id.pos_2_img);
         pos3Img = findViewById(R.id.pos_3_img);
@@ -137,14 +135,6 @@ public class Page4_4Activity extends AppCompatActivity implements NavigationView
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
-            }
-        });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
             }
         });
         navView.setNavigationItemSelectedListener(this);

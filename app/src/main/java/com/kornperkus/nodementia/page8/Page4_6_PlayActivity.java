@@ -42,7 +42,7 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
     private List<Card> openned;
     private int clickCount, correctCount, level;
     private Animation fadeIn, fadeOut;
-    private ImageView menuImg, alarmImg;
+    private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -72,7 +72,6 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         cards = provider.getCardLists(level);
         openned = new ArrayList<>();
         setupNav();
-        alarmImg.setVisibility(View.GONE);
 
         openAllCard();
         beginTime = new CountDownTimer(5000, 1000) {
@@ -185,24 +184,6 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         }
 
         if(correctCount >= cards.size()) gameWin();
-/*
-        if(flipTime == null) {
-            flipTime = new CountDownTimer(1000, 1000) {
-
-                @Override
-                public void onTick(long millisUntilFinished) {
-
-                }
-
-                @Override
-                public void onFinish() {
-                    closeCard();
-                }
-            }.start();
-        } else {
-            flipTime.cancel();
-            flipTime.start();
-        }*/
     }
 
     private void gameWin() {
@@ -226,7 +207,6 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
     }
 
     public void setupNav() {
@@ -240,14 +220,6 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
-            }
-        });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
             }
         });
         navView.setNavigationItemSelectedListener(this);

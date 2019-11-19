@@ -26,7 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class Page6ResultActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg, alarmImg, backImg, bmiImg;
+    private ImageView menuImg, backImg, bmiImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -85,7 +85,6 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
         frame.setBackgroundColor(getResources().getColor(R.color.page6PrimaryDark));
 
         setupNav();
-        alarmImg.setVisibility(View.GONE);
     }
 
     private void bindView(){
@@ -96,7 +95,6 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
         backImg = findViewById(R.id.backImg);
         bmiImg = findViewById(R.id.bmi_img);
     }
@@ -112,14 +110,6 @@ public class Page6ResultActivity extends AppCompatActivity implements Navigation
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
-            }
-        });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
             }
         });
         navView.setNavigationItemSelectedListener(this);

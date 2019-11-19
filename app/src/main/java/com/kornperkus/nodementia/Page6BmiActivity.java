@@ -28,7 +28,7 @@ import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 public class Page6BmiActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final String PREF_KEY_BMI = "bmiKey";
 
-    private ImageView menuImg, alarmImg, backImg;
+    private ImageView menuImg,backImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -72,7 +72,6 @@ public class Page6BmiActivity extends AppCompatActivity implements NavigationVie
 
 
         setupNav();
-        alarmImg.setVisibility(View.GONE);
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -93,7 +92,6 @@ public class Page6BmiActivity extends AppCompatActivity implements NavigationVie
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
         backImg = findViewById(R.id.backImg);
     }
 
@@ -108,14 +106,6 @@ public class Page6BmiActivity extends AppCompatActivity implements NavigationVie
                     drawer.closeDrawer(GravityCompat.START);
                     isOpen = false;
                 }
-            }
-        });
-        alarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
             }
         });
         navView.setNavigationItemSelectedListener(this);

@@ -94,16 +94,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        addAlarmImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addAlarmEdit.setText("");
-                addAlarmEdit.setVisibility(View.VISIBLE);
-                addSaveBtn.setVisibility(View.VISIBLE);
-                addAlarmEdit.requestFocus();
-            }
-        });
-
         addSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,7 +181,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         navView = findViewById(R.id.nav_view);
         navAlarm = findViewById(R.id.nav_alarm);
         menuImg = findViewById(R.id.ic_menu);
-        alarmImg = findViewById(R.id.ic_clock);
         page1Btn = findViewById(R.id.page1_btn);
         page2Btn = findViewById(R.id.page2_btn);
         page3Btn = findViewById(R.id.page3_btn);
@@ -202,7 +191,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page8Btn = findViewById(R.id.page8_btn);
         page9Btn = findViewById(R.id.page9_btn);
         page10Btn = findViewById(R.id.page10_btn);
-
+        alarmImg = findViewById(R.id.ic_clock);
         addAlarmImg = findViewById(R.id.alarm_add);
         addAlarmEdit = findViewById(R.id.alarm_add_edittext);
         addSaveBtn = findViewById(R.id.alarm_add_save);
