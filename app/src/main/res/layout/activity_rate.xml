@@ -57,7 +57,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18sp" />
-
                         <RadioGroup
                             android:id="@+id/group_1"
                             android:layout_width="match_parent"
@@ -70,7 +69,13 @@
                                 android:id="@+id/option1_5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/page10_rate5" />
+                                android:text="@string/page10_rate5" >
+
+                            </RadioButton>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_home"/>
 
                             <RadioButton
                                 android:id="@+id/option1_4"

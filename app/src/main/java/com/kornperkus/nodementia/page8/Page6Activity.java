@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.Menu;
@@ -35,6 +36,7 @@ public class Page6Activity extends AppCompatActivity implements NavigationView.O
     private boolean isOpen;
     private TextView title, headline, body;
     private ImageView backImg, forwardImg;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,29 @@ public class Page6Activity extends AppCompatActivity implements NavigationView.O
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_6PrimaryDark));
         setupNav();
+        player = MediaPlayer.create(getApplicationContext(), R.raw.page8_6);
+        player.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(player != null) player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
+        }
     }
 
     private void bindView(){

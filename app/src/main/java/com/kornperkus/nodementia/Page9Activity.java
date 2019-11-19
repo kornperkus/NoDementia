@@ -45,7 +45,7 @@ public class Page9Activity extends AppCompatActivity {
             }
         });
 
-        if (pageNumber >= 6) {
+        if (pageNumber >= 8) {
             forwardImg.setVisibility(View.GONE);
         }else {
             forwardImg.setOnClickListener(new View.OnClickListener() {

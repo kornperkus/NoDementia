@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String PREF_KEY_EDUCATION = "educationKey";
     public static final String PREF_KEY_DISEASE = "diseaseKey";
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +42,9 @@ public class MainActivity extends AppCompatActivity {
         //TODO: หัวข้อหน้าแรกกับหน้าป้องกัน
         //TODO: เปลี่ยนเสียง mmse
         //TODO: เสียงด้านจิตวิญญาน
-        //TODO: เพิ่มเสียงทุกหน้า
         //TODO: ใส่รูปหน้าเนื้อหา
-        //TODO: สรุปผลประเมินความพึงพอใจ
-        //TODO: สรุปคะแนนที่ส่งในเมล
-        //TODO: วิดีโอหน้าอาการกับจีบแอล
-        //TODO: เพิ่มคู่มือการใช้งาน
+        //TODO: วิดีโอหน้าอาการ
         //TODO: เสียงประกอบหน้าแรก
-        //TODO: นาฬิกาปลุก
         //TODO: pre-post test พึงพอใจ
         bindView();
 

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.Menu;
@@ -35,6 +36,7 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
     private boolean isOpen;
     private TextView title, headline, body;
     private ImageView backImg, forwardImg;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,8 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
         frame.setBackgroundColor(getResources().getColor(R.color.page7_9PrimaryDark));
 
         setupNav();
+        player = MediaPlayer.create(getApplicationContext(), R.raw.page8_9_1);
+        player.start();
     }
 
     private void bindView(){
@@ -84,6 +88,27 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(player != null) player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
+        }
     }
 
     public void setupNav() {

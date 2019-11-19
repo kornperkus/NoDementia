@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.Menu;
@@ -12,8 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -37,6 +40,7 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
     private TextView title, headline, body, body2;
     private ImageView backImg, forwardImg;
     private MediaPlayer player;
+    private VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +81,14 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
         setupNav();
         player = MediaPlayer.create(getApplicationContext(), R.raw.l_audio);
         player.start();
+
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.page8_4_5;
+        Uri videoUri = Uri.parse(videoPath);
+        videoView.setVideoURI(videoUri);
+
+        MediaController controller = new MediaController(this);
+        videoView.setMediaController(controller);
+        controller.setAnchorView(videoView);
     }
 
     private void bindView(){
@@ -89,6 +101,7 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        videoView = findViewById(R.id.page8_4_5_video);
     }
 
     @Override

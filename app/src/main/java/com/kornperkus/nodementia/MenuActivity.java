@@ -94,6 +94,16 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        addAlarmImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addAlarmEdit.setText("");
+                addAlarmEdit.setVisibility(View.VISIBLE);
+                addSaveBtn.setVisibility(View.VISIBLE);
+                addAlarmEdit.requestFocus();
+            }
+        });
+
         addSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
