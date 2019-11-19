@@ -17,11 +17,6 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_centerHorizontal="true"/>
-        <ImageView
-            android:id="@+id/ic_clock"
-            android:src="@drawable/ic_clock"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_alignParentRight="true"/>
+
     </RelativeLayout>
 </LinearLayout>
