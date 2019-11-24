@@ -14,8 +14,8 @@
         <ImageView
             android:id="@+id/ic_head1"
             android:src="@drawable/logo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"/>
         <ImageView
             android:id="@+id/ic_clock"

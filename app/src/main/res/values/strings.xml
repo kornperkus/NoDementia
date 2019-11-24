@@ -18,13 +18,12 @@
     <string name="job_5">ข้าราชการบำนาญ</string>
     <string name="job_6">ไม่ประกอบอาชีพ</string>
     <string name="job_7">อื่นๆ</string>
-    <string name="disease_0">โปรดเลือก</string>
-    <string name="disease_1">ไม่มี</string>
-    <string name="disease_2">เบาหวาน</string>
-    <string name="disease_3">ความดันโลหิต</string>
+    <string name="disease_0">ไม่มี</string>
+    <string name="disease_1">เบาหวาน</string>
+    <string name="disease_2">ความดันโลหิตสูง</string>
+    <string name="disease_3">หัวใจ</string>
     <string name="disease_4">หลอดเลือดสมอง</string>
-    <string name="disease_5">หัวใจ</string>
-    <string name="disease_6">อื่นๆ</string>
+    <string name="disease_5">อื่นๆ</string>
 
     <string name="logout_title">ออกจากระบบ</string>
     <string name="logout_confirm">หากออกจากระบบข้อมูลทั้งหมดของท่านจะสูญหาย</string>

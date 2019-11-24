@@ -10,8 +10,11 @@
 
     <style name="menu_ic">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_weight">1.5</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
     <style name="login_text">
         <item name="android:shadowColor">#000000</item>

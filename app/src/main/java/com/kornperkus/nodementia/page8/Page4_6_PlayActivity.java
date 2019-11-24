@@ -74,40 +74,46 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
         setupNav();
 
         openAllCard();
-        beginTime = new CountDownTimer(5000, 1000) {
+        beginTime = new CountDownTimer(20000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-
+                if(millisUntilFinished/1000 == 19) Toast.makeText(getApplicationContext(), "เกมจะเริ่มในอีก 20 วินาที", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFinish() {
                 closeAllCard();
+
+                timer = new CountDownTimer(120000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        if(millisUntilFinished/1000 == 119) Toast.makeText(getApplicationContext(), "เริ่ม! คุณมีเวลา 2 นาที", Toast.LENGTH_SHORT).show();
+                        if(millisUntilFinished/1000 == 60) Toast.makeText(getApplicationContext(), "เหลือเวลาอีก 1 นาที", Toast.LENGTH_SHORT).show();
+                        if(millisUntilFinished/1000 == 30) Toast.makeText(getApplicationContext(), "เหลือเวลาอีก 30 วินาที", Toast.LENGTH_SHORT).show();
+                        if(millisUntilFinished/1000 == 10) Toast.makeText(getApplicationContext(), "เหลือเวลาอีก 10 วินาที!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Toast.makeText(getApplicationContext(), "หมดเวลา! คุณแพ้", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                };
+                timer.start();
             }
         };
         beginTime.start();
-
-        timer = new CountDownTimer(60000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                if(millisUntilFinished/1000 == 30) Toast.makeText(getApplicationContext(), "เหลือเวลาอีก 30 วินาที", Toast.LENGTH_SHORT).show();
-                if(millisUntilFinished/1000 == 10) Toast.makeText(getApplicationContext(), "เหลือเวลาอีก 10 วินาที!", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFinish() {
-                Toast.makeText(getApplicationContext(), "หมดเวลา! คุณแพ้", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), Page4_6_PlayActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        };
-        timer.start();
     }
+
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if(timer != null) timer.cancel();
+    protected void onStop() {
+        super.onStop();
+        if(timer != null){
+            timer.cancel();
+            finish();
+        }
     }
 
     @Override

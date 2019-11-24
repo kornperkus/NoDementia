@@ -16,13 +16,4 @@
         <item>@string/job_6</item>
         <item>@string/job_7</item>
     </string-array>
-    <string-array name="disease_array">
-        <item>@string/disease_0</item>
-        <item>@string/disease_1</item>
-        <item>@string/disease_2</item>
-        <item>@string/disease_3</item>
-        <item>@string/disease_4</item>
-        <item>@string/disease_5</item>
-        <item>@string/disease_6</item>
-    </string-array>
 </resources>

@@ -35,7 +35,7 @@ public class Page2Activity extends AppCompatActivity implements NavigationView.O
     private NavigationView navView;
     private boolean isOpen;
     private TextView title, headline, body;
-    private ImageView backImg, forwardImg;
+    private ImageView backImg, forwardImg, pagePic;
     private MediaPlayer player;
 
     @Override
@@ -53,6 +53,8 @@ public class Page2Activity extends AppCompatActivity implements NavigationView.O
         title.setText(getString(R.string.page8_2_title));
         headline.setVisibility(View.GONE);
         body.setText(getString(R.string.page8_2_body));
+        pagePic.setVisibility(View.VISIBLE);
+        pagePic.setImageResource(R.drawable.page8_2_pic);
 
         forwardImg.setVisibility(View.GONE);
         backImg.setOnClickListener(new View.OnClickListener(){
@@ -108,6 +110,7 @@ public class Page2Activity extends AppCompatActivity implements NavigationView.O
         body = findViewById(R.id.page_body);
         backImg = findViewById(R.id.backImg);
         forwardImg = findViewById(R.id.forwardImg);
+        pagePic = findViewById(R.id.page_pic);
     }
     public void setupNav() {
         menuImg.setOnClickListener(new View.OnClickListener() {

@@ -35,7 +35,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
     private NavigationView navView;
     private boolean isOpen;
     private TextView title, headline, headline2, headline3, body, body2, body3;
-    private ImageView backImg, forwardImg;
+    private ImageView backImg, forwardImg, pagePic;
     private MediaPlayer player;
 
     @Override
@@ -57,6 +57,8 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         body.setText(getString(R.string.page8_5_body));
         body2.setText(getString(R.string.page8_5_body2));
         body3.setText(getString(R.string.page8_5_body3));
+        pagePic.setVisibility(View.VISIBLE);
+        pagePic.setImageResource(R.drawable.page8_5_pic);
 
         forwardImg.setVisibility(View.GONE);
         backImg.setOnClickListener(new View.OnClickListener(){
@@ -87,6 +89,7 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        pagePic = findViewById(R.id.page_pic);
     }
 
     @Override

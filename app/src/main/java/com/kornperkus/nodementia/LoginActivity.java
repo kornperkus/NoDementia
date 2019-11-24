@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -26,7 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText nameEdit, ageEdit;
     private RadioGroup religionRadio, genderRadio;
     private RadioButton sexMale, sexFemale, religionThai, religionIslam;
-    private Spinner educationSpinner, jobSpinner, diseaseSpinner;
+    private Spinner educationSpinner, jobSpinner; //diseaseSpinner;
+    private CheckBox disease1, disease2, disease3, disease4, disease5;
     private Button confirmBtn;
     private SharedPreferences pref;
 
@@ -44,9 +46,9 @@ public class LoginActivity extends AppCompatActivity {
         jobList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         jobSpinner.setAdapter(jobList);
 
-        final ArrayAdapter<CharSequence> diseaseList = ArrayAdapter.createFromResource(this, R.array.disease_array, android.R.layout.simple_spinner_item);
-        diseaseList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        diseaseSpinner.setAdapter(diseaseList);
+       // final ArrayAdapter<CharSequence> diseaseList = ArrayAdapter.createFromResource(this, R.array.disease_array, android.R.layout.simple_spinner_item);
+       // diseaseList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //diseaseSpinner.setAdapter(diseaseList);
 
         pref = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0);
 
@@ -78,13 +80,22 @@ public class LoginActivity extends AppCompatActivity {
                 else if (job == 6) jobSpinner.setSelection(6);
                 else if (job == 7) jobSpinner.setSelection(7);
 
-                int disease = pref.getInt(MainActivity.PREF_KEY_DISEASE, 0);
-                if (disease == 1) diseaseSpinner.setSelection(1);
+                boolean disease1Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE1, false);
+                boolean disease2Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE2, false);
+                boolean disease3Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE3, false);
+                boolean disease4Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE4, false);
+                boolean disease5Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE5, false);
+                disease1.setChecked(disease1Value);
+                disease2.setChecked(disease2Value);
+                disease3.setChecked(disease3Value);
+                disease4.setChecked(disease4Value);
+                disease5.setChecked(disease5Value);
+                /*if (disease == 1) diseaseSpinner.setSelection(1);
                 else if (disease == 2) diseaseSpinner.setSelection(2);
                 else if (disease == 3) diseaseSpinner.setSelection(3);
                 else if (disease == 4) diseaseSpinner.setSelection(4);
                 else if (disease == 5) diseaseSpinner.setSelection(5);
-                else if (disease == 6) diseaseSpinner.setSelection(6);
+                else if (disease == 6) diseaseSpinner.setSelection(6);*/
 
                 int religion = pref.getInt(MainActivity.PREF_KEY_RELIGION, 0);
                 if(religion == R.id.religion_thai) religionThai.setChecked(true);
@@ -114,23 +125,29 @@ public class LoginActivity extends AppCompatActivity {
                 int religion = religionRadio.getCheckedRadioButtonId();
                 int education = educationSpinner.getSelectedItemPosition();
                 int job = jobSpinner.getSelectedItemPosition();
-                int disease = diseaseSpinner.getSelectedItemPosition();
+               // int disease = diseaseSpinner.getSelectedItemPosition();
 
                 if (job == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกอาชีพ", Toast.LENGTH_SHORT).show();
                 else if (education == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกระดับการศึกษา", Toast.LENGTH_SHORT).show();
-                else if(disease == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกโรคประจำตัว", Toast.LENGTH_SHORT).show();
+               // else if(disease == 0) Toast.makeText(getApplicationContext(), "โปรดเลือกโรคประจำตัว", Toast.LENGTH_SHORT).show();
                 else {
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putBoolean(MainActivity.PREF_KEY_LOGIN_STATUS, true);
                     editor.putString(MainActivity.PREF_KEY_NAME, name);
                     editor.putString(MainActivity.PREF_KEY_AGE, age);
                     editor.putInt(MainActivity.PREF_KEY_JOB, job);
-                    editor.putInt(MainActivity.PREF_KEY_DISEASE, disease);
+                   // editor.putInt(MainActivity.PREF_KEY_DISEASE, disease);
                     editor.putInt(MainActivity.PREF_KEY_GENDER, gender);
                     editor.putInt(MainActivity.PREF_KEY_RELIGION, religion);
                     editor.putInt(MainActivity.PREF_KEY_EDUCATION, education);
+                    editor.putBoolean(MainActivity.PREF_KEY_DISEASE1, disease1.isChecked());
+                    editor.putBoolean(MainActivity.PREF_KEY_DISEASE2, disease2.isChecked());
+                    editor.putBoolean(MainActivity.PREF_KEY_DISEASE3, disease3.isChecked());
+                    editor.putBoolean(MainActivity.PREF_KEY_DISEASE4, disease4.isChecked());
+                    editor.putBoolean(MainActivity.PREF_KEY_DISEASE5, disease5.isChecked());
+
                     editor.apply();
-                    startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                    startActivity(new Intent(getApplicationContext(), Page9ActivityFirstTime.class));
                     Toast.makeText(getApplicationContext(), "บันทึกข้อมูลแล้ว", Toast.LENGTH_SHORT).show();
                     finish();
                 }
@@ -144,7 +161,12 @@ public class LoginActivity extends AppCompatActivity {
         nameEdit = findViewById(R.id.nameEdit);
         ageEdit = findViewById(R.id.ageEdit);
         jobSpinner = findViewById(R.id.jobSpinner);
-        diseaseSpinner = findViewById(R.id.diseaseSpinner);
+     //   diseaseSpinner = findViewById(R.id.diseaseSpinner);
+        disease1 = findViewById(R.id.disease_1);
+        disease2 = findViewById(R.id.disease_2);
+        disease3 = findViewById(R.id.disease_3);
+        disease4 = findViewById(R.id.disease_4);
+        disease5 = findViewById(R.id.disease_5);
         genderRadio = findViewById(R.id.sex_radio);
         religionRadio = findViewById(R.id.religion_radio);
         sexMale = findViewById(R.id.sex_male);

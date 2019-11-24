@@ -22,6 +22,10 @@
             android:icon="@drawable/ic_mmse"
             android:title="คะแนน MMSE ครั้งสุดท้าย"/>
         <item
+            android:id="@+id/nav_credit"
+            android:icon="@drawable/ic_university"
+            android:title="การพัฒนาแอพพลิเคชั่น"/>
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_signout"
             android:title="ออกจากระบบ"/>

@@ -23,7 +23,7 @@ public class Page1Activity extends AppCompatActivity implements NavigationView.O
 
     private TextView title, headline, body;
     private ImageView backImg, forwardImg;
-    private ImageView menuImg;
+    private ImageView menuImg, pagePic;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -44,6 +44,8 @@ public class Page1Activity extends AppCompatActivity implements NavigationView.O
         title.setText(getString(R.string.page1_title));
         headline.setVisibility(View.GONE);
         body.setText(getString(R.string.page1_body));
+        pagePic.setImageResource(R.drawable.page1_pic);
+        pagePic.setVisibility(View.VISIBLE);
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -91,6 +93,7 @@ public class Page1Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        pagePic = findViewById(R.id.page_pic);
     }
 
     public void setupNav() {

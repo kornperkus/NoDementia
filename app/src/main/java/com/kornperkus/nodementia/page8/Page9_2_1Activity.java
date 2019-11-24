@@ -35,7 +35,7 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
     private NavigationView navView;
     private boolean isOpen;
     private TextView title, headline, body;
-    private ImageView backImg, forwardImg;
+    private ImageView backImg, forwardImg, pagePic;
     private MediaPlayer player;
 
     @Override
@@ -53,6 +53,8 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
         title.setText(getString(R.string.page8_9_title));
         headline.setText(getString(R.string.page8_9_2_headline));
         body.setText(getText(R.string.page8_9_2_body));
+        pagePic.setVisibility(View.VISIBLE);
+        pagePic.setImageResource(R.drawable.page8_9_pic);
 
         forwardImg.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -88,6 +90,7 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        pagePic = findViewById(R.id.page_pic);
     }
 
     @Override

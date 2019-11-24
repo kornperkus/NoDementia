@@ -30,7 +30,7 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
     private NavigationView navView;
     private boolean isOpen;
     private TextView title, headline, body;
-    private ImageView backImg, forwardImg;
+    private ImageView backImg, forwardImg, pagePic;
     private MediaPlayer player;
 
     @Override
@@ -48,6 +48,8 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
         title.setText(getString(R.string.page4_title));
         headline.setText(getString(R.string.page4_headline));
         body.setText(getString(R.string.page4_body));
+        pagePic.setVisibility(View.VISIBLE);
+        pagePic.setImageResource(R.drawable.page4_pic);
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -96,6 +98,7 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        pagePic = findViewById(R.id.page_pic);
     }
     public void setupNav() {
         menuImg.setOnClickListener(new View.OnClickListener() {

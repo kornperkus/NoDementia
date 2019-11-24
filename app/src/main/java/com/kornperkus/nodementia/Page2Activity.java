@@ -28,7 +28,7 @@ public class Page2Activity extends AppCompatActivity implements NavigationView.O
 
     private TextView title, headline, body;
     private ImageView backImg, forwardImg;
-    private ImageView menuImg;
+    private ImageView menuImg, pagePic;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
@@ -49,6 +49,8 @@ public class Page2Activity extends AppCompatActivity implements NavigationView.O
         title.setText(getString(R.string.page2_title));
         headline.setVisibility(View.GONE);
         body.setText(getString(R.string.page2_body));
+        pagePic.setVisibility(View.VISIBLE);
+        pagePic.setImageResource(R.drawable.page2_pic);
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -97,6 +99,7 @@ public class Page2Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        pagePic = findViewById(R.id.page_pic);
     }
 
     public void setupNav() {

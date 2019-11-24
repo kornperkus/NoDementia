@@ -191,7 +191,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -202,15 +201,14 @@
                         android:text="โรคประจำตัว:"
                         android:textSize="20dp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/dissease_tv"
-                        style="@style/TextAppearance.AppCompat.Body1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:layout_marginBottom="60dp"/>
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/dissease_tv"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="70dp"/>
             </LinearLayout>
         </ScrollView>
 

@@ -78,10 +78,14 @@
             android:name=".Page8Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7">
-
         </activity>
         <activity
             android:name=".Page9Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Page9ActivityFirstTime"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>

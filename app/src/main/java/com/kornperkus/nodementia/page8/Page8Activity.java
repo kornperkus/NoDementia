@@ -35,7 +35,7 @@ public class Page8Activity extends AppCompatActivity implements NavigationView.O
     private NavigationView navView;
     private boolean isOpen;
     private TextView title, headline, body;
-    private ImageView backImg, forwardImg;
+    private ImageView backImg, forwardImg, pagePic;
     private MediaPlayer player;
 
     @Override
@@ -53,6 +53,8 @@ public class Page8Activity extends AppCompatActivity implements NavigationView.O
         title.setText(getString(R.string.page8_8_title));
         headline.setVisibility(View.GONE);
         body.setText(getString(R.string.page8_8_body));
+        pagePic.setVisibility(View.VISIBLE);
+        pagePic.setImageResource(R.drawable.page8_8_pic);
 
         forwardImg.setVisibility(View.GONE);
         backImg.setOnClickListener(new View.OnClickListener(){
@@ -101,6 +103,7 @@ public class Page8Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        pagePic = findViewById(R.id.page_pic);
     }
 
     public void setupNav() {

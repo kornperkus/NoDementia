@@ -6,23 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.AlarmClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class Page7Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView menuImg;
@@ -30,7 +23,7 @@ public class Page7Activity extends AppCompatActivity implements NavigationView.O
     private NavigationView navView;
     private boolean isOpen;
     private TextView title, headline, body;
-    private ImageView backImg, forwardImg;
+    private ImageView backImg, forwardImg, pagePic;
     private MediaPlayer player;
 
     @Override
@@ -48,6 +41,8 @@ public class Page7Activity extends AppCompatActivity implements NavigationView.O
         title.setText(getString(R.string.page7_title));
         headline.setVisibility(View.GONE);
         body.setText(getText(R.string.page7_body));
+        pagePic.setVisibility(View.VISIBLE);
+        pagePic.setImageResource(R.drawable.page7_pic);
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
@@ -96,6 +91,7 @@ public class Page7Activity extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        pagePic = findViewById(R.id.page_pic);
     }
 
     public void setupNav() {

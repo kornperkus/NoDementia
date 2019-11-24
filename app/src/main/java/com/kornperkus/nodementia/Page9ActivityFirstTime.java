@@ -1,28 +1,16 @@
 package com.kornperkus.nodementia;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.AlarmClock;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.navigation.NavigationView;
-
-public class Page9Activity extends AppCompatActivity {
+public class Page9ActivityFirstTime extends AppCompatActivity {
 
     private ImageView backImg, forwardImg;
-    private boolean isOpen;
     private ImageView displayimg;
 
     @Override
@@ -34,9 +22,22 @@ public class Page9Activity extends AppCompatActivity {
 
         bindView();
         Intent intent = getIntent();
-        final int pageNumber = intent.getIntExtra("page", 1);
-        int id = getResources().getIdentifier("page9_" + pageNumber, "drawable", getPackageName());
-        displayimg.setImageResource(id);
+        displayimg.setImageResource(R.drawable.page9_0);
+
+        if (intent != null) {
+            if (intent.getBooleanExtra("fromNav", false)) {
+                forwardImg.setVisibility(View.GONE);
+            } else {
+                forwardImg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), Page9Activity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+            }
+        }
 
         backImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,20 +45,6 @@ public class Page9Activity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
-        if (pageNumber >= 10) {
-            forwardImg.setVisibility(View.GONE);
-        }else {
-            forwardImg.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), Page9Activity.class);
-                    intent.putExtra("page", pageNumber + 1);
-                    startActivity(intent);
-                    finish();
-                }
-            });
-        }
     }
 
     @Override

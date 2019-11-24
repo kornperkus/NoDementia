@@ -65,13 +65,31 @@ public class AccountActivity extends AppCompatActivity implements NavigationView
         else if(education == 2) educationTv.setText(getString(R.string.education_2));
         else if(education == 3) educationTv.setText(getString(R.string.education_3));
 
-        int disease = pref.getInt(MainActivity.PREF_KEY_DISEASE, 0);
+       /* int disease = pref.getInt(MainActivity.PREF_KEY_DISEASE, 0);
         if(disease == 1) diseaseTv.setText(getString(R.string.disease_1));
         else if(disease == 2) diseaseTv.setText(getString(R.string.disease_2));
         else if(disease == 3) diseaseTv.setText(getString(R.string.disease_3));
         else if(disease == 4) diseaseTv.setText(getString(R.string.disease_4));
         else if(disease == 5) diseaseTv.setText(getString(R.string.disease_5));
-        else if(disease == 6) diseaseTv.setText(getString(R.string.disease_6));
+        else if(disease == 6) diseaseTv.setText(getString(R.string.disease_6));*/
+
+        boolean disease1Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE1, false);
+        boolean disease2Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE2, false);
+        boolean disease3Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE3, false);
+        boolean disease4Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE4, false);
+        boolean disease5Value = pref.getBoolean(MainActivity.PREF_KEY_DISEASE5, false);
+
+        String diseaseText = "";
+        if(disease1Value || disease2Value || disease3Value || disease4Value || disease5Value) {
+            if(disease1Value) diseaseText += getString(R.string.disease_1)+"  ";
+            if(disease2Value) diseaseText += getString(R.string.disease_2)+"  ";
+            if(disease3Value) diseaseText += getString(R.string.disease_3)+"  ";
+            if(disease4Value) diseaseText += getString(R.string.disease_4)+"  ";
+            if(disease5Value) diseaseText += getString(R.string.disease_5)+"  ";
+        }else {
+            diseaseText = getString(R.string.disease_0);
+        }
+        diseaseTv.setText(diseaseText);
 
         int religion = pref.getInt(MainActivity.PREF_KEY_RELIGION, 0);
         if(religion == R.id.religion_thai) religionTv.setText(getString(R.string.religion_thai));

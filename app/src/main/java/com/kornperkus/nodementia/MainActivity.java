@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     public static final String PREF_KEY_JOB= "jobKey";
     public static final String PREF_KEY_EDUCATION = "educationKey";
     public static final String PREF_KEY_DISEASE = "diseaseKey";
+    public static final String PREF_KEY_DISEASE1 = "disease1Key";
+    public static final String PREF_KEY_DISEASE2 = "disease2Key";
+    public static final String PREF_KEY_DISEASE3 = "disease3Key";
+    public static final String PREF_KEY_DISEASE4 = "disease4Key";
+    public static final String PREF_KEY_DISEASE5 = "disease5Key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
         final SharedPreferences pref = getApplicationContext().getSharedPreferences(PREF_KEY_MAIN, 0);
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+       // handler.postDelayed(new Runnable() {
+            //@Override
+           // public void run() {
                 if(pref.getBoolean(PREF_KEY_LOGIN_STATUS, false)) startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                 else {
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
                 finish();
-            }
-        }, 1000);
+       //    }
+      //  }, 1000);
     }
 
     public static void showLogoutConfirm(final Activity activity){
@@ -109,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.nav_mmse:
                 activity.startActivity(new Intent(activity.getApplicationContext(), MmseFinalActivity.class));
+                break;
+            case R.id.nav_credit:
+                Intent creditIntent = new Intent(activity.getApplicationContext(), Page9ActivityFirstTime.class);
+                creditIntent.putExtra("fromNav", true);
+                activity.startActivity(creditIntent);
                 break;
             case R.id.nav_logout:
                showLogoutConfirm(activity);
