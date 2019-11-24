@@ -94,6 +94,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Page5">
         </activity>
+        <activity
+            android:name=".CallActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Call_Action">
+        </activity>
 
         <!-- Rate -->
 
@@ -315,10 +320,6 @@
         </activity>
         <activity
             android:name=".page8.Page9_2_2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Page7_8"></activity>
-        <activity
-            android:name=".page8.Page9_2_3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity

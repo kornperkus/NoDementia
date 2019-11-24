@@ -50,7 +50,7 @@ public class Page9_1_3Activity extends AppCompatActivity implements NavigationVi
         bindView();
         title.setText(getString(R.string.page8_9_title));
         headline.setText(getString(R.string.page8_9_1_headline));
-        body.setText(getText(R.string.page8_9_1_body3));
+        body.setText(getText(R.string.page8_9_1_body2));
 
         forwardImg.setVisibility(View.GONE);
         backImg.setOnClickListener(new View.OnClickListener(){

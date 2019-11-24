@@ -1,9 +1,8 @@
-package com.kornperkus.nodementia.page8;
+package com.kornperkus.nodementia;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.Menu;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -21,61 +19,50 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.kornperkus.nodementia.AccountActivity;
-import com.kornperkus.nodementia.LoginActivity;
-import com.kornperkus.nodementia.MainActivity;
-import com.kornperkus.nodementia.Page6ResultActivity;
-import com.kornperkus.nodementia.R;
-import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
-public class Page9_2_3Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView menuImg;
+public class CallActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private ImageView backImg, menuImg, actionCall;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
-    private TextView title, headline, body;
-    private ImageView backImg, forwardImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page);
+        setContentView(R.layout.activity_call);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page8_9);
+        getSupportActionBar().setCustomView(R.layout.action_bar_actioncall);
         getSupportActionBar().setElevation(0);
-
         bindView();
-        title.setText(getString(R.string.page8_9_title));
-        headline.setText(getString(R.string.page8_9_2_headline));
-        body.setText(getText(R.string.page8_9_2_body3));
 
-        forwardImg.setVisibility(View.GONE);
-        backImg.setOnClickListener(new View.OnClickListener(){
+        actionCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:1669"));
+                startActivity(intent);
+            }
+        });
+
+        backImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-        //set color
-        FrameLayout frame = findViewById(R.id.frame);
-        frame.setBackgroundColor(getResources().getColor(R.color.page7_9PrimaryDark));
-
         setupNav();
     }
 
-    private void bindView(){
-        title = findViewById(R.id.page_title);
-        headline = findViewById(R.id.page_headline);
-        body = findViewById(R.id.page_body);
+    private void bindView() {
         backImg = findViewById(R.id.backImg);
-        forwardImg = findViewById(R.id.forwardImg);
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        actionCall = findViewById(R.id.action_call);
     }
 
     public void setupNav() {

@@ -24,7 +24,7 @@
         <item
             android:id="@+id/nav_credit"
             android:icon="@drawable/ic_university"
-            android:title="การพัฒนาแอพพลิเคชั่น"/>
+            android:title="เกี่ยวกับเรา"/>
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_signout"

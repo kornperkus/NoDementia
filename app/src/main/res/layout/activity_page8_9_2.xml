@@ -7,8 +7,8 @@
     android:fitsSystemWindows="true">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <FrameLayout
             android:id="@+id/frame"
             android:layout_width="match_parent"
@@ -35,52 +35,61 @@
                 android:orientation="vertical"
                 android:padding="12dp">
                 <TextView
-                    android:id="@+id/page_headline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     style="@style/TextAppearance.AppCompat.Title"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/page8_9_2_headline"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:justificationMode="inter_word"
+                    android:text="@string/page8_9_2_body2"/>
                 <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="320dp"
-                    android:id="@+id/page_pic"
+                    android:id="@+id/pray_islam_1_btn"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_play_sound"
                     android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="16dp"
-                    android:visibility="gone"/>
+                    android:layout_margin="6dp"/>
                 <TextView
-                    android:id="@+id/page_body"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:justificationMode="inter_word"
+                    android:text="@string/page8_9_2_body3"/>
+                <ImageView
+                    android:id="@+id/pray_islam_2_btn"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_play_sound"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"/>
                 <TextView
-                    android:id="@+id/page_headline2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    style="@style/TextAppearance.AppCompat.Title"
-                    android:layout_marginBottom="4dp"/>
-                <TextView
-                    android:id="@+id/page_body2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-                <TextView
-                    android:id="@+id/page_headline3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    style="@style/TextAppearance.AppCompat.Title"
-                    android:layout_marginBottom="4dp"/>
-                <TextView
-                    android:id="@+id/page_body3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:justificationMode="inter_word"
+                    android:text="@string/page8_9_2_body4"/>
+                <ImageView
+                    android:id="@+id/pray_islam_3_btn"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_play_sound"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:justificationMode="inter_word"
+                    android:text="@string/page8_9_2_body5"/>
             </LinearLayout>
         </ScrollView>
         <ImageView
@@ -92,23 +101,6 @@
             android:layout_alignParentBottom="true"
             android:layout_margin="8dp"
             android:layout_marginLeft="16dp"/>
-        <ImageView
-            android:id="@+id/forwardImg"
-            android:src="@drawable/ic_forward"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="8dp"
-            android:layout_marginRight="16dp"/>
-        <ImageView
-            android:id="@+id/action_call"
-            android:src="@drawable/call_action"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
-            android:onClick="onCallClick"/>
     </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

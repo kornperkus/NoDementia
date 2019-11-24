@@ -96,6 +96,7 @@ public class Mmse2_1_2Activity extends AppCompatActivity implements CompoundButt
         forwardImg = findViewById(R.id.forwardBtn);
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
+        menuImg = findViewById(R.id.ic_menu);
     }
 
     @Override

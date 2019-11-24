@@ -129,4 +129,9 @@
         <item name="colorPrimaryDark">@color/page7_9PrimaryDark</item>
         <item name="android:windowBackground">@color/page7_9Background</item>
     </style>
+    <style name="Call_Action" parent="AppTheme">
+        <item name="colorPrimary">#FFD3FB</item>
+        <item name="colorPrimaryDark">#FFD3FB</item>
+        <item name="android:windowBackground">#FFD3FB</item>
+    </style>
 </resources>

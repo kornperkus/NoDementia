@@ -6,219 +6,251 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/frame"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page1_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page1" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ความหมาย"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page2_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page2" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="สาเหตุ"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="wrap_content">
+        </FrameLayout>
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page3_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page3" />
-                <TextView
-                    android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ปัจจัยเสี่ยง"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
+                    android:weightSum="4">
 
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page6_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page5" />
-                <TextView
-                    android:layout_width="wrap_content"
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page1_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page1" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="ความหมาย" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page2_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page2" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="สาเหตุ" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ดัชนีมวลกาย"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
+                    android:weightSum="4">
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"/>
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
 
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page5_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page6" />
-                <TextView
-                    android:layout_width="wrap_content"
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page3_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page3" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="ปัจจัยเสี่ยง" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page6_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page5" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="ดัชนีมวลกาย" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ประเมิน"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
+                    android:weightSum="4">
 
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page4_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page4" />
-                <TextView
-                    android:layout_width="wrap_content"
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page5_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page6" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="ประเมิน" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page4_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page4" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="อาการ" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="อาการ"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
+                    android:weightSum="4">
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"/>
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
 
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page7_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page7" />
-                <TextView
-                    android:layout_width="wrap_content"
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page7_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page7" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="การป้องกัน" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page8_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page8" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="การรักษา" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="การป้องกัน"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
+                    android:weightSum="4">
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <LinearLayout style="@style/menu_ic">
+
+                        <ImageView
+                            android:id="@+id/page9_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page9" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="คู่มือ" />
+                    </LinearLayout>
+                    <LinearLayout style="@style/menu_ic">
+                        <ImageView
+                            android:id="@+id/page10_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_page10" />
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:text="พึงพอใจ" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
+        </ScrollView>
+        <ImageView
+            android:id="@+id/action_call_btn"
+            android:src="@drawable/call_action"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"/>
 
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page8_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page8" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="การรักษา"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page9_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page9" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="คู่มือ"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/menu_ic">
-                <ImageView
-                    android:id="@+id/page10_btn"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_page10" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="พึงพอใจ"
-                    android:orientation="vertical"
-                    style="@style/TextAppearance.AppCompat.Body1"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-    </ScrollView>
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -232,6 +264,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end">
+
         <include layout="@layout/drawer_alarm" />
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

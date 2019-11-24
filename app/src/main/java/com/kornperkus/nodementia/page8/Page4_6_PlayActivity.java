@@ -110,10 +110,9 @@ public class Page4_6_PlayActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onStop() {
         super.onStop();
-        if(timer != null){
-            timer.cancel();
-            finish();
-        }
+        if(beginTime != null || timer != null) finish();
+        if(beginTime != null) beginTime.cancel();
+        if(timer != null) timer.cancel();
     }
 
     @Override

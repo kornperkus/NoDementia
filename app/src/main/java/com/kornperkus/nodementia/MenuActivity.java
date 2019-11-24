@@ -45,7 +45,7 @@ import static com.kornperkus.nodementia.App.CHANNEL_1_ID;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener, NavigationView.OnNavigationItemSelectedListener {
 
-    private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, page10Btn;
+    private ImageView page1Btn, page2Btn, page3Btn, page4Btn, page5Btn, page6Btn, page7Btn, page8Btn, page9Btn, page10Btn, actionCallBtn;
     private ImageView menuImg, alarmImg;
     private DrawerLayout drawer;
     private NavigationView navView, navAlarm;
@@ -72,10 +72,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         bindView();
         setOnClick();
 
-
         notificationManagerCompat = NotificationManagerCompat.from(this);
         setUpAlarm();
         setupNav();
+        actionCallBtn.bringToFront();
     }
 
     public void setUpAlarm() {
@@ -156,7 +156,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-
     private void startAlarm(Calendar c, Alarm alarm) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver.class);
@@ -205,6 +204,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         addAlarmImg = findViewById(R.id.alarm_add);
         addAlarmEdit = findViewById(R.id.alarm_add_edittext);
         addSaveBtn = findViewById(R.id.alarm_add_save);
+        actionCallBtn = findViewById(R.id.action_call_btn);
     }
 
     public void setOnClick() {
@@ -228,6 +228,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         page8Btn.setOnLongClickListener(this);
         page9Btn.setOnLongClickListener(this);
         page10Btn.setOnLongClickListener(this);
+        actionCallBtn.setOnClickListener(this);
     }
 
     public void setupNav() {
@@ -305,6 +306,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.page10_btn:
                 clss = Page10Activity.class;
+                break;
+            case R.id.action_call_btn:
+                clss = CallActivity.class;
                 break;
         }
         if (clss != null) startActivity(new Intent(getApplicationContext(), clss));

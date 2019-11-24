@@ -92,6 +92,10 @@ public class Page5Activity extends AppCompatActivity implements NavigationView.O
         pagePic = findViewById(R.id.page_pic);
     }
 
+    public void onCallClick(View v) {
+        Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
