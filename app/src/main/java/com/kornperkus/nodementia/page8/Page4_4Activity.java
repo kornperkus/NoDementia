@@ -54,6 +54,10 @@ public class Page4_4Activity extends AppCompatActivity implements NavigationView
         title.setText(getString(R.string.page8_4_title));
         headline.setText(getString(R.string.page8_4_4_headline));
         body.setText(getText(R.string.page8_4_4_body));
+        int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+        if(relegion_id == R.id.religion_islam) {
+            body.append(" คลิ๊กที่รูปเพื่อเล่นเสียง");
+        }
 
         forwardImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,13 +119,16 @@ public class Page4_4Activity extends AppCompatActivity implements NavigationView
         pos6Img = findViewById(R.id.pos_6_img);
         pos7Img = findViewById(R.id.pos_7_img);
 
-        pos1Img.setOnClickListener(this);
-        pos2Img.setOnClickListener(this);
-        pos3Img.setOnClickListener(this);
-        pos4Img.setOnClickListener(this);
-        pos5Img.setOnClickListener(this);
-        pos6Img.setOnClickListener(this);
-        pos7Img.setOnClickListener(this);
+        int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+        if(relegion_id == R.id.religion_islam) {
+            pos1Img.setOnClickListener(this);
+            pos2Img.setOnClickListener(this);
+            pos3Img.setOnClickListener(this);
+            pos4Img.setOnClickListener(this);
+            pos5Img.setOnClickListener(this);
+            pos6Img.setOnClickListener(this);
+            pos7Img.setOnClickListener(this);
+        }
     }
 
     public void setupNav() {

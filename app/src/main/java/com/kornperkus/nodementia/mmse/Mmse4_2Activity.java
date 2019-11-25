@@ -93,8 +93,11 @@ public class Mmse4_2Activity extends AppCompatActivity implements NavigationView
         });
 
         setupNav();
-        player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_4_2);
-        player.start();
+        int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+        if(relegion_id == R.id.religion_islam) {
+            player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_4_2);
+            player.start();
+        }
     }
 
     private void bindView(){

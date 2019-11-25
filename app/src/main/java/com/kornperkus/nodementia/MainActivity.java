@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String PREF_KEY_RELIGION = "religionKey";
     public static final String PREF_KEY_JOB= "jobKey";
     public static final String PREF_KEY_EDUCATION = "educationKey";
-    public static final String PREF_KEY_DISEASE = "diseaseKey";
     public static final String PREF_KEY_DISEASE1 = "disease1Key";
     public static final String PREF_KEY_DISEASE2 = "disease2Key";
     public static final String PREF_KEY_DISEASE3 = "disease3Key";

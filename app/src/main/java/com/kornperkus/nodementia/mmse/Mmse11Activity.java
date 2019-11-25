@@ -84,8 +84,11 @@ public class Mmse11Activity extends AppCompatActivity implements CompoundButton.
         });
 
         setupNav();
-        player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_11);
-        player.start();
+        int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+        if(relegion_id == R.id.religion_islam) {
+            player = MediaPlayer.create(getApplicationContext(), R.raw.mmse_11);
+            player.start();
+        }
         Log.i("SCORE", "Score = "+score);
     }
 

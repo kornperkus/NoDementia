@@ -1,19 +1,14 @@
 package com.kornperkus.nodementia.page8;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.AlarmClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -22,12 +17,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.kornperkus.nodementia.AccountActivity;
-import com.kornperkus.nodementia.LoginActivity;
 import com.kornperkus.nodementia.MainActivity;
-import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
-import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
 public class Page9_2_1Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView menuImg;
@@ -77,7 +68,7 @@ public class Page9_2_1Activity extends AppCompatActivity implements NavigationVi
         frame.setBackgroundColor(getResources().getColor(R.color.page7_9PrimaryDark));
 
         setupNav();
-        player = MediaPlayer.create(getApplicationContext(), R.raw.page8_9_1);
+        player = MediaPlayer.create(getApplicationContext(), R.raw.page8_9_2);
         player.start();
     }
 

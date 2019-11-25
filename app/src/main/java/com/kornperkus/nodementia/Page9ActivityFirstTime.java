@@ -1,6 +1,7 @@
 package com.kornperkus.nodementia;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -12,6 +13,7 @@ public class Page9ActivityFirstTime extends AppCompatActivity {
 
     private ImageView backImg, forwardImg;
     private ImageView displayimg;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,29 @@ public class Page9ActivityFirstTime extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        player = MediaPlayer.create(getApplicationContext(), R.raw.welcome_sound);
+        player.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(player != null) player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
+        }
     }
 
     @Override

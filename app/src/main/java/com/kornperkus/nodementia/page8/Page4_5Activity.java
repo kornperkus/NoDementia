@@ -79,8 +79,11 @@ public class Page4_5Activity extends AppCompatActivity implements NavigationView
         frame.setBackgroundColor(getResources().getColor(R.color.page7_4PrimaryDark));
 
         setupNav();
-        player = MediaPlayer.create(getApplicationContext(), R.raw.l_audio);
-        player.start();
+        int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+        if(relegion_id == R.id.religion_islam) {
+            player = MediaPlayer.create(getApplicationContext(), R.raw.l_audio);
+            player.start();
+        }
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.page8_4_5;
         Uri videoUri = Uri.parse(videoPath);
