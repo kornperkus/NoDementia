@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.Menu;
@@ -28,20 +29,20 @@ import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
 import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
-public class Page9_2_2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Page9_2_2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
     private TextView title;
-    private ImageView backImg;
+    private ImageView backImg, prayIslamBtn1, prayIslamBtn2, prayIslamBtn3;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page8_9_2);
 
-        //TODO: ใส่เสียงดุอา
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
@@ -63,6 +64,47 @@ public class Page9_2_2Activity extends AppCompatActivity implements NavigationVi
         frame.setBackgroundColor(getResources().getColor(R.color.page7_9PrimaryDark));
 
         setupNav();
+        prayIslamBtn1.setOnClickListener(this);
+        prayIslamBtn2.setOnClickListener(this);
+        prayIslamBtn3.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(player != null) player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(player != null) player.release();
+        switch (v.getId()) {
+            case R.id.pray_islam_1_btn:
+                player = MediaPlayer.create(getApplicationContext(), R.raw.pray_islam_1);
+                break;
+            case R.id.pray_islam_2_btn:
+                player = MediaPlayer.create(getApplicationContext(), R.raw.pray_islam_2);
+                break;
+            case R.id.pray_islam_3_btn:
+                player = MediaPlayer.create(getApplicationContext(), R.raw.pray_islam_3);
+                break;
+        }
+        player.start();
     }
 
     private void bindView(){
@@ -71,6 +113,9 @@ public class Page9_2_2Activity extends AppCompatActivity implements NavigationVi
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
+        prayIslamBtn1 = findViewById(R.id.pray_islam_1_btn);
+        prayIslamBtn2 = findViewById(R.id.pray_islam_2_btn);
+        prayIslamBtn3 = findViewById(R.id.pray_islam_3_btn);
     }
 
     public void setupNav() {

@@ -309,10 +309,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity
-            android:name=".page8.Page9_1_3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Page7_8"></activity>
-        <activity
             android:name=".page8.Page9_2_1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8">

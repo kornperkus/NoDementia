@@ -33,14 +33,15 @@ public class Page9_1_2Activity extends AppCompatActivity implements NavigationVi
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
-    private TextView title, headline, body;
-    private ImageView backImg, forwardImg;
+    private TextView title;
+    private ImageView backImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page);
+        setContentView(R.layout.activity_page8_9_1);
 
+        //TODO: ใส่เสียงบทสวด
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
@@ -49,18 +50,7 @@ public class Page9_1_2Activity extends AppCompatActivity implements NavigationVi
 
         bindView();
         title.setText(getString(R.string.page8_9_title));
-        headline.setText(getString(R.string.page8_9_1_headline));
-        body.setText(getText(R.string.page8_9_1_body2));
 
-        forwardImg.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Page9_1_3Activity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
         backImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -76,10 +66,7 @@ public class Page9_1_2Activity extends AppCompatActivity implements NavigationVi
 
     private void bindView(){
         title = findViewById(R.id.page_title);
-        headline = findViewById(R.id.page_headline);
-        body = findViewById(R.id.page_body);
         backImg = findViewById(R.id.backImg);
-        forwardImg = findViewById(R.id.forwardImg);
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
