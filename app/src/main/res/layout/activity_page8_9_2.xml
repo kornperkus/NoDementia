@@ -47,14 +47,8 @@
                     android:textSize="16sp"
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:justificationMode="inter_word"
-                    android:text="@string/page8_9_2_body2"/>
-                <ImageView
-                    android:id="@+id/pray_islam_1_btn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/ic_play_sound"
-                    android:layout_gravity="center"
-                    android:layout_margin="6dp"/>
+                    android:text="@string/page8_9_2_body2"
+                    android:layout_marginBottom="8dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

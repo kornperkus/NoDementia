@@ -305,7 +305,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 clss = Page9Activity.class;
                 break;
             case R.id.page10_btn:
-                clss = Page10Activity.class;
+                Intent intent = new Intent(getApplicationContext(), Page10Activity.class);
+                intent.putExtra("test_status", 1);
+                startActivity(intent);
                 break;
             case R.id.action_call_btn:
                 clss = CallActivity.class;

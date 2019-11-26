@@ -92,7 +92,7 @@
         <activity
             android:name=".Page10Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/Page5">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
             android:name=".CallActivity"

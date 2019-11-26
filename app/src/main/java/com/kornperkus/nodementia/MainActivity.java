@@ -54,16 +54,16 @@ public class MainActivity extends AppCompatActivity {
 
         final SharedPreferences pref = getApplicationContext().getSharedPreferences(PREF_KEY_MAIN, 0);
         Handler handler = new Handler();
-       // handler.postDelayed(new Runnable() {
-            //@Override
-           // public void run() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 if(pref.getBoolean(PREF_KEY_LOGIN_STATUS, false)) startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                 else {
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
                 finish();
-       //    }
-      //  }, 1000);
+           }
+        }, 1000);
     }
 
     public static void showLogoutConfirm(final Activity activity){

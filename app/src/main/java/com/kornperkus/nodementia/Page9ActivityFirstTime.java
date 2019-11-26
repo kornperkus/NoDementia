@@ -33,7 +33,7 @@ public class Page9ActivityFirstTime extends AppCompatActivity {
                 forwardImg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), Page9Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), Page10Activity.class);
                         startActivity(intent);
                         finish();
                     }

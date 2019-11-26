@@ -35,7 +35,7 @@ public class Page9_2_2Activity extends AppCompatActivity implements NavigationVi
     private NavigationView navView;
     private boolean isOpen;
     private TextView title;
-    private ImageView backImg, prayIslamBtn1, prayIslamBtn2, prayIslamBtn3;
+    private ImageView backImg, prayIslamBtn2, prayIslamBtn3;
     private MediaPlayer player;
 
     @Override
@@ -64,7 +64,6 @@ public class Page9_2_2Activity extends AppCompatActivity implements NavigationVi
         frame.setBackgroundColor(getResources().getColor(R.color.page7_9PrimaryDark));
 
         setupNav();
-        prayIslamBtn1.setOnClickListener(this);
         prayIslamBtn2.setOnClickListener(this);
         prayIslamBtn3.setOnClickListener(this);
     }
@@ -94,9 +93,6 @@ public class Page9_2_2Activity extends AppCompatActivity implements NavigationVi
     public void onClick(View v) {
         if(player != null) player.release();
         switch (v.getId()) {
-            case R.id.pray_islam_1_btn:
-                player = MediaPlayer.create(getApplicationContext(), R.raw.pray_islam_1);
-                break;
             case R.id.pray_islam_2_btn:
                 player = MediaPlayer.create(getApplicationContext(), R.raw.pray_islam_2);
                 break;
@@ -113,7 +109,6 @@ public class Page9_2_2Activity extends AppCompatActivity implements NavigationVi
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        prayIslamBtn1 = findViewById(R.id.pray_islam_1_btn);
         prayIslamBtn2 = findViewById(R.id.pray_islam_2_btn);
         prayIslamBtn3 = findViewById(R.id.pray_islam_3_btn);
     }
