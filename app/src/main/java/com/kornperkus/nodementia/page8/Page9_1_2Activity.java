@@ -35,7 +35,7 @@ public class Page9_1_2Activity extends AppCompatActivity implements NavigationVi
     private NavigationView navView;
     private boolean isOpen;
     private TextView title;
-    private ImageView backImg, prayThaiBtn1, prayThaiBtn2, prayThaiBtn3, prayThaiBtn4, prayThaiBtn5;
+    private ImageView backImg, forwardImg, prayThaiBtn1, prayThaiBtn2, prayThaiBtn3, prayThaiBtn4, prayThaiBtn5;
     private MediaPlayer player;
 
     @Override
@@ -53,6 +53,15 @@ public class Page9_1_2Activity extends AppCompatActivity implements NavigationVi
         bindView();
         title.setText(getString(R.string.page8_9_title));
 
+        forwardImg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Page9_1_3Activity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
         backImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -75,6 +84,7 @@ public class Page9_1_2Activity extends AppCompatActivity implements NavigationVi
     private void bindView(){
         title = findViewById(R.id.page_title);
         backImg = findViewById(R.id.backImg);
+        forwardImg = findViewById(R.id.forwardImg);
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);

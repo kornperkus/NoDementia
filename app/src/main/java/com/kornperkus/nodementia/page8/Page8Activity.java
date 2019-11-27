@@ -56,7 +56,21 @@ public class Page8Activity extends AppCompatActivity implements NavigationView.O
         pagePic.setVisibility(View.VISIBLE);
         pagePic.setImageResource(R.drawable.page8_8_pic);
 
-        forwardImg.setVisibility(View.GONE);
+        forwardImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+                int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+                if(relegion_id == R.id.religion_islam) {
+                    intent = new Intent(getApplicationContext(), Page8_2Activity.class);
+                }else {
+                    intent = new Intent(getApplicationContext(), Page8_1Activity.class);
+                }
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
         backImg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

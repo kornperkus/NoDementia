@@ -65,7 +65,7 @@
     <string name="page4_headline">ภาวะสมองเสื่อมแบ่งเป็น 3 ระยะดังนี้</string>
     <string name="page4_body">\t\t1.ระยะเริ่มแรก (Early  stages) ผู้สูงอายุจะเริ่มมีความบกพร่องในหน้าที่การงานและกิจกรรมสังคมอย่างเด่นชัด ขี้ลืมและบกพร่องในการจัดการธุรกิจ เช่น การจัดตารางการนัดหมาย การใช้โทรศัพท์ การเดินทางโดยลำพัง เป็นต้น แต่ยังสามารถช่วยเหลือตนเองได้ มีอาการหลงลืมไม่มาก ดูแลสุขภาพอนามัยของตนเองได้ และตัดสินใจเรื่องทั่วๆไปได้\n
 \t\t2. ระยะกลาง (Middle stages)เมื่อโรคก้าวหน้าขึ้น ผู้สูงอายุจะช่วยเหลือตนเองได้น้อยลง ความจำเสียอย่างเห็นได้ชัด สับสนในเรื่องเวลา สถานที่ บกพร่องในการแก้ปัญหาอย่างรุนแรง ไม่สามารถทำหน้าที่นอกบ้านได้ มีความบกพร่องในการดูแลตนเองในชีวิตประจำวันขั้นสูง เช่น การซักผ้า ล้างจาน จ่ายตลาด การปรุงอาหาร การใช้โทรศัพท์ การบริหารเงิน เป็นต้น และต่อมาจะมีความบกพร่องในการทำกิจวัตรประจำวันขั้นพื้นฐาน เช่น การล้างหน้าแปรงฟัน การใช้ห้องน้ำการขับถ่าย การอาบน้ำแต่งตัว การขึ้นลงบันได การรับประทานอาหาร เป็นต้น ถ้าปล่อยให้ผู้สูงอายุอยู่ตามลำพังหรือตัดสินใจเรื่องต่างๆ ด้วยตนเองจะเกิดอันตรายจำเป็นต้องมีผู้ดูแลใกล้ชิด\n
-\t\t3. ระยะท้าย (Late stages) มีอาการสมองเสื่อมรุนแรงมากจนไม่สามารถช่วยเหลือตนเองได้ ไม่สามารถดูแลสุขภาพตนเองได้ สูญเสียความจำอย่างมาก ไม่รู้เวลา สถานที่ จำบุคคลใกล้ชิดไม่ได้ ไม่สามารถคิดและตัดสินใจด้วยตนเองได้ พูดไม่รู้เรื่อง หรือไม่พูด อาจเคลื่อนไหวไม่ได้ ความอยากอาหารลดลงจนไม่อยากรับประทานเลยและไม่รู้จักตนเอง บางรายมีอาการหลงผิด เกิดภาพหลอน ก้าวร้าวรุนแรง กลั้นปัสสาวะอุจจาระไม่ได้\n\n\n
+\t\t3. ระยะท้าย (Late stages) มีอาการสมองเสื่อมรุนแรงมากจนไม่สามารถช่วยเหลือตนเองได้ ไม่สามารถดูแลสุขภาพตนเองได้ สูญเสียความจำอย่างมาก ไม่รู้เวลา สถานที่ จำบุคคลใกล้ชิดไม่ได้ ไม่สามารถคิดและตัดสินใจด้วยตนเองได้ พูดไม่รู้เรื่อง หรือไม่พูด อาจเคลื่อนไหวไม่ได้ ความอยากอาหารลดลงจนไม่อยากรับประทานเลยและไม่รู้จักตนเอง บางรายมีอาการหลงผิด เกิดภาพหลอน ก้าวร้าวรุนแรง กลั้นปัสสาวะอุจจาระไม่ได้
 </string>
 
     <!-- Page 5 -->
@@ -193,7 +193,7 @@
     <string name="page8_7_title">การเข้าสังคม</string>
     <string name="page8_7_body">\t\tการเข้าร่วมกิจกรรมสังคมบ่อยๆ พบปะ พูดคุยกับผู้อื่นบ่อยๆ เช่น ไปงานเลี้ยงต่างๆ การเข้าชมรมผู้สูงอายุ ไปวัด ไปมัสยิด เยี่ยมญาติพี่น้อง เป็นต้น รวมถึงการสร้างสังคมใหม่ๆ จะช่วยป้องกันการเกิดภาวะสมองเสื่อมได้เพราะได้พูดคุย โต้ตอบกับคนอื่น ทำให้สมองได้ใช้ความคิด ผ่อนคลายจากความเครียดและมีความสุขทางใจ\n\n\n</string>
     <string name="page8_8_title">การจัดการความเครียด</string>
-    <string name="page8_8_body">\t\tการจัดการความเครียดเป็นอีกวิธีหนึ่งที่สามารถป้องกันการเกิดภาวะสมองเสื่อม ซึ่งสามารถทำได้โดยการทำกิจกรรมที่ชอบ เช่น การเลี้ยงนกเขา การเย็บปักถักร้อย กิจกรรมการปลูกต้นไม้ ดอกไม้ การทำกิจกรรมนันทนาการ เช่น การรำวง และการฟังเพลงที่ชอบ เป็นต้น เป็นการช่วยให้ผู้สูงอายุมีสมาธิ ช่วยลดพฤติกรรมรุนแรง ช่วยฟื้นฟูความจําเกิดความภาคภูมิใจในตัวเอง และมีความสุข\n\n</string>
+    <string name="page8_8_body">\t\tการจัดการความเครียดเป็นอีกวิธีหนึ่งที่สามารถป้องกันการเกิดภาวะสมองเสื่อม ซึ่งสามารถทำได้โดยการทำกิจกรรมที่ชอบ เช่น การเลี้ยงนกเขา การเย็บปักถักร้อย กิจกรรมการปลูกต้นไม้ ดอกไม้ การทำกิจกรรมนันทนาการ เช่น การรำวง และการฟังเพลงที่ชอบ เป็นต้น เป็นการช่วยให้ผู้สูงอายุมีสมาธิ ช่วยลดพฤติกรรมรุนแรง ช่วยฟื้นฟูความจําเกิดความภาคภูมิใจในตัวเอง และมีความสุข\n\n\n</string>
     <string name="page8_9_title">การปฏิบัติด้านจิตวิญญาณ</string>
     <string name="page8_9_1_headline">มิติจิตวิญญาณตามวิถีพุทธ</string>
     <string name="page8_9_1_body"><b>การให้ทาน</b>
@@ -262,13 +262,13 @@
          </string>
     <string name="page8_9_2_body3">
         «اللَّهُمَّإنِّيعَبْدُكَ،ابْنُعَبدِكَ،ابْنُأمَتِكَ،نَاصِيَتيبِيَدِكَ،مَاضٍفِيَّحُكْمُكَ،عَدْلٌفِيَّقَضَاؤُكَ،أسْأَلُكَبِكُلِّاسْمٍهُوَلَكَ،سَمَّيْتَبهِنَفْسَكَ،أوْأنْزَلْتَهُفِيكِتَابِكَ،أوْعَلَّمْتَهُأحَداًمِنْخَلْقِكَ،أوِاسْتأثَرْتَبِهِفِيعِلْمِالغَيْبِعِنْدَكَ،أنْتَجْعَلَالقُرْآنَرَبِيْعَقَلبِي،وَنُورَصَدْرِي،وجَلاءَحُزْنِي،وَذَهَابَهَمِّي»
-\n\t\tอ่านว่า     อัลลอฮุมม่า อินนี อับดุก้าอิบนุอับดิก้าอิบนุอ้าม่าตี้ก้า นาซิย่าตี บิย่าดิก้า มาดินฟีย่าฮุกมุก้า อัดลุนฟีย่าก่อดออู้ก้าอัซอะลุก้า บิกุลอิสมิน ฮุว่าละก้า ซัมมัยต้าบิฮีนัฟซะก้า เอาอันซัลต้าฮูฟีกิตาบิก้า เอาอัลลัมต้าฮู อะหะดัน มินค็อลกี้ก้าอะวิซตะซัรฺต้าบิฮีฟีอิลมิลฆ็อยบิอินดะก้า อันตัจอ้าลัลกุรอาน่า รอบีอ้า ก็อลบี ว่านูร่อ ซ็อดรี ว่าญะลาอ้า ฮุสนี วะซ่าฮาบ้า ฮัมมี
+\n\n\t\tอ่านว่า     อัลลอฮุมม่า อินนี อับดุก้าอิบนุอับดิก้าอิบนุอ้าม่าตี้ก้า นาซิย่าตี บิย่าดิก้า มาดินฟีย่าฮุกมุก้า อัดลุนฟีย่าก่อดออู้ก้าอัซอะลุก้า บิกุลอิสมิน ฮุว่าละก้า ซัมมัยต้าบิฮีนัฟซะก้า เอาอันซัลต้าฮูฟีกิตาบิก้า เอาอัลลัมต้าฮู อะหะดัน มินค็อลกี้ก้าอะวิซตะซัรฺต้าบิฮีฟีอิลมิลฆ็อยบิอินดะก้า อันตัจอ้าลัลกุรอาน่า รอบีอ้า ก็อลบี ว่านูร่อ ซ็อดรี ว่าญะลาอ้า ฮุสนี วะซ่าฮาบ้า ฮัมมี
 \n\t\tความว่า   โอ้อัลลอฮฺ แท้จริงฉันเป็นบ่าวของพระองค์ เป็นลูกของบ่าวชายของพระองค์ เป็นลูกของบ่าวหญิงของพระองค์ กระหม่อมของฉันอยู่ในพระหัตถ์ของพระองค์ คำตัดสินของพระองค์ย่อมผ่านมายังตัวของฉัน คำพิพากษาของพระองค์ย่อมผ่านมายังตัวของฉัน ฉันขอต่อพระองค์ ด้วยกับทุกพระนามที่เป็นของพระองค์ ที่พระองค์ใช้เรียกตัวพระองค์เอง หรือประทานมันลงมาในคัมภีร์ของพระองค์ หรือที่พระองค์สอนให้กับบ่าวคนใดคนหนึ่งของพระองค์ หรือที่พระองค์เก็บเอาไว้อยู่ในความรู้ที่เร้นลับ ณ ที่พระองค์ ขอให้พระองค์ทรงทำให้อัลกุรอานเป็นความสดใสเบ่งบานในหัวใจของฉัน เป็นแสงสว่างภายในหัวอกของฉัน เป็นสิ่งที่ขับไล่ความทุกข์โศกของฉันให้หมดไป และเป็นสิ่งที่ทำให้ความวิตกของฉันมลายไปสิ้น
-\n\t\t(ดุอาอ์นี้มาจากฮะดีษ อะฮฺมัด:391/1 เศาะฮีห์)\n
+\n\t\t(ดุอาอ์นี้มาจากฮะดีษ อะฮฺมัด:391/1 เศาะฮีห์)\n\n
 لَّاخَيۡرَفِيكَثِيرٖمِّننَّجۡوَىٰهُمۡإِلَّامَنۡأَمَرَبِصَدَقَةٍأَوۡمَعۡرُوفٍأَوۡإِصۡلَٰحِۢبَيۡنَٱلنَّاسِۚوَمَنيَفۡعَلۡذَٰلِكَٱبۡتِغَآءَمَرۡضَاتِٱللَّهِفَسَوۡفَنُؤۡتِيهِأَجۡرًاعَظِيمٗا١١٤﴾ [النساء : 114]
 \n\n\t\tความหมาย“ไม่มีความดีใดๆ ในการพูดซุบซิบอันมากมายของพวกเขา นอกจากผู้ที่ใช้ให้ทำทานหรือให้ทำสิ่งที่ดีงาม หรือให้ประนีประนอมระหว่างผู้คนเท่านั้น และผู้ใดกระทำดังกล่าวเพื่อแสวงหาความโปรดปรานจากอัลลอฮฺแล้ว เราก็จะให้รางวัลอันยิ่งใหญ่แก่เขา”  (อัน-นิสาอ์ : 114)\n\n
 «احْرِصْعَلَىمَايَنْفَعُكَ،وَاسْتَعِنْبِاَللَّهِوَلَاتَعْجَزْ،وَإِذَاأَصَابَكَشَيْءٌفَلَاتَقُلْ: لَوْأَنِّيفَعَلْتُكَانَكَذَاوَكَذَا،وَلَكِنْقُلْ: قَدَّرَاللهُوَمَاشَاءَفَعَلَ،فَإِنَّلَوْتَفْتَحُعَمَلَاَلشَّيْطَانِ» [رواهمسلم  2664،ابنماجه 79،أحمد 2/370]
-\n\n\t\tความหมาย “จงมุ่งมั่นทุ่มเทแสวงหาสิ่งที่เป็นประโยชน์แก่ท่าน และจงขอความช่วยเหลือต่ออัลลอฮฺ และอย่าได้อ่อนแอ หากเกิดว่ามีสิ่งหนึ่งสิ่งใดมาประสบกับท่าน ท่านอย่าได้พูดว่า มาตรแม้น/หากว่าฉันทำอย่างนี้ มันคงจะเป็นอย่างนั้น แต่จงพูดว่า อัลลอฮฺทรงกำหนดไว้แล้ว และสิ่งที่ทรงประสงค์ก็จะทรงให้มันเป็นไปตามนั้น แท้จริงคำว่า มาตรแม้น/หากว่า นั้นเป็นการเปิดประตูให้แก่งานของชัยฏอน” (บันทึกโดยมุสลิม 2664)\n
+\n\n\t\tความหมาย “จงมุ่งมั่นทุ่มเทแสวงหาสิ่งที่เป็นประโยชน์แก่ท่าน และจงขอความช่วยเหลือต่ออัลลอฮฺ และอย่าได้อ่อนแอ หากเกิดว่ามีสิ่งหนึ่งสิ่งใดมาประสบกับท่าน ท่านอย่าได้พูดว่า มาตรแม้น/หากว่าฉันทำอย่างนี้ มันคงจะเป็นอย่างนั้น แต่จงพูดว่า อัลลอฮฺทรงกำหนดไว้แล้ว และสิ่งที่ทรงประสงค์ก็จะทรงให้มันเป็นไปตามนั้น แท้จริงคำว่า มาตรแม้น/หากว่า นั้นเป็นการเปิดประตูให้แก่งานของชัยฏอน” (บันทึกโดยมุสลิม 2664)\n\n
 «اللهمأَصْلِحْلِيدِينِيالَّذِيهُوَعِصْمَةُأَمْرِي،وَأَصْلِحْلِيدُنْيَايَالَّتِيفِيهَامَعَاشِي،وَأَصْلِحْلِيآخِرَتِيالَّتِيفِيهَامَعَادِي،وَاجْعَلِالْحَيَاةَزِيَادَةًلِيفِيكُلِّخَيْرٍ،وَاجْعَلِالْمَوْتَرَاحَةًلِيمِنْكُلِّشَرٍّ» [رواهمسلم 2720]
 \n\n\t\tความหมาย “โอ้อัลลอฮฺ ขอพระองค์ทรงปรับปรุงศาสนาอันเป็นที่ยึดมั่นของข้าพระองค์ ขอทรงปรับปรุงโลกดุนยาอันเป็นที่แห่งการมีชีวิตของข้าพระองค์ ขอทรงปรับปรุงอาคิเราะฮฺอันเป็นที่แห่งการกลับคืนของข้าพระองค์ ขอทรงให้การมีชีวิตเป็นการเพิ่มความดีแก่ข้าพระองค์ในทุกๆ เรื่อง และขอทรงให้การตายเป็นการพักผ่อนแก่ข้าพระองค์จากทุกสิ่งที่ชั่วร้าย” (บันทึกโดยมุสลิม 2720)\n
 إِلَهَإِلَّااللَّهُوَحْدَهُلاَشَرِيكَلَهُ،لَهُالمُلْكُ،وَلَهُالحَمْدُ،وَهُوَعَلَىكُلِّشَيْءٍقَدِيرٌ،اللَّهُمَّلاَمَانِعَلِمَاأَعْطَيْتَ،وَلاَمُعْطِيَلِمَامَنَعْتَ،وَلاَيَنْفَعُذَاالجَدِّمِنْكَالجَدُّ
@@ -323,4 +323,68 @@
     <string name="page10_4_2">2.สามารถนำความรู้การป้องกันภาวะสมองเสื่อมมาใช้ในชีวิตประจำวันได้</string>
     <string name="page10_4_3">3.สามารถป้องกันภาวะสมองเสื่อมได้</string>
     <string name="page10_exit_confirm">กดอีกครั้งเพื่อออกจากแบบประเมิน</string>
+    
+    <string name="link_8_thai_1"><u>https://www.youtube.com/watch?v=cnpi56lScU4</u></string>
+    <string name="link_8_thai_2"><u>https://www.youtube.com/watch?v=wOJuq5oWKqs</u></string>
+    <string name="link_8_thai_3"><u>https://www.youtube.com/watch?v=ljvmx2t5Qfs</u></string>
+    <string name="link_8_thai_4"><u>https://www.youtube.com/watch?v=ZFCgkpLeGts</u></string>
+    <string name="link_8_thai_5"><u>https://www.youtube.com/watch?v=Pg42HYNdKwE</u></string>
+    <string name="link_8_thai_6"><u>https://www.youtube.com/watch?v=QjtqpsYDPbc</u></string>
+    <string name="link_8_thai_7"><u>https://www.youtube.com/watch?v=yz6TSShCCBI</u></string>
+    <string name="link_8_thai_8"><u>https://www.youtube.com/watch?v=pUPtLPT7vu8</u></string>
+    <string name="link_8_thai_9"><u>https://www.youtube.com/watch?v=Yq_BYeOoQ20</u></string>
+    <string name="link_8_thai_10"><u>https://www.youtube.com/watch?v=i8M4FBPdc8o</u></string>
+    <string name="link_8_thai_11"><u>https://www.youtube.com/watch?v=6iSLWbJXQFs</u></string>
+    <string name="link_8_thai_12"><u>https://www.youtube.com/watch?v=oJKkCVfEdzA</u></string>
+    <string name="link_8_thai_13"><u>https://www.youtube.com/watch?v=hXwvi0ecwTQ</u></string>
+    <string name="link_8_thai_14"><u>https://www.youtube.com/watch?v=xS7DQb3pt6E</u></string>
+    <string name="link_8_thai_15"><u>https://www.youtube.com/watch?v=nD3TApXn71I\n\n\n</u></string>
+
+    <string name="link_8_islam_1"><u>https://www.youtube.com/watch?v=huOv7hta1Ho</u></string>
+    <string name="link_8_islam_2"><u>https://www.youtube.com/watch?v=pEEOThZLEVs</u></string>
+    <string name="link_8_islam_3"><u>https://www.youtube.com/watch?v=fVHOvAht-Ck</u></string>
+    <string name="link_8_islam_4"><u>https://www.youtube.com/watch?v=96xg6AGxrRE</u></string>
+    <string name="link_8_islam_5"><u>https://www.youtube.com/watch?v=2YKNLkWo0_4</u></string>
+    <string name="link_8_islam_6"><u>https://www.youtube.com/watch?v=_Wxz1ngqdVs</u></string>
+    <string name="link_8_islam_7"><u>https://www.youtube.com/watch?v=VM7-c382iVI</u></string>
+    <string name="link_8_islam_8"><u>https://www.youtube.com/watch?v=EquzFtfr658</u></string>
+    <string name="link_8_islam_9"><u>https://www.youtube.com/watch?v=jQ71tXoJ4n4</u></string>
+    <string name="link_8_islam_10"><u>https://www.youtube.com/watch?v=OJZzOrRFRrg</u></string>
+    <string name="link_8_islam_11"><u>https://www.youtube.com/watch?v=4xjMnL9UvVI</u></string>
+    <string name="link_8_islam_12"><u>https://www.youtube.com/watch?v=56oGZIOYoxo</u></string>
+    <string name="link_8_islam_13"><u>https://www.youtube.com/watch?v=manbMayVXsI</u></string>
+    <string name="link_8_islam_14"><u>https://www.youtube.com/watch?v=CxluZaSiv1s</u></string>
+    <string name="link_8_islam_15"><u>https://www.youtube.com/watch?v=qx_n0Aex1yU</u></string>
+    <string name="link_8_islam_16"><u>https://www.youtube.com/watch?v=3ROSCGqwR8w</u></string>
+    <string name="link_8_islam_17"><u>https://www.youtube.com/watch?v=eaAnoxvSKbk\n\n\n</u></string>
+
+    <string name="link_9_thai_1"><u>https://www.youtube.com/watch?v=drEK-q-uUVA</u></string>
+    <string name="link_9_thai_2"><u>https://www.youtube.com/watch?v=bLNnAA_2_rs</u></string>
+    <string name="link_9_thai_3"><u>https://www.youtube.com/watch?v=dgUt_rPD_ss</u></string>
+    <string name="link_9_thai_4"><u>https://www.youtube.com/watch?v=Zu4pwnNcZkQ</u></string>
+    <string name="link_9_thai_5"><u>https://www.youtube.com/watch?v=bkst3xdeWrU</u></string>
+    <string name="link_9_thai_6"><u>https://www.youtube.com/watch?v=kgy33OslcAg</u></string>
+    <string name="link_9_thai_7"><u>https://www.youtube.com/watch?v=Q05waGR5F_w</u></string>
+    <string name="link_9_thai_8"><u>https://www.youtube.com/watch?v=Ns40wsrM2ow\n\n\n</u></string>
+
+    <string name="link_9_islam_1"><u>https://www.youtube.com/watch?v=pDp44HfqEv8</u></string>
+    <string name="link_9_islam_2"><u>https://www.youtube.com/watch?v=hI9jB4siCXw</u></string>
+    <string name="link_9_islam_3"><u>https://www.youtube.com/watch?v=ihXsosziwRY</u></string>
+    <string name="link_9_islam_4"><u>https://www.youtube.com/watch?v=nkmHVDV6DgY</u></string>
+    <string name="link_9_islam_5"><u>https://www.youtube.com/watch?v=12qUxPBIFoY</u></string>
+    <string name="link_9_islam_6"><u>https://www.youtube.com/watch?v=iw0Ckg93yTs</u></string>
+    <string name="link_9_islam_7"><u>https://www.youtube.com/watch?v=TrnD4OqjbZU</u></string>
+    <string name="link_9_islam_8"><u>https://www.youtube.com/watch?v=Vqfy4ScRXFQ</u></string>
+    <string name="link_9_islam_9"><u>https://www.youtube.com/watch?v=LyvmNdP0lVk</u></string>
+    <string name="link_9_islam_10"><u>https://www.youtube.com/watch?v=1OMD_LSELAM</u></string>
+    <string name="link_9_islam_11"><u>https://www.youtube.com/watch?v=y7kTchpUu84</u></string>
+    <string name="link_9_islam_12"><u>https://www.youtube.com/watch?v=V-kZMHoXnLA</u></string>
+    <string name="link_9_islam_13"><u>https://www.youtube.com/watch?v=Lz39qpNg41w</u></string>
+    <string name="link_9_islam_14"><u>https://www.youtube.com/watch?v=z01Wxbtai94</u></string>
+    <string name="link_9_islam_15"><u>https://www.youtube.com/watch?v=eVD8VVr5c_w</u></string>
+    <string name="link_9_islam_16"><u>https://www.youtube.com/watch?v=rCUh3uT75PQ</u></string>
+    <string name="link_9_islam_17"><u>https://www.youtube.com/watch?v=YbEJ4pH7F6w</u></string>
+    <string name="link_9_islam_18"><u>https://www.youtube.com/watch?v=u9VOJf7Dev8</u></string>
+    <string name="link_9_islam_19"><u>https://www.youtube.com/watch?v=lF6zowKOXFA\n\n\n</u></string>
+
 </resources>

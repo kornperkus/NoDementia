@@ -1,10 +1,12 @@
 package com.kornperkus.nodementia;
 
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.Menu;
@@ -30,13 +32,13 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
     private NavigationView navView;
     private boolean isOpen;
     private TextView title, headline, body;
-    private ImageView backImg, forwardImg, pagePic;
+    private ImageView backImg, forwardImg, pagePic, playVideo;
     private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page);
+        setContentView(R.layout.activity_page4);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -66,6 +68,21 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
         setupNav();
         player = MediaPlayer.create(getApplicationContext(), R.raw.page4);
         player.start();
+
+        playVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = "fiXi13CW7Ns";
+                Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+                Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://www.youtube.com/watch?v=" + id));
+                try {
+                    startActivity(appIntent);
+                } catch (ActivityNotFoundException ex) {
+                    startActivity(webIntent);
+                }
+            }
+        });
     }
 
     @Override
@@ -99,6 +116,7 @@ public class Page4Activity extends AppCompatActivity implements NavigationView.O
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
         pagePic = findViewById(R.id.page_pic);
+        playVideo = findViewById(R.id.play_video);
     }
     public void setupNav() {
         menuImg.setOnClickListener(new View.OnClickListener() {

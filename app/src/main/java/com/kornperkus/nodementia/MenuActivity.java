@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -57,6 +58,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private EditText addAlarmEdit;
     private Button addSaveBtn;
     NotificationManagerCompat notificationManagerCompat;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -256,12 +258,38 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                     drawer.closeDrawer(navAlarm);
                     isAlramOpen = false;
                 }
-               /* Intent intent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);*/
             }
         });
         navView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        player = MediaPlayer.create(getApplicationContext(), R.raw.background_music);
+        player.setLooping(true);
+        player.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(player != null) player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player != null) player.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(player != null) {
+            if(player.isPlaying()) player.stop();
+            player.release();
+        }
     }
 
     @Override

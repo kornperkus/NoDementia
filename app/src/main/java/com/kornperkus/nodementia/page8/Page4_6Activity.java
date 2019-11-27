@@ -77,8 +77,11 @@ public class Page4_6Activity extends AppCompatActivity implements NavigationView
         FrameLayout frame = findViewById(R.id.frame);
         frame.setBackgroundColor(getResources().getColor(R.color.page7_4PrimaryDark));
         setupNav();
-        player = MediaPlayer.create(getApplicationContext(), R.raw.game);
-        player.start();
+        int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+        if(relegion_id == R.id.religion_islam) {
+            player = MediaPlayer.create(getApplicationContext(), R.raw.game);
+            player.start();
+        }
     }
 
     @Override

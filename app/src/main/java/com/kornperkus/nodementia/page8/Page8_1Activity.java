@@ -1,19 +1,15 @@
 package com.kornperkus.nodementia.page8;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
-import android.provider.AlarmClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -22,46 +18,33 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.kornperkus.nodementia.AccountActivity;
-import com.kornperkus.nodementia.LoginActivity;
 import com.kornperkus.nodementia.MainActivity;
-import com.kornperkus.nodementia.Page6ResultActivity;
 import com.kornperkus.nodementia.R;
-import com.kornperkus.nodementia.mmse.MmseFinalActivity;
 
-public class Page9_2_2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class Page8_1Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private ImageView menuImg;
     private DrawerLayout drawer;
     private NavigationView navView;
     private boolean isOpen;
-    private TextView title;
-    private ImageView backImg, forwardImg, prayIslamBtn2, prayIslamBtn3;
-    private MediaPlayer player;
+    private TextView title, link1, link2, link3, link4, link5, link6, link7, link8;
+    private ImageView backImg, forwardImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page8_9_2);
+        setContentView(R.layout.activity_page8_8_thai);
 
         //Setting actionbar
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.action_bar_page8_9);
+        getSupportActionBar().setCustomView(R.layout.action_bar_page8_8);
         getSupportActionBar().setElevation(0);
 
         bindView();
-        title.setText(getString(R.string.page8_9_title));
+        title.setText(getString(R.string.page8_8_title));
 
-        forwardImg.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Page9_2_3Activity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
-        backImg.setOnClickListener(new View.OnClickListener(){
+        forwardImg.setVisibility(View.GONE);
+        backImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -70,57 +53,76 @@ public class Page9_2_2Activity extends AppCompatActivity implements NavigationVi
 
         //set color
         FrameLayout frame = findViewById(R.id.frame);
-        frame.setBackgroundColor(getResources().getColor(R.color.page7_9PrimaryDark));
+        frame.setBackgroundColor(getResources().getColor(R.color.page7_8PrimaryDark));
 
         setupNav();
-        prayIslamBtn2.setOnClickListener(this);
-        prayIslamBtn3.setOnClickListener(this);
-    }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if(player != null) player.pause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(player != null) player.start();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if(player != null) {
-            if(player.isPlaying()) player.stop();
-            player.release();
-        }
+        link1.setOnClickListener(this);
+        link2.setOnClickListener(this);
+        link3.setOnClickListener(this);
+        link4.setOnClickListener(this);
+        link5.setOnClickListener(this);
+        link6.setOnClickListener(this);
+        link7.setOnClickListener(this);
+        link8.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(player != null) player.release();
         switch (v.getId()) {
-            case R.id.pray_islam_2_btn:
-                player = MediaPlayer.create(getApplicationContext(), R.raw.pray_islam_2);
+            case R.id.link_1:
+                openYoutube("drEK-q-uUVA");
                 break;
-            case R.id.pray_islam_3_btn:
-                player = MediaPlayer.create(getApplicationContext(), R.raw.pray_islam_3);
+            case R.id.link_2:
+                openYoutube("bLNnAA_2_rs");
+                break;
+            case R.id.link_3:
+                openYoutube("dgUt_rPD_ss");
+                break;
+            case R.id.link_4:
+                openYoutube("Zu4pwnNcZkQ");
+                break;
+            case R.id.link_5:
+                openYoutube("bkst3xdeWrU");
+                break;
+            case R.id.link_6:
+                openYoutube("kgy33OslcAg");
+                break;
+            case R.id.link_7:
+                openYoutube("Q05waGR5F_w");
+                break;
+            case R.id.link_8:
+                openYoutube("Ns40wsrM2ow");
                 break;
         }
-        player.start();
     }
 
-    private void bindView(){
+    private void openYoutube(String id) {
+        Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+        Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://www.youtube.com/watch?v=" + id));
+        try {
+            startActivity(appIntent);
+        } catch (ActivityNotFoundException ex) {
+            startActivity(webIntent);
+        }
+    }
+
+    private void bindView() {
         title = findViewById(R.id.page_title);
-        forwardImg = findViewById(R.id.forwardImg);
         backImg = findViewById(R.id.backImg);
+        forwardImg = findViewById(R.id.forwardImg);
         drawer = findViewById(R.id.drawer);
         navView = findViewById(R.id.nav_view);
         menuImg = findViewById(R.id.ic_menu);
-        prayIslamBtn2 = findViewById(R.id.pray_islam_2_btn);
-        prayIslamBtn3 = findViewById(R.id.pray_islam_3_btn);
+        link1 = findViewById(R.id.link_1);
+        link2 = findViewById(R.id.link_2);
+        link3 = findViewById(R.id.link_3);
+        link4 = findViewById(R.id.link_4);
+        link5 = findViewById(R.id.link_5);
+        link6 = findViewById(R.id.link_6);
+        link7 = findViewById(R.id.link_7);
+        link8 = findViewById(R.id.link_8);
     }
 
     public void setupNav() {

@@ -35,89 +35,100 @@
                 android:orientation="vertical"
                 android:padding="12dp">
                 <TextView
+                    android:text="สุนทราภรณ์"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     style="@style/TextAppearance.AppCompat.Title"
-                    android:layout_marginBottom="4dp"
-                    android:text="@string/page8_9_1_headline"/>
+                    android:layout_marginBottom="10dp"/>
                 <TextView
+                    android:id="@+id/link_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:text="@string/link_9_thai_1"
+                    android:layout_marginBottom="6dp"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:justificationMode="inter_word"
-                    android:text="@string/page8_9_1_body2"/>
-                <ImageView
-                    android:id="@+id/pray_thai_1_btn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/ic_play_sound"
-                    android:layout_gravity="center"
-                    android:layout_margin="6dp"/>
+                    android:textColor="#0000FF" />
                 <TextView
+                    android:id="@+id/link_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:text="@string/link_9_thai_2"
+                    android:layout_marginBottom="6dp"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:justificationMode="inter_word"
-                    android:text="@string/page8_9_1_body3"/>
-                <ImageView
-                    android:id="@+id/pray_thai_2_btn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/ic_play_sound"
-                    android:layout_gravity="center"
-                    android:layout_margin="6dp"/>
+                    android:textColor="#0000FF" />
                 <TextView
+                    android:text="ลูกกรุง"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:justificationMode="inter_word"
-                    android:text="@string/page8_9_1_body4"/>
-                <ImageView
-                    android:id="@+id/pray_thai_3_btn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/ic_play_sound"
-                    android:layout_gravity="center"
-                    android:layout_margin="6dp"/>
+                    android:textSize="20sp"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="16dp"/>
                 <TextView
+                    android:id="@+id/link_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:text="@string/link_9_thai_3"
+                    android:layout_marginBottom="6dp"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:justificationMode="inter_word"
-                    android:text="@string/page8_9_1_body5"/>
-                <ImageView
-                    android:id="@+id/pray_thai_4_btn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/ic_play_sound"
-                    android:layout_gravity="center"
-                    android:layout_margin="6dp"/>
+                    android:textColor="#0000FF" />
                 <TextView
+                    android:id="@+id/link_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:text="@string/link_9_thai_4"
+                    android:layout_marginBottom="6dp"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:justificationMode="inter_word"
-                    android:text="@string/page8_9_1_body6"/>
-                <ImageView
-                    android:id="@+id/pray_thai_5_btn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/ic_play_sound"
-                    android:layout_gravity="center"
-                    android:layout_margin="6dp"/>
+                    android:textColor="#0000FF" />
                 <TextView
+                    android:text="เพลงไทยเดิม"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="16dp"/>
+                <TextView
+                    android:id="@+id/link_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/link_9_thai_5"
+                    android:layout_marginBottom="6dp"
                     style="@style/TextAppearance.AppCompat.Body1"
-                    android:justificationMode="inter_word"
-                    android:text="@string/page8_9_1_body7"/>
+                    android:textColor="#0000FF" />
+                <TextView
+                    android:id="@+id/link_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/link_9_thai_6"
+                    android:layout_marginBottom="6dp"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0000FF" />
+                <TextView
+                    android:text="รำไทเก็ก"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="16dp"/>
+                <TextView
+                    android:id="@+id/link_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/link_9_thai_7"
+                    android:layout_marginBottom="6dp"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0000FF" />
+                <TextView
+                    android:id="@+id/link_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/link_9_thai_8"
+                    android:layout_marginBottom="6dp"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0000FF" />
             </LinearLayout>
         </ScrollView>
         <ImageView

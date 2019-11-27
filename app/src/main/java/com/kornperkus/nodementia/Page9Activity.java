@@ -1,23 +1,12 @@
 package com.kornperkus.nodementia;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.AlarmClock;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import com.google.android.material.navigation.NavigationView;
 
 public class Page9Activity extends AppCompatActivity {
 
@@ -35,9 +24,17 @@ public class Page9Activity extends AppCompatActivity {
         bindView();
         Intent intent = getIntent();
         final int pageNumber = intent.getIntExtra("page", 1);
-        int id = getResources().getIdentifier("page9_" + pageNumber, "drawable", getPackageName());
-        displayimg.setImageResource(id);
+        int id = 0;
 
+        if (pageNumber == 11) {
+            int relegion_id = getApplicationContext().getSharedPreferences(MainActivity.PREF_KEY_MAIN, 0).getInt(MainActivity.PREF_KEY_RELIGION, R.id.religion_thai);
+            if (relegion_id == R.id.religion_islam) id = R.drawable.page9_11_islam;
+            else id = R.drawable.page9_11_thai;
+        } else {
+            id = getResources().getIdentifier("page9_" + pageNumber, "drawable", getPackageName());
+        }
+
+        displayimg.setImageResource(id);
         backImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,9 +42,9 @@ public class Page9Activity extends AppCompatActivity {
             }
         });
 
-        if (pageNumber >= 10) {
+        if (pageNumber >= 12) {
             forwardImg.setVisibility(View.GONE);
-        }else {
+        } else {
             forwardImg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -299,44 +299,42 @@
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity
+            android:name=".page8.Page8_1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page7_8"></activity>
+        <activity
+            android:name=".page8.Page8_2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page7_8"></activity>
+        <activity
             android:name=".page8.Page9_1_1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7_9">
-
         </activity>
         <activity
             android:name=".page8.Page9_1_2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page7_8">
+        </activity>
+        <activity
+            android:name=".page8.Page9_1_3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
         <activity
             android:name=".page8.Page9_2_1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8">
-
         </activity>
         <activity
             android:name=".page8.Page9_2_2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Page7_8"></activity>
-        <activity
-            android:name=".page10.Page1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Page5"></activity>
-        <activity
-            android:name=".page10.Page2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Page5"></activity>
-        <activity
-            android:name=".page10.Page3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Page5"></activity>
-        <activity
-            android:name=".page10.Page4Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Page5"></activity>
-
-
         <receiver android:name=".AlarmReceiver"/>
+        <activity
+            android:name=".page8.Page9_2_3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Page7_8">
+        </activity>
     </application>
 
 </manifest>
